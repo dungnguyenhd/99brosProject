@@ -33,7 +33,7 @@ function UserPhoneData(props) {
         return (
                 <div class="col-md-4 mb-4">
 
-                  <div class="card overflow-hidden shadow"> <Link to={'/buy/' + item.id}> <img class="card-img-top" src={item.anh} height='300'/></Link>
+                  <div class="card overflow-hidden shadow"> <Link to={'/buy/' + item.id}> <img class="card-img-top" src={item.anh} height='400'/></Link>
 
                     <div class="card-body py-4 px-3">
 
@@ -43,7 +43,7 @@ function UserPhoneData(props) {
 
                       <div class="d-flex align-items-center"><span class="fs-0 fw-medium">Diện tích: {item.dientich}</span>
 
-                      <i class="far fa-heart text-end" style={{paddingLeft: "12rem",}}></i>
+                      <i class="far fa-heart text-end" style={{paddingLeft: "10.5rem",}}></i>
                       </div>
 
                     </div>
