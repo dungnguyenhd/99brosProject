@@ -16,11 +16,6 @@ const initProduct = {
 
 function todoProduct(state = initProduct, action) {
   switch (action.type) {
-    case GET_ALL_PRODUCT:
-      return {
-        ...state,
-        _products: action.payload,
-      };
     case GET_NUMBER_CART:
       return {
         ...state,
@@ -57,6 +52,7 @@ function todoProduct(state = initProduct, action) {
       return {
         ...state,
         numberCart: state.numberCart + 1,
+
       };
     case INCREASE_QUANTITY:
       state.numberCart++;

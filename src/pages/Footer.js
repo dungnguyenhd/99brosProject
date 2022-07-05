@@ -5,7 +5,7 @@ const Footer = () => {
     return (
     <>
 
-      <section class="pb-0 pb-lg-4">
+      <section class="pb-0 pb-lg-4 bg-danger">
 
         <div class="container">
           <div class="row">
