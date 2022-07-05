@@ -33,11 +33,11 @@ function UserPhoneData(props) {
         return (
                 <div class="col-md-4 mb-4">
 
-                  <div class="card overflow-hidden shadow"> <Link to={'/buy/' + item.id}> <img class="card-img-top" src={item.anh} height='400'/></Link>
+                  <div class="card overflow-hidden shadow"> <Link to={'/buy/' + item.id}> <img class="card-img-top" src={item.anh} height='450'/></Link>
 
                     <div class="card-body py-4 px-3">
 
-                      <div class="d-flex align-items-center"><span class="fs-0 fw-medium"><h4 class="text-secondary fw-medium">{item.tennha}</h4><span class="fs-0 fw-medium" style={{color: 'black'}}>Địa chỉ: {item.diachi}</span></span></div>
+                      <div class="d-flex align-items-center"><span class="fs-0 fw-medium"><h4 class="fw-medium" style={{color: 'blue'}}>{item.tennha}</h4><span class="fs-0 fw-medium" style={{color: 'black'}}>Địa chỉ: {item.diachi}</span></span></div>
 
                       <div class="d-flex align-items-center"><span class="fs-0 fw-medium">Mức Giá: {item.mucgia}</span></div>
 

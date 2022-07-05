@@ -28,7 +28,7 @@
   --bs-white: #FFFEFE;
   --bs-gray: #F0F4F9;
   --bs-gray-dark: #616161;
-  --bs-primary: #F1A501;
+  --bs-primary: #0155f1;
   --bs-secondary: #5E6282;
   --bs-success: #79B93C;
   --bs-info: #006380;
@@ -4824,7 +4824,7 @@ fieldset:disabled .btn {
   padding-right: 1rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
-  background-color: rgba(199, 194, 194, 0.9);
+  background-color: rgba(199, 194, 194, 0.8);
   z-index: -1;
 }
 
@@ -18609,8 +18609,8 @@ section {
 
 @media (min-width: 992px) {
   section {
-    padding-top: 5rem;
-    padding-bottom: 0rem;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
   }
 }
 
