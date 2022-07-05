@@ -4,23 +4,15 @@ import React from 'react';
 const NoPage = () => {
   return (
     <>
-<<<<<<< HEAD
-      <div style={{paddingTop: "7rem",}} class = "container fluid">
+      <div style={{ paddingTop: "7rem", }} class="container fluid">
         <div class="col-6 text-justify " >
-          <h1 style={{lineHeight: "70px"}}>Về 99BROS</h1>
-          <p class = "blockquote">
+          <h1 style={{ lineHeight: "70px" }}>Về 99BROS</h1>
+          <p class="blockquote">
             99bros là công ty cung cấp dịch vụ thuê văn phòng chuyên nghiệp tại Hà Nội và TP. Hồ Chí Minh.
             Chúng tôi trợ giúp khách hàng doanh nghiệp tìm thuê văn phòng tại các tòa nhà hạng A,B,C nhanh chóng,
             tối ưu chi phí và phù hợp mục đích sử dụng!
           </p>
         </div>
-=======
-    <div style={{paddingTop: "7rem",}} >
-      <h1>Name: Group 4</h1>
-      <h1>Donate me: =))))))) </h1>
-      </div>
->>>>>>> df4ec34eb2c1fc16e7f572f32320f767cf6be66b
-
         <div>
           <h4>Dịch vụ tư vấn hoàn toàn miễn phí, nhận ngay:</h4>
         </div>
