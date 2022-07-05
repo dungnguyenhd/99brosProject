@@ -668,7 +668,7 @@ progress {
 }
 
 .row {
-  --bs-gutter-x: 2rem;
+  --bs-gutter-x: 3rem;
   --bs-gutter-y: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4824,7 +4824,7 @@ fieldset:disabled .btn {
   padding-right: 1rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
-  background-color: rgba(199, 194, 194, 0.63);
+  background-color: rgba(199, 194, 194, 0.9);
   z-index: -1;
 }
 
@@ -13191,7 +13191,7 @@ fieldset:disabled .btn {
     padding-top: 5rem !important;
   }
   .pt-md-9 {
-    padding-top: 7.5rem !important;
+    padding-top: 4.5rem !important;
   }
   .pt-md-10 {
     padding-top: 10rem !important;
@@ -18610,7 +18610,7 @@ section {
 @media (min-width: 992px) {
   section {
     padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 0rem;
   }
 }
 
