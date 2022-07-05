@@ -21,8 +21,8 @@ const Layout = () => {
               <li class="nav-item px-3 px-xl-4"><Link to="/aboutMe" class="nav-link fw-medium">Giới thiệu</Link></li>
               <li class="nav-item px-3 px-xl-4"><Link to="/tintuc" class="nav-link fw-medium">Tin tức</Link></li>
               <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#testimonial">Bộ sưu tập</a></li>
-              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#!">Đăng nhập</a></li>
-              <li class="nav-item px-3 px-xl-4"><a class="btn btn-outline-dark order-1 order-lg-0 fw-medium" href="#!">Đăng kí</a></li>
+              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#!"><i class="fas fa-heart text-end"></i> </a></li>
+              <li class="nav-item px-3 px-xl-4"><a class="btn btn-outline-dark order-1 order-lg-0 fw-medium" href="#!">Đăng nhập</a></li>
               <li class="nav-item dropdown px-3 px-lg-0"> <a class="d-inline-block ps-0 py-2 pe-3 text-decoration-none dropdown-toggle fw-medium" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">VIE</a>
                 <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg"  aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#!">VIE</a></li>
