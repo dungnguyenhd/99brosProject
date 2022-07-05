@@ -10,7 +10,7 @@ import Category from './pages/Category';
 import Edit from './pages/Edit';
 import Collection from './pages/Collection';
 import Tintuc from './pages/Tintuc';
- 
+
 
 export default function App() {
   return (

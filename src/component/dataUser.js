@@ -28,12 +28,12 @@ function UserPhoneData(props) {
   var count = 0;
   if (phone != null) {
     phone_list = phone.map((item) => {
-      if (count < 6) {
+      if (count < 12) {
         count++;
         return (
                 <div class="col-md-4 mb-4">
 
-                  <div class="card overflow-hidden shadow"> <Link to={'/buy/' + item.id}> <img class="card-img-top" src={item.anh} height='450'/></Link>
+                  <div class="card overflow-hidden shadow"> <Link to={'/buy/' + item.id}> <img class="card-img-top" src={item.anh} height='420'/></Link>
 
                     <div class="card-body py-4 px-3">
 

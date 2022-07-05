@@ -127,8 +127,8 @@ const Home = () => {
 
       <div className="container">
         <div class="mb-7 text-center" id='viewnews'>
-            <h5 class="text-secondary">TOP ROOM </h5>
-            <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">Top Destination</h3>
+            <h5 class="text-secondary">OFFICE </h5>
+            <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">Top Office</h3>
           </div>
 
           <section class="pt-5" id="destination">
