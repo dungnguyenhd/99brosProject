@@ -71,7 +71,7 @@ const Home = () => {
 
         <div class="container">
           <div class="position-absolute z-index--1 end-0 d-none d-lg-block"></div>
-          <div class="mb-7 text-center">
+          <div class="mb-7 text-center pt-5">
             <h5 class="text-secondary">LOCATION </h5>
             <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">Choose Location</h3>
           </div>

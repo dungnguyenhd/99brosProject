@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { useNavigate, useParams } from 'react-router-dom';
 import '../css/main.css';
+import { AddCart } from '../actions';
+import { connect } from 'react-redux';
 
 function UserPhoneData(props) {
   const [phone, setPhone] = useState(null);
@@ -35,25 +37,32 @@ function UserPhoneData(props) {
       if (count < 12) {
         count++;
         return (
-                <div class="col-md-4 mb-4">
+          <div class="col-md-4 mb-4">
 
-                  <div class="card overflow-hidden shadow"> <div className='card-border bg-primary'><Link to={'/buy/' + item.id} onClick={clickView}> <img class="card-img-top" src={item.anh} height='420'/></Link></div>
+            <div class="card overflow-hidden shadow"> <div className='card-border bg-primary'><Link to={'/buy/' + item.id} onClick={clickView}> <img class="card-img-top" src={item.anh} height='420' /></Link></div>
 
-                    <div class="card-body py-4 px-3">
+              <div class="card-body py-4 px-3">
 
-                      <div class="d-flex align-items-center"><span class="fs-0"><h4 class="fw-medium ten">{item.tennha}</h4><span class="fs-0 fw-medium" style={{color: 'black'}}>Địa chỉ: {item.diachi}</span></span></div>
+                <div class="d-flex align-items-center"><span class="fs-0"><h4 class="fw-medium ten">{item.tennha}</h4><span class="fs-0 fw-medium" style={{ color: 'black' }}>Địa chỉ: {item.diachi}</span></span></div>
 
-                      <div class="d-flex align-items-center"><span class="fs-0 fw-medium">Mức Giá: {item.mucgia}</span></div>
+                <div class="d-flex align-items-center"><span class="fs-0 fw-medium">Mức Giá: {item.mucgia}</span></div>
 
-                      <div class="d-flex align-items-center"><span class="fs-0 fw-medium">Diện tích: {item.dientich}</span>
+                <div class="d-flex align-items-center"><span class="fs-0 fw-medium">Diện tích: {item.dientich}</span>
 
-                      <span className='tim'><i class="fas fa-heart text-end" style={{paddingLeft: "12rem",}}></i></span>
-                      </div>
+                  <span className='tim' style={{ marginLeft: "12rem", }}>
+                    <button
+                      className="btn btn-outline-danger ms-2 rounded-circle"
+                      onClick={() => props.AddCart(item)}>
+                      <i class="fas fa-heart text-end"></i>
+                    </button>
 
-                    </div>
-
-                  </div>
+                  </span>
                 </div>
+
+              </div>
+
+            </div>
+          </div>
         );
       } else {
         return;
@@ -88,10 +97,22 @@ function UserPhoneData(props) {
           </li>
         </ul>
       </div>
-      <br/><br/><br/>
+      <br /><br /><br />
       {phone_list}
     </>
   );
 }
 
-export default UserPhoneData;
+const mapStateToProps = (state) => {
+  return {
+    //_products: state._todoProduct,
+    numberCart: state._todoProduct.numberCart,
+  };
+};
+function mapDispatchToProps(dispatch) {
+  return {
+    AddCart: (item) => dispatch(AddCart(item)),
+  };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(UserPhoneData);
+

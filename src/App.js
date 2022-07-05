@@ -10,6 +10,7 @@ import Category from './pages/Category';
 import Edit from './pages/Edit';
 import Collection from './pages/Collection';
 import Tintuc from './pages/Tintuc';
+import Favorite from './pages/Favorite';
 
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="tintuc" element={<Tintuc />} />
           <Route path="collection" element={<Collection />} />
           <Route path="category/:name" element={<Category />} />
+          <Route path="favorite" element={<Favorite />} />
           <Route path="edit/:id" element={<Edit />} />
           <Route path="*" element={<NoPage />} />
         </Route>
@@ -31,5 +33,3 @@ export default function App() {
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
