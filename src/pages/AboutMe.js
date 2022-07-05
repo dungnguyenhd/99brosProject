@@ -23,6 +23,23 @@ const NoPage = () => {
             <li>Thông tin ưu & Nhược điểm của từng khu vực , từng toà nhà</li>
           </ul>
         </div>
+        <div class="row">
+          <div class="col md-4">
+            <img class="rounded float-right" src='https://game8.vn/media/202204/files/bind-from-air.png' width="558px" height="350px" />
+            <div>
+              <h3>Khách thuê</h3>
+              <p>Tìm hiểu dịch vụ thuê văn phòng</p>
+            </div>
+
+          </div>
+          <div class="col md-4">
+            <img class="rounded float-left" src='https://s3-eu-central-1.amazonaws.com/www-staging.esports.com/WP%20Media%20Folder%20-%20esports-com//var/app/current/web/app/uploads/2021/05/Dust2-boxes.jpg' width="558px" height="350px" />
+            <div>
+              <h3>Chủ toà nhà</h3>
+              <p>Trở thành đối tác cho thuê văn phòng</p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   )
