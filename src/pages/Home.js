@@ -52,7 +52,7 @@ const Home = () => {
     <>
       {/* <!-- ======= Hero Section ======= --> */}
       <section style={{paddingTop: "7rem",}}>
-        <div class="bg-holder" style={{
+        <div class="bg-holder" id="start" style={{
       backgroundImage: `url("https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?cs=srgb&dl=pexels-vecislavas-popa-1571459.jpg&fm=jpg")`}}>
         </div>
 
@@ -63,11 +63,9 @@ const Home = () => {
               <h1 class="hero-title">Welcome<br/>To 99Bros Website </h1>
               <p class="mb-4 fw-medium">This website provide infomation about real estate.<br class="d-none d-xl-block" />Or house renting, real estate news<br class="d-none d-xl-block" />Booking room.</p>
               <div class="text-center text-md-start"> <a class="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow" href="#viewnews" role="button">View news</a>
-                <div class="w-100 d-block d-md-none"></div><a href="#!" role="button" data-bs-toggle="modal" data-bs-target="#popupVideo"><span class="btn btn-success round-btn-lg rounded-circle me-3 danger-btn-shadow">
+                <div class="w-100 d-block d-md-none"></div><a href="#start" role="button"><span class="btn btn-success round-btn-lg rounded-circle me-3 danger-btn-shadow">
                 <i class="fas fa-paper-plane"></i>
                 </span></a><span class="fw-medium" style={{color: 'white'}}>Post News</span>
-                <div class="modal fade" id="popupVideo" tabindex="-1" aria-labelledby="popupVideo" aria-hidden="true">
-                </div>
               </div>
             </div>
           </div>
