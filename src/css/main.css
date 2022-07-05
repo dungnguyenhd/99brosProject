@@ -18747,6 +18747,10 @@ iframe {
   z-index: 0;
 }
 
+.chan{
+  background-color: rgba(192, 192, 192, 0.29);
+}
+
 .bg-holder.bg-right {
   left: auto;
   right: 0;
