@@ -5387,6 +5387,27 @@ fieldset:disabled .btn {
   border-top-right-radius: calc(1.5rem - 1px);
 }
 
+.card .card-img-top:hover{
+  transform: scale(1.1);
+  transition: all 700ms ease-in-out;
+}
+
+.card-border{
+  overflow: hidden;
+}
+
+.card .card-img-top:hover .ten{
+  color: red;
+}
+
+.ten{
+  color: blue;
+}
+
+.tim:hover{
+  color: red;
+}
+
 .card-img,
 .card-img-bottom {
   border-bottom-right-radius: calc(1.5rem - 1px);

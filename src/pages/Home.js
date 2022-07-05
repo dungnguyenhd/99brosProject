@@ -140,6 +140,13 @@ const Home = () => {
           </section>
       </div>
 
+      <div className="container">
+        <div class="mb-7 text-center" id='viewnews'>
+            <h5 class="text-secondary">HOUSE </h5>
+            <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">Top House</h3>
+          </div>
+        </div>
+
     </>
   );
 };
