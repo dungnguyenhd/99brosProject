@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import UserPhoneData from '../component/dataUser';
 import '../css/main.css';
 import { Outlet, Link } from 'react-router-dom';
+import PhoneData from '../component/data';
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -17,7 +18,7 @@ const Home = () => {
         setData(data);
       });
 
-    let url_category = 'https://62b04a56e460b79df0423a2e.mockapi.io/name';
+    let url_category = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase/?phanloai=';
 
     fetch(url_category)
       .then((response) => response.json())
@@ -38,15 +39,6 @@ const Home = () => {
       });
   };
 
-  var categories_list = [];
-
-  if (categories != null) {
-    categories_list = categories.map((item) => (
-      <li>
-        <Link to={'category/' + item.type_name}>{item.type_name}</Link>
-      </li>
-    ));
-  }
 
   return (
     <>
@@ -85,36 +77,44 @@ const Home = () => {
           </div>
           <div class="row">
             <div class="col-lg-3 col-sm-6 mb-6">
+            <Link to={'category/Hà%20Nội'}>
               <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
                 <div class="card-body p-xxl-5 p-4"> <img src="http://2.bp.blogspot.com/-BhNz0plAze4/VecqxSWuxyI/AAAAAAAADJM/9HROc8vSj4o/s400/vector-logohn-khuevancac.jpg" width="75" alt="Service" />
                   <h4 class="mb-3">Hà Nội</h4>
                   <p class="mb-0 fw-medium">Thành phố Hà Nội bao gồm cả ngoại thành và nội thành.</p>
                 </div>
               </div>
+            </Link>
             </div>
             <div class="col-lg-3 col-sm-6 mb-6">
+            <Link to={'category/Hồ%20Chí%20Minh'}>
               <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
                 <div class="card-body p-xxl-5 p-4"> <img src="https://i.imgur.com/TW9KwPd.png" width="75" alt="Service" />
                   <h4 class="mb-3">Hồ Chí Minh</h4>
                   <p class="mb-0 fw-medium">Thành phố Hồ Chí Minh và các khu vực lân cận.</p>
                 </div>
               </div>
+              </Link>
             </div>
             <div class="col-lg-3 col-sm-6 mb-6">
+            <Link to={'category/Đà%20Nẵng'}>
               <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
                 <div class="card-body p-xxl-5 p-4"> <img src="https://www.sos24h.vn/wwwroot/resources/upload/img/productcategory/8-2020/logo2.png" width="75" alt="Service" />
                   <h4 class="mb-3">Đà Nẵng</h4>
                   <p class="mb-0 fw-medium">Khu vực Thành Phố Đà Nẵng. Không bao gồm lân cận</p>
                 </div>
               </div>
+              </Link>
             </div>
             <div class="col-lg-3 col-sm-6 mb-6">
+            <Link to={'category/Khác'}>
               <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
                 <div class="card-body p-xxl-5 p-4"> <img src="https://i.pinimg.com/originals/95/b2/2f/95b22f2e0059265d3d9cdb0cce0a4a27.png" width="115" alt="Service" />
                   <h4 class="mb-3">Các Khu Vực Khác</h4>
                   <p class="mb-0 fw-medium">Các tỉnh thành khác trên khu vực Việt Nam</p>
                 </div>
               </div>
+              </Link>
             </div>
           </div>
         </div>

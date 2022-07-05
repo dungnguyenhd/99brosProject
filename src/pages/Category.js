@@ -12,7 +12,7 @@ const Category = () => {
     console.log('user use effect!!');
 
     let url =
-      'https://62b04a56e460b79df0423a2e.mockapi.io/aa/?type=' + params.name;
+      'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase/?phanloai=' + params.name;
 
     console.log(url);
     fetch(url)
@@ -24,7 +24,7 @@ const Category = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{paddingTop: "7rem",}}>
       <div className="App-jumbotron jumbotron text-center ">
         <h1> Category {category}</h1>
         <p>Product</p>

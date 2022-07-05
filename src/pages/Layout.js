@@ -8,7 +8,7 @@ const Layout = () => {
       <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
         <div class="container">
           <Link to="/#start" class="navbar-brand">
-            <img src="https://i.imgur.com/CkZJbLx.png" height="41" width='70' alt="99Bro" /></Link>
+            <img src="https://i.imgur.com/CkZJbLx.png" height="42" width='68' alt="99Bro" /></Link>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base align-items-lg-center align-items-start">
