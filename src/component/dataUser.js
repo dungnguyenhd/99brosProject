@@ -14,13 +14,13 @@ function UserPhoneData(props) {
 
   const sortPriceDown = () => {
     const sortData = [...phone];
-    sortData.sort((a, b) => a.mucgia - b.mucgia);
+    sortData.sort((a, b) => a.phaply - b.phaply);
     setPhone(sortData);
   };
 
   const sortPriceUp = () => {
     const sortData = [...phone];
-    sortData.sort((a, b) => b.mucgia - a.mucgia);
+    sortData.sort((a, b) => b.phaply - a.phaply);
     setPhone(sortData);
   };
 
@@ -43,7 +43,7 @@ function UserPhoneData(props) {
 
                       <div class="d-flex align-items-center"><span class="fs-0 fw-medium">Diện tích: {item.dientich}</span>
 
-                      <i class="far fa-heart text-end" style={{paddingLeft: "10.5rem",}}></i>
+                      <i class="far fa-heart text-end" style={{paddingLeft: "11rem",}}></i>
                       </div>
 
                     </div>
