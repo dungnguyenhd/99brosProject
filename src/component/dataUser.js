@@ -24,6 +24,10 @@ function UserPhoneData(props) {
     setPhone(sortData);
   };
 
+  const clickView = () => {
+    window.scrollTo(0, 0);
+  }
+
   var phone_list = [];
   var count = 0;
   if (phone != null) {
@@ -33,17 +37,17 @@ function UserPhoneData(props) {
         return (
                 <div class="col-md-4 mb-4">
 
-                  <div class="card overflow-hidden shadow"> <Link to={'/buy/' + item.id}> <img class="card-img-top" src={item.anh} height='420'/></Link>
+                  <div class="card overflow-hidden shadow"> <div className='card-border bg-primary'><Link to={'/buy/' + item.id} onClick={clickView}> <img class="card-img-top" src={item.anh} height='420'/></Link></div>
 
                     <div class="card-body py-4 px-3">
 
-                      <div class="d-flex align-items-center"><span class="fs-0 fw-medium"><h4 class="fw-medium" style={{color: 'blue'}}>{item.tennha}</h4><span class="fs-0 fw-medium" style={{color: 'black'}}>Địa chỉ: {item.diachi}</span></span></div>
+                      <div class="d-flex align-items-center"><span class="fs-0"><h4 class="fw-medium ten">{item.tennha}</h4><span class="fs-0 fw-medium" style={{color: 'black'}}>Địa chỉ: {item.diachi}</span></span></div>
 
                       <div class="d-flex align-items-center"><span class="fs-0 fw-medium">Mức Giá: {item.mucgia}</span></div>
 
                       <div class="d-flex align-items-center"><span class="fs-0 fw-medium">Diện tích: {item.dientich}</span>
 
-                      <i class="far fa-heart text-end" style={{paddingLeft: "11rem",}}></i>
+                      <span className='tim'><i class="fas fa-heart text-end" style={{paddingLeft: "12rem",}}></i></span>
                       </div>
 
                     </div>

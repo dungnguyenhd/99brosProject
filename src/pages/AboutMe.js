@@ -4,8 +4,7 @@ const NoPage = () => {
   return (
     <>
     <div style={{paddingTop: "7rem",}} >
-      <h1>Name: DungNguyen</h1>
-      <h1>Email: dungnguyent9902@gmail.com</h1>
+      <h1>Name: Group 4</h1>
       <h1>Donate me: =))))))) </h1>
       </div>
 
