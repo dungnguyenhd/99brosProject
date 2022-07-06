@@ -33,7 +33,7 @@ function Type(props) {
     if (type != null) {
         listType = (
             <div>
-                <div class="mb-7 text-center">
+                <div class="mb-7 text-center" style={{ paddingTop: "2.5rem", }}>
                     <h4 class="text-secondary"><i class="fas fa-american-sign-language-interpreting"></i>&#160;PHÂN LOẠI </h4>
                     <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">{type}</h3>
                 </div>

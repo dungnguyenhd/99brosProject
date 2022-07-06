@@ -124,6 +124,7 @@ const Home = () => {
       {/*
       <!-- ============================================--> */}
 
+
       <section class="pt-1 pt-md-9" id="service">
 
         <div class="container">
@@ -156,7 +157,8 @@ const Home = () => {
           {/* end of div search */}
 
           <div class="position-absolute z-index--1 end-0 d-none d-lg-block"></div>
-          <div class="mb-7 text-center pt-5 mt-5">
+          <div className='containter'>
+          <div class="mb-7 text-center pt-5 mt-5" >
             <h5 class="text-secondary">DANH MỤC </h5>
             <h4 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Bất Động Sản Theo Khu Vực</h4>
           </div>
@@ -203,10 +205,13 @@ const Home = () => {
             </div>
           </div>
         </div>
+        </div>
       </section>
       {/* <!-- end of .container--> */}
 
-      <div className="container">
+      <div className='container' id='wrapper_xem_nhieu' style={{backgroundColor: 'white', border: '1px solid white', borderRadius: '7px',}}>
+
+      <div className="container" style={{paddingTop: "3rem"}}>
         <div class="mb-7 text-center" id='viewnews'>
           <h4 class="text-secondary"><i class="fas fa-fire"></i>&#160; XEM NHIỀU </h4>
           <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">TOP NHÀ PHỔ BIẾN</h3>
@@ -217,12 +222,22 @@ const Home = () => {
             <div className='row'>
               <UserHouseData data={data} />
             </div>
-            <div>
-              {arrayType}
+          </div>
+        </section>
+      </div>
+      </div>
+
+      <div className='container' id='wrapper_phanloai' style={{backgroundColor: 'white', border: '1px solid white', borderRadius: '7px', marginTop: '2.5rem'}}>
+
+      <section class="pt-5" id="destination" style={{ marginLeft: "2.5rem", }}>
+          <div class="container">
+            <div className='row'>
+            {arrayType}
             </div>
           </div>
         </section>
       </div>
+
 
       <div className="container">
         <div class="mb-7 text-center" id='viewnews'>

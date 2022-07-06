@@ -19647,10 +19647,7 @@ iframe {
 .majestic-tabs .nav-item.show .nav-link {
   border-bottom-color: #DF6951;
 }
-
-/*-----------------------------------------------
-|   User Styles
------------------------------------------------*/
-
-/*# sourceMappingURL=theme.css.map */
+body{
+  background-color: rgba(236, 236, 236, 0.8);
+}
 
