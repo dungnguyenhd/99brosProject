@@ -6,40 +6,40 @@ import '../css/main.css';
 import { AddCart } from '../actions';
 import { connect } from 'react-redux';
 
-function UserPhoneData(props) {
-  const [phone, setPhone] = useState(null);
+function UserHouseData(props) {
+  const [house, setHouse] = useState(null);
   let navigate = useNavigate();
 
   useEffect(() => {
-    setPhone(props.data);
+    setHouse(props.data);
   }, [props.data]);
 
   const sortPriceDown = () => {
-    const sortData = [...phone];
+    const sortData = [...house];
     sortData.sort((a, b) => a.phaply - b.phaply);
-    setPhone(sortData);
+    setHouse(sortData);
   };
 
   const sortPriceUp = () => {
-    const sortData = [...phone];
+    const sortData = [...house];
     sortData.sort((a, b) => b.phaply - a.phaply);
-    setPhone(sortData);
+    setHouse(sortData);
   };
 
   const clickView = () => {
     window.scrollTo(0, 0);
   }
 
-  var phone_list = [];
+  var house_list = [];
   var count = 0;
-  if (phone != null) {
-    phone_list = phone.map((item) => {
-      if (count < 12) {
+  if (house != null) {
+    house_list = house.map((item) => {
+      if (count < 6) {
         count++;
         return (
           <div class="col-md-4 mb-4">
 
-            <div class="card overflow-hidden shadow"> <div className='card-border bg-primary'><Link to={'/buy/' + item.id} onClick={clickView}> <img class="card-img-top" src={item.anh} height='420' /></Link></div>
+            <div class="card overflow-hidden shadow"> <div className='card-border bg-primary'><Link to={'/buy/' + item.id} onClick={clickView}> <img class="card-img-top" src={item.anh} height='380' /></Link></div>
 
               <div class="card-body py-4 px-3">
 
@@ -98,7 +98,7 @@ function UserPhoneData(props) {
         </ul>
       </div>
       <br /><br /><br />
-      {phone_list}
+      {house_list}
     </>
   );
 }
@@ -114,5 +114,5 @@ function mapDispatchToProps(dispatch) {
     AddCart: (item) => dispatch(AddCart(item)),
   };
 }
-export default connect(mapStateToProps, mapDispatchToProps)(UserPhoneData);
+export default connect(mapStateToProps, mapDispatchToProps)(UserHouseData);
 

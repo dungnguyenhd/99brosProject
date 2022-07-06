@@ -1338,7 +1338,7 @@ progress {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-    width: 33.33333%;
+    width: 31.33333%;
   }
   .col-md-5 {
     -webkit-box-flex: 0;
@@ -9324,7 +9324,7 @@ fieldset:disabled .btn {
 }
 
 .pt-5 {
-  padding-top: 2.5rem !important;
+  padding-top: 0.5rem !important;
 }
 
 .pt-6 {
@@ -18024,7 +18024,7 @@ fieldset:disabled .btn {
     padding: 1.8rem !important;
   }
   .p-xxl-5 {
-    padding: 2.5rem !important;
+    padding: 0.5rem !important;
   }
   .p-xxl-6 {
     padding: 3rem !important;
@@ -19492,7 +19492,7 @@ iframe {
 }
 
 .hero-title {
-  font-family: "Volkhov", "DM Serif Display", cursive;
+  font-family: "Poppins", "Rubik", "Open Sans","Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 700;
   font-size: 2.88651rem;
   color: #181E4B;

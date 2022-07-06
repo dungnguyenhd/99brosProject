@@ -28,13 +28,13 @@ const Layout = (props) => {
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base align-items-lg-center align-items-start">
-              <li class="nav-item px-3 px-xl-4"><Link to="/" class="nav-link fw-medium">Trang chủ</Link></li>
-              <li class="nav-item px-3 px-xl-4"><Link to="/aboutMe" class="nav-link fw-medium">Giới thiệu</Link></li>
-              <li class="nav-item px-3 px-xl-4"><Link to="/tintuc" class="nav-link fw-medium">Tin tức</Link></li>
+              <li class="nav-item px-3 px-xl-4"><Link to="/" class="nav-link fw-medium" onClick={clickView}>Trang chủ</Link></li>
+              <li class="nav-item px-3 px-xl-4"><Link to="/aboutMe" class="nav-link fw-medium" onClick={clickView}>Giới thiệu</Link></li>
+              <li class="nav-item px-3 px-xl-4"><Link to="/tintuc" class="nav-link fw-medium" onClick={clickView}>Tin tức</Link></li>
               <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#testimonial">Bộ sưu tập</a></li>
 
               <li class="nav-item px-3 px-xl-4">
-              <Link to="/favorite" class="nav-link fw-medium">
+              <Link to="/favorite" class="nav-link fw-medium" onClick={clickView}>
                 <a class="nav-link fw-medium" aria-current="page" href="#!"><i class="fas fa-heart text-end"></i> <span className="text-white rounded-circle" id="lblCartCount">
                   {numberCart}
                 </span></a>

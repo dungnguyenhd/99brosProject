@@ -11,6 +11,7 @@ import Edit from './pages/Edit';
 import Collection from './pages/Collection';
 import Tintuc from './pages/Tintuc';
 import Favorite from './pages/Favorite';
+import Viewnews from './pages/Viewnews';
 
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="collection" element={<Collection />} />
           <Route path="category/:name" element={<Category />} />
           <Route path="favorite" element={<Favorite />} />
+          <Route path="viewnews/:id/" element={<Viewnews />} />
           <Route path="edit/:id" element={<Edit />} />
           <Route path="*" element={<NoPage />} />
         </Route>
