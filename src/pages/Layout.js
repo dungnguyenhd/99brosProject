@@ -36,7 +36,7 @@ const Layout = (props) => {
               <li class="nav-item px-3 px-xl-4">
               <Link to="/favorite" class="nav-link fw-medium" onClick={clickView}>
                 <a class="nav-link fw-medium" aria-current="page" href="#!"><i class="fas fa-heart text-end"></i> <span className="text-white rounded-circle" id="lblCartCount">
-                  {numberCart}
+                  <span style={{color: 'white'}}>{numberCart}</span>
                 </span></a>
                 </Link>
               </li>

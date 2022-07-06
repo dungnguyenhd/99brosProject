@@ -37,7 +37,7 @@ function NewsData(props) {
 
                             <div class="card-body py-4 px-3">
 
-                                <div class="d-flex align-items-center"><span class="fs-0"><span class="fs-0 fw-medium" style={{ color: 'black' }}>{item.tieude}</span></span></div>
+                                <div class="d-flex align-items-center"><span class="fs-0"><span class="fs-0 fw-medium" style={{ color: 'black' }}><h3>{item.tieude}</h3></span></span></div>
 
                                 <div class="d-flex align-items-center"><span class="fs-0"><span class="fs-0 fw-medium" style={{ color: 'black' }}>{item.mota}</span></span></div>
 

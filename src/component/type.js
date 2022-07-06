@@ -15,7 +15,7 @@ function Type(props) {
         setString(props.string);
         let url = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase';
         if (type != null) {
-            url = url + '/?phanloai=' + props.type;
+            url = url + '/?sophong=' + props.type;
         }
 
         // if(string != ""){
@@ -34,8 +34,8 @@ function Type(props) {
         listType = (
             <div>
                 <div class="mb-7 text-center">
-                    <h5 class="text-secondary">LOCATION </h5>
-                    <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">{type}</h3>
+                    <h4 class="text-secondary"><i class="fas fa-american-sign-language-interpreting"></i>&#160;PHÂN LOẠI </h4>
+                    <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">{type}</h3>
                 </div>
                 <div className='row'>
                     <UserPhoneData data={data} />

@@ -7,6 +7,17 @@ import Type from '../component/type';
 import '../css/main.css';
 import { Outlet, Link } from 'react-router-dom';
 import PhoneData from '../component/data';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
+import autoplay from 'autoplay';
+
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -16,7 +27,7 @@ const Home = () => {
   const [stringSearch, setStringSearch] = useState('');
   const [type, setType] = useState([]);
   var arrayName = [];
-  
+
   useEffect(() => {
     let url = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase';
     let urlHome = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase';
@@ -34,8 +45,8 @@ const Home = () => {
       .then((response) => response.json())
       .then((data) => {
         data.map((item) => {
-          if (!arrayName.includes(item.phanloai)) {
-            arrayName.push(item.phanloai);
+          if (!arrayName.includes(item.sophong)) {
+            arrayName.push(item.sophong);
             console.log(" Nguyen Duy Hung Array" + arrayName.length);
           }
         });
@@ -53,7 +64,7 @@ const Home = () => {
         setNewsdata(newsdata);
       });
 
-    let url_category = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase/?phanloai=';
+    let url_category = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase/?sophong=';
 
     fetch(url_category)
       .then((response) => response.json())
@@ -117,14 +128,14 @@ const Home = () => {
 
         <div class="container">
           {/* div search */}
-          <div className='container' style={{ marginBottom: "20px" }}>
+          <div className='container mt-5' style={{ marginBottom: "20px" }}>
             <form className="form-inline">
               <div className="input-group">
                 <input
                   type="text"
                   className="form-control"
                   size="100"
-                  placeholder="Search"
+                  placeholder="Tìm kiếm"
                   id='inputSearch'
                 />
                 <div className="input-group-btn">
@@ -136,7 +147,7 @@ const Home = () => {
                       setStringSearch(text);
                     }}
                   >
-                    Search
+                    <i class="fas fa-search"></i>
                   </button>
                 </div>
               </div>
@@ -146,8 +157,8 @@ const Home = () => {
 
           <div class="position-absolute z-index--1 end-0 d-none d-lg-block"></div>
           <div class="mb-7 text-center pt-5 mt-5">
-            <h5 class="text-secondary">LOCATION </h5>
-            <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">Choose Location</h3>
+            <h5 class="text-secondary">DANH MỤC </h5>
+            <h4 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Bất Động Sản Theo Khu Vực</h4>
           </div>
           <div class="row">
             <div class="col-lg-3 col-sm-6 mb-6">
@@ -197,8 +208,8 @@ const Home = () => {
 
       <div className="container">
         <div class="mb-7 text-center" id='viewnews'>
-          <h5 class="text-secondary">OFFICE </h5>
-          <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">Top Office</h3>
+          <h4 class="text-secondary"><i class="fas fa-fire"></i>&#160; XEM NHIỀU </h4>
+          <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">TOP NHÀ PHỔ BIẾN</h3>
         </div>
 
         <section class="pt-5" id="destination" style={{ marginLeft: "2.5rem", }}>
@@ -215,8 +226,8 @@ const Home = () => {
 
       <div className="container">
         <div class="mb-7 text-center" id='viewnews'>
-          <h5 class="text-secondary">NEWS </h5>
-          <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">Common News</h3>
+          <h4 class="text-secondary"><i class="far fa-newspaper"></i>&#160;TIN TỨC </h4>
+          <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Tin Hot Hôm Nay</h3>
         </div>
 
         <section class="pt-5" id="destination" style={{ marginLeft: "2.5rem", }}>
@@ -227,6 +238,39 @@ const Home = () => {
           </div>
         </section>
       </div>
+
+      <div class="mb-7 text-center" id='viewnews'>
+          <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Các Đối Tác</h3>
+        </div>
+
+    <div className='container'>
+      <Swiper className='ps-9'
+      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+      slidesPerView={4}
+      navigation
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      pagination={{ clickable: true }}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+    >
+      <SwiperSlide><img src='https://www.leaderim.com/wp-content/uploads/2020/02/Partner-logo-2016.png' height={70}/></SwiperSlide>
+      <SwiperSlide><img src='https://www.pngfind.com/pngs/m/683-6836144_cisco-partner-logo-cisco-partner-logo-vector-hd.png' height={70}/></SwiperSlide>
+      <SwiperSlide><img src='https://thumbs.dreamstime.com/b/partner-logo-design-ai-supported-81271814.jpg' height={70}/></SwiperSlide>
+      <SwiperSlide><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIXfIvUx5yLhleD_vSTSP6NTY0HoYy1YwHVi6mnCNQ93UdwoKnTbO5EWDJAGyMk_loSIA&usqp=CAU' height={70}/></SwiperSlide>
+      <SwiperSlide><img src='https://us.123rf.com/450wm/nakigitsune111/nakigitsune1111806/nakigitsune111180600285/103380642-the-logo-between-the-letter-s-and-letter-o-or-so-with-a-certain-distance-and-connected-by-orange-and.jpg?ver=6' height={70}/></SwiperSlide>
+      <SwiperSlide><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-R9fTatXZD2vZGInGIbNCwGeL0KxF-HkkQYaH8_p3yuKbVVg7vw6iavRqRod9lkVf5lg&usqp=CAU' height={70}/></SwiperSlide>
+      <SwiperSlide><img src='https://allvectorlogo.com/img/2016/10/sap-partner-logo.png' height={70}/></SwiperSlide>
+      <SwiperSlide><img src='https://www.seekpng.com/png/detail/209-2091194_rheem-pro-partner-logo.png' height={70}/></SwiperSlide>
+      <SwiperSlide><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjFJ4p95Vx4W9CWNldLVkcLmDwFl15SSGzjg&usqp=CAU' height={70}/></SwiperSlide>
+      <SwiperSlide><img src='https://findlogovector.com/wp-content/uploads/2019/10/business-integration-partners-bip-logo-vector.png' height={70}/></SwiperSlide>
+      <br/>
+    </Swiper>
+
+    <br/> <br/>
+    </div>
 
     </>
   );

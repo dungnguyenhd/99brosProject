@@ -40,7 +40,19 @@ const Viewnews = () => {
       {news != null ? (
         <div className="container" style={{ paddingTop: "7rem", }}>
             <div className='row'>
-                <h2> {news.tieude} </h2> <br/> <span> {news.day} </span>
+                <h1> {news.tieude} </h1> <br/> <span> {news.day} </span>
+            </div>
+
+            <div className='row mt-5'>
+                <span>
+                    <img src={news.anhchitiet} height='500' width='1200' />
+                </span>
+            </div>
+
+            <div className='row'>
+                <span>
+                    {news.mota}
+                </span>
             </div>
 
             <div className='row'>
@@ -48,12 +60,29 @@ const Viewnews = () => {
                     {news.chitiet}
                 </span>
             </div>
+
+            <div className='row'>
+                <span>
+                    <img src={news.anhchitiet2} height='500' width='1200' />
+                </span>
+            </div>
+
+            <div className='row'>
+                <span>
+                    {news.chitiet2}
+                </span>
+            </div>
         </div>
       ) : (
         <div className="spinner-border text-primary mt-3 ms-6"> </div>
       )}
       <div className="container">
-        <div className="row mt-5">
+
+        <div className='mt-7'>
+           <h2 className='pt-5'> Tin liên quan </h2>
+        </div>
+
+        <div className="row">
           <NewsData newsdata={newsdata} />
         </div>
       </div>

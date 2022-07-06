@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Outlet, Link } from 'react-router-dom';
 import { IncreaseQuantity, DecreaseQuantity, DeleteCart } from '../actions';
 
 const Favorite = (props) => {
@@ -13,18 +14,25 @@ const Favorite = (props) => {
     setCartItems(props.store_state.Carts);
   }, [props.store_state]);
 
+
+  const clickView = () => {
+    window.scrollTo(0, 0);
+  }
+
   console.log(cartItems);
 
   var carts_jsx = '';
   if (cartItems.length > 0) {
     carts_jsx = cartItems.map((item, key) => (
       <tr>
-       <td><img src={item.anh} width='300'/></td>
-        <td>{item.tennha}</td>
-        <td class="text-right">${item.mucgia}</td>
-        <td class="text-right">{item.mota}</td>
+       <td><Link to={'/buy/' + item.id} onClick={clickView}> <img src={item.anh} width='300'/> </Link> </td>
+        <td> <Link to={'/buy/' + item.id} onClick={clickView}>  <h5>{item.tennha} </h5> </Link> </td>
+        <td class="text-center"> <Link to={'/buy/' + item.id} onClick={clickView}>  <h5>${item.mucgia}</h5></Link></td>
+        <td class="text-center"><Link to={'/buy/' + item.id} onClick={clickView}> {item.mota} /</Link></td>
         <td class="text-center">
-          <button class="btn btn-sm btn-danger" onClick={() => props.DeleteCart(key)}>Remove</button>
+
+        <Link to={'/buy/' + item.id} onClick={clickView}><button class="btn btn-sm btn-info"> <i class="far fa-eye"></i>  &#160;Xem</button></Link> &#160;
+          <button class="btn btn-sm btn-danger" onClick={() => props.DeleteCart(key)}> <i class="fas fa-trash-alt"></i> &#160;Xóa</button>
         </td>
       </tr>
     ));
@@ -32,18 +40,20 @@ const Favorite = (props) => {
   }
 
 
+
+
   return (
     <div class="container-fluid" style={{ paddingTop: "7rem", }}>
       <div class="row">
         <div class="col mt-2">
-          <h2 class="text-center">Danh sách yêu thích</h2>
+          <h2 class="text-center">Danh sách yêu thích</h2><br></br>
           <table class="table table-bordered table-striped p-2">
             <thead>
               <tr>
-                <th width='300'>Ảnh</th>
-                <th width='200'>Tên tòa nhà</th>
-                <th class="text-center" width='200'>Giá</th>
-                <th class="text-center" width='400'>Mô tả</th>
+                <th width='300' class="text-center">Ảnh</th>
+                <th width='300' class="text-center">Tên tòa nhà</th>
+                <th class="text-center" width='300'>Giá</th>
+                <th class="text-center" width='700'>Mô tả</th>
               </tr>
             </thead>
             <tbody>
@@ -64,11 +74,13 @@ const Favorite = (props) => {
       <div class="row">
         <div class="col">
           <div class="text-center">
-            <button class="btn btn-primary m-1" onClick={()=>navigate(-1)}>Continue Finding</button>
+            <button class="btn btn-primary m-1" onClick={()=>navigate(-1)}>Tiếp tục tìm kiếm</button>
             <button class="btn btn-danger m-1" type="button">
-              Checkout
+              Liên hệ
             </button>
           </div>
+
+          <br></br>
         </div>
       </div>
     </div>
