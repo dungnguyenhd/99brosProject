@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import UserHouseData from '../component/dataUser';
 import NewsData from '../component/news';
+import Type from '../component/type';
 import '../css/main.css';
 import { Outlet, Link } from 'react-router-dom';
 import PhoneData from '../component/data';
@@ -12,13 +13,38 @@ const Home = () => {
   const [newsdata, setNewsdata] = useState([]);
   const [product, setProduct] = useState('');
   const [categories, setCategories] = useState(null);
+  const [stringSearch, setStringSearch] = useState('');
+  const [type, setType] = useState([]);
+  var arrayName = [];
+  
   useEffect(() => {
     let url = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase';
-    fetch(url)
+    let urlHome = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase';
+    if (stringSearch.length > 0) {
+      urlHome += '?search=' + stringSearch;
+    }
+
+    fetch(urlHome)
       .then((response) => response.json())
       .then((data) => {
         setData(data);
       });
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        data.map((item) => {
+          if (!arrayName.includes(item.phanloai)) {
+            arrayName.push(item.phanloai);
+            console.log(" Nguyen Duy Hung Array" + arrayName.length);
+          }
+        });
+        setType(arrayName);
+
+        for (var i = 0; i < type.length; i++) {
+          console.log("Get lol:" + type[i]);
+        }
+      }, []);
 
     let news_url = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/NewsDatabase';
     fetch(news_url)
@@ -36,17 +62,27 @@ const Home = () => {
       });
   }, []);
 
-  const doSearch = () => {
-    let url =
-      'https://62b04a56e460b79df0423a2e.mockapi.io/aa/?search=' + product;
+  // const doSearch = () => {
+  //   let url =
+  //     'https://62b04a56e460b79df0423a2e.mockapi.io/aa/?search=' + product;
 
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setProduct('');
-        setData(data);
-      });
-  };
+  //   fetch(url)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setProduct('');
+  //       setData(data);
+  //     });
+  // };
+
+  var arrayType = [];
+  if (type != null) {
+    arrayType = type.map((item) => (
+      <div>
+        <Type type={item} string={stringSearch} />
+      </div>
+    ));
+    console.log("step........" + stringSearch);
+  }
 
 
   return (
@@ -80,6 +116,34 @@ const Home = () => {
       <section class="pt-1 pt-md-9" id="service">
 
         <div class="container">
+          {/* div search */}
+          <div className='container' style={{ marginBottom: "20px" }}>
+            <form className="form-inline">
+              <div className="input-group">
+                <input
+                  type="text"
+                  className="form-control"
+                  size="100"
+                  placeholder="Search"
+                  id='inputSearch'
+                />
+                <div className="input-group-btn">
+                  <button
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={function () {
+                      var text = inputSearch.value;
+                      setStringSearch(text);
+                    }}
+                  >
+                    Search
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          {/* end of div search */}
+
           <div class="position-absolute z-index--1 end-0 d-none d-lg-block"></div>
           <div class="mb-7 text-center pt-5 mt-5">
             <h5 class="text-secondary">LOCATION </h5>
@@ -141,6 +205,9 @@ const Home = () => {
           <div class="container">
             <div className='row'>
               <UserHouseData data={data} />
+            </div>
+            <div>
+              {arrayType}
             </div>
           </div>
         </section>
