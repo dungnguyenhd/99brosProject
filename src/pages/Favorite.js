@@ -13,19 +13,22 @@ const Favorite = (props) => {
     setCartItems(props.store_state.Carts);
   }, [props.store_state]);
 
+  console.log(cartItems);
+
   var carts_jsx = '';
   if (cartItems.length > 0) {
     carts_jsx = cartItems.map((item, key) => (
       <tr>
-       <td>{key}</td>
-        <td>{item.name}</td>
-        <td class="text-right">${item.price}</td>
-        <td class="text-right">{item.price}</td>
+       <td><img src={item.anh} width='300'/></td>
+        <td>{item.tennha}</td>
+        <td class="text-right">${item.mucgia}</td>
+        <td class="text-right">{item.mota}</td>
         <td class="text-center">
           <button class="btn btn-sm btn-danger" onClick={() => props.DeleteCart(key)}>Remove</button>
         </td>
       </tr>
     ));
+    console.log('success');
   }
 
 
@@ -37,17 +40,17 @@ const Favorite = (props) => {
           <table class="table table-bordered table-striped p-2">
             <thead>
               <tr>
-                <th>Ảnh</th>
-                <th>Tên tòa nhà</th>
-                <th class="text-right">Giá</th>
-                <th class="text-right">Mô tả</th>
+                <th width='300'>Ảnh</th>
+                <th width='200'>Tên tòa nhà</th>
+                <th class="text-center" width='200'>Giá</th>
+                <th class="text-center" width='400'>Mô tả</th>
               </tr>
             </thead>
             <tbody>
               {cartItems.length == 0 ? (
                 <tr>
                   <td colspan="4" class="text-center">
-                    Your favorite is empty
+                    Your Cart is empty
                   </td>
                 </tr>
               ) : (

@@ -25,26 +25,37 @@ function todoProduct(state = initProduct, action) {
         let cart = {
           id: action.payload.id,
           quantity: 1,
-          name: action.payload.name,
-          picture: action.payload.picture,
-          price: action.payload.price,
+          tennha: action.payload.tennha,
+          anh: action.payload.anh,
+          mucgia: action.payload.mucgia,
+          mota: action.payload.mota,
         };
         state.Carts.push(cart);
       } else {
         let check = false;
+        /*
         state.Carts.map((item, key) => {
           if (item.id == action.payload.id) {
             state.Carts[key].quantity++;
             check = true;
           }
         });
+        */
+        for (var i = 0; i < state.Carts.length; i++) {
+          if (state.Carts[i].id == action.payload.id) {
+            state.Carts[i].quantity++;
+            check = true;
+            break;
+          }
+        }
         if (!check) {
           let _cart = {
             id: action.payload.id,
             quantity: 1,
-            name: action.payload.name,
-            picture: action.payload.picture,
-            price: action.payload.price,
+            tennha: action.payload.tennha,
+            anh: action.payload.anh,
+            mucgia: action.payload.mucgia,
+            mota: action.payload.mota,
           };
           state.Carts.push(_cart);
         }
@@ -52,7 +63,6 @@ function todoProduct(state = initProduct, action) {
       return {
         ...state,
         numberCart: state.numberCart + 1,
-
       };
     case INCREASE_QUANTITY:
       state.numberCart++;
