@@ -119,10 +119,10 @@ const Home = () => {
             <div class="col-md-7 col-lg-6 text-md-start text-center py-4">
               <h1 class="hero-title">99Bros<br />of KITS<br />Vietnam </h1>
               <p class="mb-4 fw-medium">99Bros Bất động sản.<br class="d-none d-xl-block" />Dịch vụ bất động sản hàng đầu KITS<br class="d-none d-xl-block" />Xem ngay.</p>
-              <div class="text-center text-md-start"> <a class="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow" href="#viewnews" role="button">View news</a>
+              <div class="text-center text-md-start"> <a class="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow" href="#viewnews" role="button">Xem tin</a>
                 <div class="w-100 d-block d-md-none"></div><a href="#start" role="button"><span class="btn btn-success round-btn-lg rounded-circle me-3 danger-btn-shadow">
                   <i class="fas fa-paper-plane"></i>
-                </span></a><span class="fw-medium" style={{ color: 'white' }}>Post News</span>
+                </span></a><span class="fw-medium" style={{ color: 'white' }}>Đăng tin</span>
               </div>
             </div>
           </div>
@@ -138,27 +138,27 @@ const Home = () => {
           <div className='col-lg-2 d-none d-lg-block'>
             <div className='sticky' style={{ marginTop: '40rem' }}>
               <div className='btn-group-vertical wrapper_sidebar bg-muted'>
-                <button type="button" class="btn btn-light btn-md text-info" onClick={clickView} style={{ marginTop: '7rem', fontSize: '1.5rem' }}><i class="fas fa-arrow-up"></i></button>
-                <a href='#wrapper_xem_nhieu'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }}><i class="fa fa-balance-scale"></i></button></a>
-                <a href='#wrapper_phanloai'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }}><i class="fas fa-hotel"></i></button></a>
-                <a href='#wrapper_tintuc'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }}><i class="far fa-newspaper"></i></button></a>
-                <button type="button" class="btn btn-light btn-md text-info" onClick={clickDown} style={{ fontSize: '1.5rem' }}><i class="fas fa-arrow-down"></i></button>
+                <button type="button" class="btn btn-light btn-md text-info" onClick={clickView} style={{ marginTop: '7rem', fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Up"><i class="fas fa-arrow-up"></i></button>
+                <a href='#wrapper_xem_nhieu'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Popular"><i class="fa fa-balance-scale"></i></button></a>
+                <a href='#wrapper_phanloai'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Office"><i class="fas fa-hotel"></i></button></a>
+                <a href='#wrapper_tintuc'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Hot news"><i class="far fa-newspaper"></i></button></a>
+                <button type="button" class="btn btn-light btn-md text-info" onClick={clickDown} style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Down"><i class="fas fa-arrow-down"></i></button>
               </div>
 
               <div className='btn-group-vertical wrapper_sidebar bg-muted'>
                 <button class="btn btn-md btn-outline-light">&#160;</button>
                 <button class="btn btn-md btn-outline-light">&#160;</button>
-                <button className="shake-btn btn btn-danger ms-2 rounded-circle" style={{ padding: '.5rem' }}>
+                <button className="shake-btn btn btn-danger ms-2 rounded-circle" style={{ padding: '.5rem' }} type="button" data-bs-toggle="tooltip" title="Hotline">
                   <a href="https://chat.zalo.me/" target="_blank" className='text-white'><i class="fa fa-phone-alt"></i></a>
                 </button>
 
                 &#160;
-                <button className="shake-btn btn btn-info ms-2 rounded-circle" style={{ padding: '.5rem' }}>
+                <button className="shake-btn btn btn-info ms-2 rounded-circle" style={{ padding: '.5rem' }} type="button" data-bs-toggle="tooltip" title="Facebook">
                   <a href="https://www.facebook.com/" target="_blank" className='text-white'><i class="fab fa-facebook-f"></i></a>
                 </button>
 
                 &#160;
-                <button className="shake-btn btn btn-secondary ms-2 rounded-circle" style={{ padding: '.5rem' }}>
+                <button className="shake-btn btn btn-secondary ms-2 rounded-circle" style={{ padding: '.5rem' }} type="button" data-bs-toggle="tooltip" title="Twitter">
                   <a href="https://twitter.com/?lang=en" target="_blank" className='text-white'><i class="fab fa-twitter"></i></a>
                 </button>
               </div>
