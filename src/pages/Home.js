@@ -138,7 +138,7 @@ const Home = () => {
           <div className='col-lg-2 d-none d-lg-block'>
             <div className='sticky' style={{ marginTop: '40rem' }}>
               <div className='btn-group-vertical wrapper_sidebar bg-muted'>
-                <button type="button" class="btn btn-light btn-md text-info" onClick={clickView} style={{marginTop: '7rem', fontSize: '1.5rem' }}><i class="fas fa-arrow-up"></i></button>
+                <button type="button" class="btn btn-light btn-md text-info" onClick={clickView} style={{ marginTop: '7rem', fontSize: '1.5rem' }}><i class="fas fa-arrow-up"></i></button>
                 <a href='#wrapper_xem_nhieu'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }}><i class="fa fa-balance-scale"></i></button></a>
                 <a href='#wrapper_phanloai'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }}><i class="fas fa-hotel"></i></button></a>
                 <a href='#wrapper_tintuc'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }}><i class="far fa-newspaper"></i></button></a>
@@ -156,19 +156,19 @@ const Home = () => {
 
                 &#160;
                 <button className="shake-btn btn btn-info ms-2 rounded-circle" style={{ padding: '.5rem' }}>
-                <i class="fab fa-facebook-f"></i>
+                  <i class="fab fa-facebook-f"></i>
                 </button>
 
                 &#160;
                 <button className="shake-btn btn btn-secondary ms-2 rounded-circle" style={{ padding: '.5rem' }}>
-                <i class="fab fa-twitter"></i>
+                  <i class="fab fa-twitter"></i>
                 </button>
               </div>
             </div>
 
           </div>
 
-          <div className='col-lg-8 col-md-12 col-sm-2'>
+          <div className='col-lg-8 col-md-12 col-sm-12'>
             <section class="pt-1 pt-md-9" id="service">
 
               <div class="container">
@@ -291,9 +291,7 @@ const Home = () => {
 
               <section class="pt-5" id="destination" style={{ marginLeft: "2.5rem", }}>
                 <div class="container">
-                  <div className='row'>
-                    <NewsData newsdata={newsdata} />
-                  </div>
+                        <NewsData newsdata={newsdata} />
                 </div>
               </section>
             </div>
