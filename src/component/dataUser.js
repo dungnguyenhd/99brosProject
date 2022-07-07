@@ -56,7 +56,11 @@ function UserHouseData(props) {
         return (
           <div class="col-md-4 mb-4">
 
+<<<<<<< HEAD
             <div class="card overflow-hidden shadow"> <div className='card-border bg-primary'><Link to={'/buy/' + item.id} onClick={clickView}> <img class="card-img-top" src={item.anh} height='380' /></Link></div>
+=======
+            <div class="card overflow-hidden shadow"> <div className='card-border bg-primary'><Link to={'/buy/' + item.id} onClick={clickView}> <img class="card-img-top" src={item.anh}/></Link></div>
+>>>>>>> 58bca886089f1d14763bac97d78c5f0a8a26a1c8
 
               <div class="card-body py-4 px-3">
 

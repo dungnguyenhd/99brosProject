@@ -73,6 +73,14 @@ const Home = () => {
       });
   }, []);
 
+  const clickView = () => {
+    window.scrollTo(0, 0);
+  }
+
+  const clickDown = () => {
+    window.scrollTo(0, 20000);
+  }
+
   // const doSearch = () => {
   //   let url =
   //     'https://62b04a56e460b79df0423a2e.mockapi.io/aa/?search=' + product;
@@ -109,8 +117,8 @@ const Home = () => {
           <div class="row align-items-center">
             <div class="col-md-5 col-lg-6 order-0 order-md-1 text-end"></div>
             <div class="col-md-7 col-lg-6 text-md-start text-center py-4">
-              <h1 class="hero-title">Welcome<br />To 99Bros Website </h1>
-              <p class="mb-4 fw-medium">This website provide infomation about real estate.<br class="d-none d-xl-block" />Or house renting, real estate news<br class="d-none d-xl-block" />Booking room.</p>
+              <h1 class="hero-title">99Bros<br/>of KITS<br/>Vietnam </h1>
+              <p class="mb-4 fw-medium">99Bros Bất động sản.<br class="d-none d-xl-block" />Dịch vụ bất động sản hàng đầu KITS<br class="d-none d-xl-block" />Xem ngay.</p>
               <div class="text-center text-md-start"> <a class="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow" href="#viewnews" role="button">View news</a>
                 <div class="w-100 d-block d-md-none"></div><a href="#start" role="button"><span class="btn btn-success round-btn-lg rounded-circle me-3 danger-btn-shadow">
                   <i class="fas fa-paper-plane"></i>
@@ -124,9 +132,20 @@ const Home = () => {
       {/*
       <!-- ============================================--> */}
 
+      <div className='container-fluid'>
+        <div className='row'>
 
-      <section class="pt-1 pt-md-9" id="service">
+          <div className='col-lg-2 d-none d-lg-block'>
+            <div className='sticky' style={{ marginTop: '40rem' }}>
+              <div className='btn-group-vertical wrapper_sidebar bg-muted'>
+                <button type="button" class="btn btn-light btn-md text-info" onClick={clickView} style={{ marginTop: '7rem', fontSize: '1.5rem' }}><i class="fas fa-arrow-up"></i></button>
+                <a href='#wrapper_xem_nhieu'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }}><i class="fa fa-balance-scale"></i></button></a>
+                <a href='#wrapper_phanloai'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }}><i class="fas fa-hotel"></i></button></a>
+                <a href='#wrapper_tintuc'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }}><i class="far fa-newspaper"></i></button></a>
+                <button type="button" class="btn btn-light btn-md text-info" onClick={clickDown} style={{ fontSize: '1.5rem' }}><i class="fas fa-arrow-down"></i></button>
+              </div>
 
+<<<<<<< HEAD
         <div class="container">
           {/* div search */}
           <div className='container mt-5' style={{ marginBottom: "20px" }}>
@@ -151,143 +170,203 @@ const Home = () => {
                       <i class="fas fa-search"></i>
                     </button>
                   </Link>
+=======
+
+
+              <div className='btn-group-vertical wrapper_sidebar bg-muted'>
+                <button class="btn btn-md btn-outline-light">&#160;</button>
+                <button class="btn btn-md btn-outline-light">&#160;</button>
+                <button className="shake-btn btn btn-danger ms-2 rounded-circle" style={{ padding: '.5rem' }}>
+                <a href="https://chat.zalo.me/" target="_blank" className='text-white'><i class="fa fa-phone-alt"></i></a>
+                </button>
+
+                &#160;
+               <button className="shake-btn btn btn-info ms-2 rounded-circle" style={{ padding: '.5rem' }}>
+                   <a href="https://www.facebook.com/" target="_blank" className='text-white'><i class="fab fa-facebook-f"></i></a>
+                </button>
+
+                &#160;
+                <button className="shake-btn btn btn-secondary ms-2 rounded-circle" style={{ padding: '.5rem' }}>
+                <a href="https://twitter.com/?lang=en" target="_blank" className='text-white'><i class="fab fa-twitter"></i></a>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <div className='col-lg-8 col-md-12 col-sm-12'>
+            <section class="pt-1 pt-md-9" id="service">
+
+              <div class="container">
+                {/* div search */}
+                <div className='container mt-5' style={{ marginBottom: "20px" }}>
+                  <form className="form-inline">
+                    <div className="input-group">
+                      <input
+                        type="text"
+                        className="form-control"
+                        size="100"
+                        placeholder="Tìm kiếm"
+                        id='inputSearch'
+                      />
+                      <div className="input-group-btn">
+                        <button
+                          type="button"
+                          className="btn btn-danger"
+                          onClick={function () {
+                            var text = inputSearch.value;
+                            setStringSearch(text);
+                          }}
+                        >
+                          <i class="fas fa-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                {/* end of div search */}
+
+                <div class="position-absolute z-index--1 end-0 d-none d-lg-block"></div>
+                <div className='containter'>
+                  <div class="mb-7 text-center pt-5 mt-5" >
+                    <h5 class="text-secondary"><i class="fas fa-list"></i>&#160; DANH MỤC </h5>
+                    <h4 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Bất Động Sản Theo Khu Vực</h4>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-3 col-sm-6 mb-6">
+                      <Link to={'category/Hà%20Nội'}>
+                        <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
+                          <div class="card-body p-xxl-5 p-4"> <img src="http://2.bp.blogspot.com/-BhNz0plAze4/VecqxSWuxyI/AAAAAAAADJM/9HROc8vSj4o/s400/vector-logohn-khuevancac.jpg" width="75" alt="Service" />
+                            <h4 class="mb-3">Hà Nội</h4>
+                            <p class="mb-0 fw-medium">Thành phố Hà Nội bao gồm cả ngoại thành và nội thành.</p>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mb-6">
+                      <Link to={'category/Hồ%20Chí%20Minh'}>
+                        <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
+                          <div class="card-body p-xxl-5 p-4"> <img src="https://i.imgur.com/TW9KwPd.png" width="75" alt="Service" />
+                            <h4 class="mb-3">Hồ Chí Minh</h4>
+                            <p class="mb-0 fw-medium">Thành phố Hồ Chí Minh và các khu vực lân cận.</p>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mb-6">
+                      <Link to={'category/Đà%20Nẵng'}>
+                        <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
+                          <div class="card-body p-xxl-5 p-4"> <img src="https://www.sos24h.vn/wwwroot/resources/upload/img/productcategory/8-2020/logo2.png" width="75" alt="Service" />
+                            <h4 class="mb-3">Đà Nẵng</h4>
+                            <p class="mb-0 fw-medium">Khu vực Thành Phố Đà Nẵng. Không bao gồm lân cận</p>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mb-6">
+                      <Link to={'category/Khác'}>
+                        <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
+                          <div class="card-body p-xxl-5 p-4"> <img src="https://i.pinimg.com/originals/95/b2/2f/95b22f2e0059265d3d9cdb0cce0a4a27.png" width="115" alt="Service" />
+                            <h4 class="mb-3">Các Khu Vực Khác</h4>
+                            <p class="mb-0 fw-medium">Các tỉnh thành khác trên khu vực Việt Nam</p>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
+                  </div>
+>>>>>>> 58bca886089f1d14763bac97d78c5f0a8a26a1c8
                 </div>
               </div>
-            </form>
-          </div>
-          {/* end of div search */}
+            </section>
+            {/* <!-- end of .container--> */}
 
-          <div class="position-absolute z-index--1 end-0 d-none d-lg-block"></div>
-          <div className='containter'>
-          <div class="mb-7 text-center pt-5 mt-5" >
-            <h5 class="text-secondary">DANH MỤC </h5>
-            <h4 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Bất Động Sản Theo Khu Vực</h4>
-          </div>
-          <div class="row">
-            <div class="col-lg-3 col-sm-6 mb-6">
-              <Link to={'category/Hà%20Nội'}>
-                <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
-                  <div class="card-body p-xxl-5 p-4"> <img src="http://2.bp.blogspot.com/-BhNz0plAze4/VecqxSWuxyI/AAAAAAAADJM/9HROc8vSj4o/s400/vector-logohn-khuevancac.jpg" width="75" alt="Service" />
-                    <h4 class="mb-3">Hà Nội</h4>
-                    <p class="mb-0 fw-medium">Thành phố Hà Nội bao gồm cả ngoại thành và nội thành.</p>
+            <div className='container' id='wrapper_xem_nhieu' style={{ backgroundColor: 'white', border: '1px solid white', borderRadius: '7px', }}>
+
+              <div className="container" style={{ paddingTop: "1rem" }} id='viewnews'>
+                <div class="mb-7 text-center" id='viewtrend'>
+                  <h4 class="blink_me text-secondary"><i class="fas fa-fire"></i>&#160; XEM NHIỀU </h4>
+                  <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">TOP NHÀ PHỔ BIẾN</h3>
+                </div>
+
+                <section class="pt-5" id="destination" style={{ marginLeft: "2.5rem", }}>
+                  <div class="container">
+                    <div className='row'>
+                      <UserHouseData data={data} />
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+            <div className='container' id='wrapper_phanloai' style={{ backgroundColor: 'white', border: '1px solid white', borderRadius: '7px', marginTop: '2.5rem' }}>
+
+              <section class="pt-5" id="destination" style={{ marginLeft: "2.5rem", }}>
+                <div class="container">
+                  <div className='row'>
+                    {arrayType}
                   </div>
                 </div>
-              </Link>
+              </section>
             </div>
-            <div class="col-lg-3 col-sm-6 mb-6">
-              <Link to={'category/Hồ%20Chí%20Minh'}>
-                <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
-                  <div class="card-body p-xxl-5 p-4"> <img src="https://i.imgur.com/TW9KwPd.png" width="75" alt="Service" />
-                    <h4 class="mb-3">Hồ Chí Minh</h4>
-                    <p class="mb-0 fw-medium">Thành phố Hồ Chí Minh và các khu vực lân cận.</p>
-                  </div>
+
+
+            <div className="container" id='wrapper_tintuc' style={{ backgroundColor: 'white', border: '1px solid white', borderRadius: '7px', marginTop: '2.5rem' }}>
+              <div class="mb-7 text-center" id='viewtrend' style={{ marginTop: '1rem' }}>
+                <h4 class="blink_me_green text-secondary"><i class="far fa-newspaper"></i>&#160;TIN TỨC </h4>
+                <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Tin Hot Hôm Nay</h3>
+              </div>
+
+              <section class="pt-5" id="destination" style={{ marginLeft: "2.5rem", }}>
+                <div class="container">
+                        <NewsData newsdata={newsdata} />
                 </div>
-              </Link>
+              </section>
             </div>
-            <div class="col-lg-3 col-sm-6 mb-6">
-              <Link to={'category/Đà%20Nẵng'}>
-                <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
-                  <div class="card-body p-xxl-5 p-4"> <img src="https://www.sos24h.vn/wwwroot/resources/upload/img/productcategory/8-2020/logo2.png" width="75" alt="Service" />
-                    <h4 class="mb-3">Đà Nẵng</h4>
-                    <p class="mb-0 fw-medium">Khu vực Thành Phố Đà Nẵng. Không bao gồm lân cận</p>
-                  </div>
-                </div>
-              </Link>
+
+            <div class="mb-7 text-center mt-5">
+              <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Các Đối Tác</h3>
             </div>
-            <div class="col-lg-3 col-sm-6 mb-6">
-              <Link to={'category/Khác'}>
-                <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
-                  <div class="card-body p-xxl-5 p-4"> <img src="https://i.pinimg.com/originals/95/b2/2f/95b22f2e0059265d3d9cdb0cce0a4a27.png" width="115" alt="Service" />
-                    <h4 class="mb-3">Các Khu Vực Khác</h4>
-                    <p class="mb-0 fw-medium">Các tỉnh thành khác trên khu vực Việt Nam</p>
-                  </div>
-                </div>
-              </Link>
+
+            <div className='container'>
+              <Swiper className='ps-9'
+                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                spaceBetween={50}
+                slidesPerView={4}
+                navigation
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                pagination={{ clickable: true }}
+                onSwiper={(swiper) => console.log(swiper)}
+                onSlideChange={() => console.log('slide change')}
+              >
+                <SwiperSlide><img src='https://www.leaderim.com/wp-content/uploads/2020/02/Partner-logo-2016.png' height={70} /></SwiperSlide>
+                <SwiperSlide><img src='https://www.pngfind.com/pngs/m/683-6836144_cisco-partner-logo-cisco-partner-logo-vector-hd.png' height={70} /></SwiperSlide>
+                <SwiperSlide><img src='https://thumbs.dreamstime.com/b/partner-logo-design-ai-supported-81271814.jpg' height={70} /></SwiperSlide>
+                <SwiperSlide><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIXfIvUx5yLhleD_vSTSP6NTY0HoYy1YwHVi6mnCNQ93UdwoKnTbO5EWDJAGyMk_loSIA&usqp=CAU' height={70} /></SwiperSlide>
+                <SwiperSlide><img src='https://us.123rf.com/450wm/nakigitsune111/nakigitsune1111806/nakigitsune111180600285/103380642-the-logo-between-the-letter-s-and-letter-o-or-so-with-a-certain-distance-and-connected-by-orange-and.jpg?ver=6' height={70} /></SwiperSlide>
+                <SwiperSlide><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-R9fTatXZD2vZGInGIbNCwGeL0KxF-HkkQYaH8_p3yuKbVVg7vw6iavRqRod9lkVf5lg&usqp=CAU' height={70} /></SwiperSlide>
+                <SwiperSlide><img src='https://allvectorlogo.com/img/2016/10/sap-partner-logo.png' height={70} /></SwiperSlide>
+                <SwiperSlide><img src='https://www.seekpng.com/png/detail/209-2091194_rheem-pro-partner-logo.png' height={70} /></SwiperSlide>
+                <SwiperSlide><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjFJ4p95Vx4W9CWNldLVkcLmDwFl15SSGzjg&usqp=CAU' height={70} /></SwiperSlide>
+                <SwiperSlide><img src='https://findlogovector.com/wp-content/uploads/2019/10/business-integration-partners-bip-logo-vector.png' height={70} /></SwiperSlide>
+                <br />
+              </Swiper>
+
+              <br /> <br />
+            </div>
+
+          </div>
+
+          <div className='col-lg-2 d-none d-lg-block'>
+            <div style={{ marginTop: '54rem',paddingLeft: '5rem'}}>
+              <img src='https://i.imgur.com/qm96ni9.gif' />
             </div>
           </div>
-        </div>
-        </div>
-      </section>
-      {/* <!-- end of .container--> */}
 
-      <div className='container' id='wrapper_xem_nhieu' style={{backgroundColor: 'white', border: '1px solid white', borderRadius: '7px',}}>
-
-      <div className="container" style={{paddingTop: "3rem"}}>
-        <div class="mb-7 text-center" id='viewnews'>
-          <h4 class="text-secondary"><i class="fas fa-fire"></i>&#160; XEM NHIỀU </h4>
-          <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">TOP NHÀ PHỔ BIẾN</h3>
         </div>
-
-        <section class="pt-5" id="destination" style={{ marginLeft: "2.5rem", }}>
-          <div class="container">
-            <div className='row'>
-              <UserHouseData data={data} />
-            </div>
-          </div>
-        </section>
       </div>
-      </div>
-
-      <div className='container' id='wrapper_phanloai' style={{backgroundColor: 'white', border: '1px solid white', borderRadius: '7px', marginTop: '2.5rem'}}>
-
-      <section class="pt-5" id="destination" style={{ marginLeft: "2.5rem", }}>
-          <div class="container">
-            <div className='row'>
-            {arrayType}
-            </div>
-          </div>
-        </section>
-      </div>
-
-
-      <div className="container">
-        <div class="mb-7 text-center" id='viewnews'>
-          <h4 class="text-secondary"><i class="far fa-newspaper"></i>&#160;TIN TỨC </h4>
-          <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Tin Hot Hôm Nay</h3>
-        </div>
-
-        <section class="pt-5" id="destination" style={{ marginLeft: "2.5rem", }}>
-          <div class="container">
-            <div className='row'>
-              <NewsData newsdata={newsdata} />
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <div class="mb-7 text-center" id='viewnews'>
-          <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Các Đối Tác</h3>
-        </div>
-
-    <div className='container'>
-      <Swiper className='ps-9'
-      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-      slidesPerView={4}
-      navigation
-      autoplay={{
-        delay: 2500,
-        disableOnInteraction: false,
-      }}
-      pagination={{ clickable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
-    >
-      <SwiperSlide><img src='https://www.leaderim.com/wp-content/uploads/2020/02/Partner-logo-2016.png' height={70}/></SwiperSlide>
-      <SwiperSlide><img src='https://www.pngfind.com/pngs/m/683-6836144_cisco-partner-logo-cisco-partner-logo-vector-hd.png' height={70}/></SwiperSlide>
-      <SwiperSlide><img src='https://thumbs.dreamstime.com/b/partner-logo-design-ai-supported-81271814.jpg' height={70}/></SwiperSlide>
-      <SwiperSlide><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIXfIvUx5yLhleD_vSTSP6NTY0HoYy1YwHVi6mnCNQ93UdwoKnTbO5EWDJAGyMk_loSIA&usqp=CAU' height={70}/></SwiperSlide>
-      <SwiperSlide><img src='https://us.123rf.com/450wm/nakigitsune111/nakigitsune1111806/nakigitsune111180600285/103380642-the-logo-between-the-letter-s-and-letter-o-or-so-with-a-certain-distance-and-connected-by-orange-and.jpg?ver=6' height={70}/></SwiperSlide>
-      <SwiperSlide><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-R9fTatXZD2vZGInGIbNCwGeL0KxF-HkkQYaH8_p3yuKbVVg7vw6iavRqRod9lkVf5lg&usqp=CAU' height={70}/></SwiperSlide>
-      <SwiperSlide><img src='https://allvectorlogo.com/img/2016/10/sap-partner-logo.png' height={70}/></SwiperSlide>
-      <SwiperSlide><img src='https://www.seekpng.com/png/detail/209-2091194_rheem-pro-partner-logo.png' height={70}/></SwiperSlide>
-      <SwiperSlide><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjFJ4p95Vx4W9CWNldLVkcLmDwFl15SSGzjg&usqp=CAU' height={70}/></SwiperSlide>
-      <SwiperSlide><img src='https://findlogovector.com/wp-content/uploads/2019/10/business-integration-partners-bip-logo-vector.png' height={70}/></SwiperSlide>
-      <br/>
-    </Swiper>
-
-    <br/> <br/>
-    </div>
-
     </>
   );
 };

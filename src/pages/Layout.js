@@ -22,6 +22,11 @@ const Layout = (props) => {
     });
   }
 
+  const clickNews = () => {
+    window.scrollTo(0, 5700);
+  }
+
+
   return (
     <>
       <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll">

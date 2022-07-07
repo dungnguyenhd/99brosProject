@@ -29,15 +29,15 @@ const Footer = () => {
               </ul>
             </div>
             <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-3 order-md-4">
-              <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">More</h4>
+              <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Văn phòng</h4>
               <ul class="list-unstyled mb-0">
-                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Không</a></li>
-                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Còn</a></li>
-                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Gì</a></li>
+                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Hà Nội</a></li>
+                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Hồ Chí Minh</a></li>
+                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Đà Nẵng</a></li>
               </ul>
             </div>
             <div class="col-lg-3 col-md-5 col-12 mb-4 mb-md-6 mb-lg-0 order-lg-4 order-md-1">
-              <div class="icon-group mb-4"> <a class="text-decoration-none icon-item shadow-social" id="facebook" href="https://www.facebook.com/dungn99/" target="_blank"><i class="fab fa-facebook-f"> </i></a><a class="text-decoration-none icon-item shadow-social" id="instagram" href="https://www.instagram.com/" target='_blank'><i class="fab fa-instagram"> </i></a><a class="text-decoration-none icon-item shadow-social" id="twitter" href="https://twitter.com/" target='_sblank'><i class="fab fa-twitter"> </i></a></div>
+              <div class="icon-group mb-4"> <a class="text-decoration-none icon-item shadow-social" id="facebook" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"> </i></a><a class="text-decoration-none icon-item shadow-social" id="instagram" href="https://www.instagram.com/" target='_blank'><i class="fab fa-instagram"> </i></a><a class="text-decoration-none icon-item shadow-social" id="twitter" href="https://twitter.com/" target='_sblank'><i class="fab fa-twitter"> </i></a></div>
               <h4 class="fw-medium font-sans-serif text-secondary mb-3">Khám phá ứng dụng của chúng tôi</h4>
               <div class="d-flex align-items-center"> <a href="https://unleashed-fern-bee.notion.site/Demo-Playlist-195d8de4f63946ec95b4cfd097cfbe1a" target='_blank'> <i class="fas fa-store"></i> Notion </a><a href="https://batdongsan.com.vn/" target='_blank'> &#160; <i class="fas fa-hands-helping"></i> Partner</a></div>
             </div>
