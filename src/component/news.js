@@ -82,7 +82,7 @@ function NewsData(props) {
 
                                 <div class="d-flex align-items-center"><Link to={'/viewnews/' + item.id} onClick={clickView}><span class="fs-0"><span class="fs-0 fw-medium" style={{ color: 'black' }}><h3>{item.tieude}</h3></span></span></Link></div>
 
-                                <div class="d-flex align-items-center"><span class="fs-0"><span class="fs-0 fw-medium" style={{ color: 'black' }}>{item.mota}</span></span></div>
+                                <div class="d-flex align-items-center"><span class="fs-0"><span class="fs-0 fw-medium span-description" style={{ color: 'black' }}>{item.mota}</span></span></div>
 
                             </div>
 

@@ -117,7 +117,7 @@ const Home = () => {
           <div class="row align-items-center">
             <div class="col-md-5 col-lg-6 order-0 order-md-1 text-end"></div>
             <div class="col-md-7 col-lg-6 text-md-start text-center py-4">
-              <h1 class="hero-title">99Bros<br/>of KITS<br/>Vietnam </h1>
+              <h1 class="hero-title">99Bros<br />of KITS<br />Vietnam </h1>
               <p class="mb-4 fw-medium">99Bros Bất động sản.<br class="d-none d-xl-block" />Dịch vụ bất động sản hàng đầu KITS<br class="d-none d-xl-block" />Xem ngay.</p>
               <div class="text-center text-md-start"> <a class="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow" href="#viewnews" role="button">View news</a>
                 <div class="w-100 d-block d-md-none"></div><a href="#start" role="button"><span class="btn btn-success round-btn-lg rounded-circle me-3 danger-btn-shadow">
@@ -145,49 +145,21 @@ const Home = () => {
                 <button type="button" class="btn btn-light btn-md text-info" onClick={clickDown} style={{ fontSize: '1.5rem' }}><i class="fas fa-arrow-down"></i></button>
               </div>
 
-<<<<<<< HEAD
-        <div class="container">
-          {/* div search */}
-          <div className='container mt-5' style={{ marginBottom: "20px" }}>
-            <form className="form-inline">
-              <div className="input-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  size="100"
-                  placeholder="Tìm kiếm"
-                  id='inputSearch'
-                  onChange={function () {
-                    var text = inputSearch.value;
-                    setStringSearch(text);
-                  }}
-                />
-                <div className="input-group-btn">
-                  <Link to={'/search/' + stringSearch}>
-                    <button
-                      type="button"
-                      className="btn btn-danger">
-                      <i class="fas fa-search"></i>
-                    </button>
-                  </Link>
-=======
-
-
               <div className='btn-group-vertical wrapper_sidebar bg-muted'>
                 <button class="btn btn-md btn-outline-light">&#160;</button>
                 <button class="btn btn-md btn-outline-light">&#160;</button>
                 <button className="shake-btn btn btn-danger ms-2 rounded-circle" style={{ padding: '.5rem' }}>
-                <a href="https://chat.zalo.me/" target="_blank" className='text-white'><i class="fa fa-phone-alt"></i></a>
+                  <a href="https://chat.zalo.me/" target="_blank" className='text-white'><i class="fa fa-phone-alt"></i></a>
                 </button>
 
                 &#160;
-               <button className="shake-btn btn btn-info ms-2 rounded-circle" style={{ padding: '.5rem' }}>
-                   <a href="https://www.facebook.com/" target="_blank" className='text-white'><i class="fab fa-facebook-f"></i></a>
+                <button className="shake-btn btn btn-info ms-2 rounded-circle" style={{ padding: '.5rem' }}>
+                  <a href="https://www.facebook.com/" target="_blank" className='text-white'><i class="fab fa-facebook-f"></i></a>
                 </button>
 
                 &#160;
                 <button className="shake-btn btn btn-secondary ms-2 rounded-circle" style={{ padding: '.5rem' }}>
-                <a href="https://twitter.com/?lang=en" target="_blank" className='text-white'><i class="fab fa-twitter"></i></a>
+                  <a href="https://twitter.com/?lang=en" target="_blank" className='text-white'><i class="fab fa-twitter"></i></a>
                 </button>
               </div>
             </div>
@@ -208,18 +180,19 @@ const Home = () => {
                         size="100"
                         placeholder="Tìm kiếm"
                         id='inputSearch'
+                        onChange={function () {
+                          var text = inputSearch.value;
+                          setStringSearch(text);
+                        }}
                       />
                       <div className="input-group-btn">
-                        <button
-                          type="button"
-                          className="btn btn-danger"
-                          onClick={function () {
-                            var text = inputSearch.value;
-                            setStringSearch(text);
-                          }}
-                        >
-                          <i class="fas fa-search"></i>
-                        </button>
+                        <Link to={'/search/' + stringSearch}>
+                          <button
+                            type="button"
+                            className="btn btn-danger">
+                            <i class="fas fa-search"></i>
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </form>
@@ -274,7 +247,6 @@ const Home = () => {
                       </Link>
                     </div>
                   </div>
->>>>>>> 58bca886089f1d14763bac97d78c5f0a8a26a1c8
                 </div>
               </div>
             </section>
@@ -318,7 +290,7 @@ const Home = () => {
 
               <section class="pt-5" id="destination" style={{ marginLeft: "2.5rem", }}>
                 <div class="container">
-                        <NewsData newsdata={newsdata} />
+                  <NewsData newsdata={newsdata} />
                 </div>
               </section>
             </div>
@@ -360,7 +332,7 @@ const Home = () => {
           </div>
 
           <div className='col-lg-2 d-none d-lg-block'>
-            <div style={{ marginTop: '54rem',paddingLeft: '5rem'}}>
+            <div style={{ marginTop: '54rem', paddingLeft: '5rem' }}>
               <img src='https://i.imgur.com/qm96ni9.gif' />
             </div>
           </div>

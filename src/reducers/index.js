@@ -11,7 +11,7 @@ import {
 const initProduct = {
   numberCart: 0,
   Carts: [],
-  _products: [],
+  _products: []
 };
 
 function todoProduct(state = initProduct, action) {

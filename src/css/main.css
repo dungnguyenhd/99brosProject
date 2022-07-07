@@ -19651,16 +19651,6 @@ body{
   background-color: rgba(236, 236, 236, 0.8);
 }
 
-<<<<<<< HEAD
-.span-description {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
-
-=======
 .blink_me {
   animation: blinker 1s linear infinite;
   color: red!important;
@@ -19751,4 +19741,10 @@ div.sticky {
     transform: translate3d(1px, 0, 1px);
   }
 }
->>>>>>> 58bca886089f1d14763bac97d78c5f0a8a26a1c8
+.span-description {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
