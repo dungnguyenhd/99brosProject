@@ -161,37 +161,75 @@ const Buy = () => {
                         </table>
                       
                     </div>
+                    <div className='row' style={{ marginTop: "2rem" }}>
+                    <div className='container row md-12' style={{ margin: "auto" }}>
+                      <h1 className="mt-4"> <b>Chi tiết các dịch vụ</b> </h1>
+                    </div>
+                    <div class=" " style={{paddingTop: "4rem"}}>
+                        <table style={{ margin: "auto", width: "100%" }}>
+                          <ul class="list-group">
+
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/do-xe.svg" alt="Maison Office" width="14" height="25" />  &#160; Bãi xe:</td>
+                              <span class="badge rounded-pill"><td className="h5"> {detail.baidoxe}</td></span>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/do-oto.svg" alt="Maison Office" width="25" height="16" />  &#160; Giá gửi xe oto:</td>
+                              <span class="badge rounded-pill"><td className="h5"> {detail.giadooto}</td></span>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/do-xe.svg" alt="Maison Office" width="14" height="25" />  &#160; Giá gửi xe máy:</td>
+                              <span class="badge rounded-pill"><td className="h5"> {detail.giadoxemay}</td></span>
+                            </li>
+
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/gio-lam-viec.svg" alt="Maison Office" width="25" height="25" />  &#160; Giờ làm việc:</td>
+                              <span class="badge rounded-pill"><td className="h5"> {detail.giolamviec}</td></span>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/thang-may.svg" alt="Maison Office" width="26" height="26" />  &#160; Thang máy:</td>
+                              <span class="badge rounded-pill"><td className="h5"> {detail.thangmay}</td></span>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/dien-du-phong.svg" alt="Maison Office" width="16" height="22" />  &#160; Điện dự phòng:</td>
+                              <span class="badge rounded-pill"><td className="h5"> {detail.dienduphong}</td></span>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/phi-dich-vu.svg" alt="Maison Office" width="18" height="25" />  &#160;Phí dịch vụ:</td>
+                              <span class="badge rounded-pill"><td className="h5"> {detail.phidichvu}</td></span>
+                            </li>
+
+
+                          </ul>
+                        </table>
+                        </div>
+                        </div>
                   </div>
 
                   {/* -------------------------------------------------------------------------------------------------------*/}
                   <div className="container-fluid">
                     <div className="row ms-5 pt-5 me-5" style={{ marginTop: "5rem", }}>
                       <div className='container row md-12' style={{ margin: "auto" }}>
-                        <h1 className="mt-4" style={{ paddingBottom: "5rem", paddingtop: "1rem" }}> <b>VỊ TRÍ CHIẾN LƯỢC</b> </h1>
+                        <h1 className="mt-4" style={{ paddingBottom: "5rem", paddingtop: "1rem" }}> <b>Mô tả</b> </h1>
                       </div>
                       <div className='container row'>
                         <div className='col-sm-8 col-8 col-md-8'>
                           <span style={{ paddingRight: "auto" }}>
-                            <br />
-                            Tọa lạc ngay giao lộ Nguyễn Văn Tỏ – quốc lộ 51, P. Long Bình
-                            Tân, TP. Biên Hòa, Phố thương mại Diamond Center mang đến cơ hội
-                            an cư lạc nghiệp vô cùng thuận tiện cho cư dân bởi hệ thống tiện
-                            ích cao cấp bao quanh. Chỉ trong vài phút, từ Diamond Center có
-                            thể tiếp cận mọi tiện ích từ giáp dục, y tế, thương mại cho đến
-                            vui chơi giải trí, cũng như làm việc hay thực hiện các thủ tục
-                            hành chính. Diamond Center còn được cộng hưởng lợi ích rất lớn
-                            do nằm trong khu vực phát triển đô thị quy hạch hoàn chỉnh, cộng
-                            đồng dân trí cao. Đây cũng là khu vực đang được đầu tư thêm rất
-                            nhiều dự án hạ tầng và tiện ích, mang đến cho các chủ nhân
-                            Diamond Center một tài sản gia tăng giá trị bền vững.
+                            {phone.mota}
                           </span>
                         </div>
 
                         <div className="col-md-4 col-sm-4 col-4" style={{ marginRight: "auto", paddingBottom: "auto", left: "auto" }}>
                           <img
-                            src="https://thegioidatviet.com.vn/wp-content/uploads/2021/11/so-do-vi-tri.jpg"
+                          src={detail.anh5}
                             width='100%'
-                            class="img-thumbnail" />
+                            class="img-thumbnail" ></img>
                         </div>
                       </div>
                     </div>
@@ -214,78 +252,45 @@ const Buy = () => {
 
                       <div className="col-md-4 col-sm-4  ps-5 col-4 text-justify" style={{ paddingTop: "2rem", }}>
                         <img
-                          src="https://thegioidatviet.com.vn/wp-content/uploads/2021/11/so-do-vi-tri.jpg"
+                          src={phone.anh}
                           width="100%"
                           class="rounded adImage" />
                         <br />
                         <span class="blockquote">
-                          <b> VỊ TRÍ KIM CƯƠNG</b>
+                          <b> Thông tin thêm</b>
                           <br />
-                          Tọa lạc ngay giao lộ Nguyễn Văn Tỏ – quốc lộ 51, P. Long Bình
-                          Tân, TP. Biên Hòa, Phố thương mại Diamond Center mang đến cơ
-                          hội an cư lạc nghiệp vô cùng thuận tiện cho cư dân bởi hệ
-                          thống tiện ích cao cấp bao quanh. Chỉ trong vài phút, từ
-                          Diamond Center có thể tiếp cận mọi tiện ích từ giáp dục, y tế,
-                          thương mại cho đến vui chơi giải trí, cũng như làm việc hay
-                          thực hiện các thủ tục hành chính. Diamond Center còn được cộng
-                          hưởng lợi ích rất lớn do nằm trong khu vực phát triển đô thị
-                          quy hạch hoàn chỉnh, cộng đồng dân trí cao. Đây cũng là khu
-                          vực đang được đầu tư thêm rất nhiều dự án hạ tầng và tiện ích,
-                          mang đến cho các chủ nhân Diamond Center một tài sản gia tăng
-                          giá trị bền vững.
+                          {detail.thongtinthem}
                         </span>
                       </div>
                       <div className="col-md-4 col-sm-4 col-4  ps-5 text-justify" style={{ paddingTop: "2rem", }}>
                         <img
-                          src="https://thegioidatviet.com.vn/wp-content/uploads/2021/11/so-do-vi-tri.jpg"
+                          src={detail.anh7}
                           width="100%"
                           class="rounded adImage" />
                         <br />
                         <span class="blockquote">
-                          <b> VỊ TRÍ KIM CƯƠNG</b>
+                          <b> Vị trí phong thủy</b>
                           <br />
-                          Tọa lạc ngay giao lộ Nguyễn Văn Tỏ – quốc lộ 51, P. Long Bình
-                          Tân, TP. Biên Hòa, Phố thương mại Diamond Center mang đến cơ
-                          hội an cư lạc nghiệp vô cùng thuận tiện cho cư dân bởi hệ
-                          thống tiện ích cao cấp bao quanh. Chỉ trong vài phút, từ
-                          Diamond Center có thể tiếp cận mọi tiện ích từ giáp dục, y tế,
-                          thương mại cho đến vui chơi giải trí, cũng như làm việc hay
-                          thực hiện các thủ tục hành chính. Diamond Center còn được cộng
-                          hưởng lợi ích rất lớn do nằm trong khu vực phát triển đô thị
-                          quy hạch hoàn chỉnh, cộng đồng dân trí cao. Đây cũng là khu
-                          vực đang được đầu tư thêm rất nhiều dự án hạ tầng và tiện ích,
-                          mang đến cho các chủ nhân Diamond Center một tài sản gia tăng
-                          giá trị bền vững.
+                          {detail.vitriphongthuy}
                         </span>
                       </div>
                       <div className="col-md-4 col-sm-4 col-4  ps-5 text-justify" style={{ paddingTop: "2rem", }}>
                         <img
-                          src="https://thegioidatviet.com.vn/wp-content/uploads/2021/11/so-do-vi-tri.jpg"
+                          src={detail.anh8}
                           width="100%"
                           class="rounded adImage" />
                         <br />
                         <span class="blockquote" >
-                          <b> VỊ TRÍ KIM CƯƠNG</b>
+                          <b> Quy mô tòa nhà</b>
                           <br />
-                          Tọa lạc ngay giao lộ Nguyễn Văn Tỏ – quốc lộ 51, P. Long Bình
-                          Tân, TP. Biên Hòa, Phố thương mại Diamond Center mang đến cơ
-                          hội an cư lạc nghiệp vô cùng thuận tiện cho cư dân bởi hệ
-                          thống tiện ích cao cấp bao quanh. Chỉ trong vài phút, từ
-                          Diamond Center có thể tiếp cận mọi tiện ích từ giáp dục, y tế,
-                          thương mại cho đến vui chơi giải trí, cũng như làm việc hay
-                          thực hiện các thủ tục hành chính. Diamond Center còn được cộng
-                          hưởng lợi ích rất lớn do nằm trong khu vực phát triển đô thị
-                          quy hạch hoàn chỉnh, cộng đồng dân trí cao. Đây cũng là khu
-                          vực đang được đầu tư thêm rất nhiều dự án hạ tầng và tiện ích,
-                          mang đến cho các chủ nhân Diamond Center một tài sản gia tăng
-                          giá trị bền vững.
+                          {detail.quymo}
                         </span>
                       </div>
                     </div>
                   </div>
 
 
-                  <div className='sticky col-md-4 col-md-6 mt-5'>
+                  <div className='sticky col-md-4 col-md-6 mt-5 '>
 
                     <img src='https://thumbs.gfycat.com/TatteredAgonizingHuman-size_restricted.gif' width='250px'></img>
 
@@ -302,7 +307,7 @@ const Buy = () => {
 
 <p>Thông tin chi tiết và chính xác giúp bạn nhanh chóng tìm được lựa chọn văn phòng phù hợp.</p>
 </div>
-
+{/* <img src='https://www.thanhphocaphe.com/data/upload/image/banner/hanh-trinh-lap-chi_5b695446e2c9f.png'  /> */}
 <div class="ttnb-contact">Liên hệ <a href="tel:0389546759" data-wpel-link="internal">038.954.6759</a> để nhận báo giá.
 
 </div>                                        
@@ -318,8 +323,6 @@ const Buy = () => {
 
 
               </div>
-
-
 
               <div className='hidden-sm col-md-1 col-lg-2 d-none d-lg-block ' style={{ marginTop: '7rem', paddingLeft: '0' }}>
                 <img src='http://taxiadvertisingvn.com/wp-content/uploads/2021/07/roadshowqc.gif' width='200px' height='1000px'></img>
