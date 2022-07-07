@@ -19668,6 +19668,7 @@ body{
 }
 
 #viewtrend{
-  background-color: pink!important;
-  padding: .7rem;
+  background-color: rgba(215, 244, 247, 0.75)!important;
+  padding: 1rem;
+  border-radius: 10px;
 }

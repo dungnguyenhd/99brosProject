@@ -124,7 +124,7 @@ const Home = () => {
       {/*
       <!-- ============================================--> */}
 
-
+<div>
       <section class="pt-1 pt-md-9" id="service">
 
         <div class="container">
@@ -211,7 +211,7 @@ const Home = () => {
 
       <div className='container' id='wrapper_xem_nhieu' style={{backgroundColor: 'white', border: '1px solid white', borderRadius: '7px',}}>
 
-      <div className="container" style={{paddingTop: "3rem"}}>
+      <div className="container" style={{paddingTop: "1rem"}}>
         <div class="mb-7 text-center" id='viewtrend'>
           <h4 class="blink_me text-secondary"><i class="fas fa-fire"></i>&#160; XEM NHIỀU </h4>
           <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">TOP NHÀ PHỔ BIẾN</h3>
@@ -239,8 +239,8 @@ const Home = () => {
       </div>
 
 
-      <div className="container">
-        <div class="mb-7 text-center" id='viewnews'>
+      <div className="container" id='wrapper_phanloai' style={{backgroundColor: 'white', border: '1px solid white', borderRadius: '7px', marginTop: '2.5rem'}}>
+        <div class="mb-7 text-center" id='viewtrend' style={{marginTop: '1rem'}}>
           <h4 class="text-secondary"><i class="far fa-newspaper"></i>&#160;TIN TỨC </h4>
           <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Tin Hot Hôm Nay</h3>
         </div>
@@ -254,7 +254,7 @@ const Home = () => {
         </section>
       </div>
 
-      <div class="mb-7 text-center" id='viewnews'>
+      <div class="mb-7 text-center" id='viewtrend'>
           <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Các Đối Tác</h3>
         </div>
 
@@ -286,7 +286,7 @@ const Home = () => {
 
     <br/> <br/>
     </div>
-
+</div>
     </>
   );
 };
