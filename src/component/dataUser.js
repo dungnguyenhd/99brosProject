@@ -10,7 +10,9 @@ function UserHouseData(props) {
   const [house, setHouse] = useState(null);
   const [listItem, setListItem] = useState([]);
   const [liked, setLiked] = useState([]);
+  const [district, setDistrict] = useState(null);
   let navigate = useNavigate();
+  const params = useParams();
 
   useEffect(() => {
     setHouse(props.data);
@@ -28,6 +30,7 @@ function UserHouseData(props) {
     }
   }, [props.store_state]);
 
+
   const sortPriceDown = () => {
     const sortData = [...house];
     sortData.sort((a, b) => a.phaply - b.phaply);
@@ -39,6 +42,7 @@ function UserHouseData(props) {
     sortData.sort((a, b) => b.phaply - a.phaply);
     setHouse(sortData);
   };
+
 
   const clickView = () => {
     window.scrollTo(0, 0);
@@ -57,7 +61,7 @@ function UserHouseData(props) {
           <div class="col-md-4 mb-4">
 
 
-            <div class="card overflow-hidden shadow"> <div className='card-border bg-primary'><Link to={'/buy/' + item.id} onClick={clickView}> <img class="card-img-top" src={item.anh}/></Link></div>
+            <div class="card overflow-hidden shadow"> <div className='card-border bg-primary'><Link to={'/buy/' + item.id} onClick={clickView}> <img class="card-img-top" src={item.anh} /></Link></div>
 
               <div class="card-body py-4 px-3">
 
@@ -76,9 +80,9 @@ function UserHouseData(props) {
                       <span class="tooltiptext">Tooltip text</span>
                     </button> */}
                     <button
-                        className="btn btn-outline-danger ms-2 rounded-circle"
-                        onClick={() => props.AddCart(item)}>
-                        <i class="fas fa-heart text-end"></i>
+                      className="btn btn-outline-danger ms-2 rounded-circle"
+                      onClick={() => props.AddCart(item)}>
+                      <i class="fas fa-heart text-end"></i>
                     </button>
                   </span>
                 </div>
@@ -107,6 +111,44 @@ function UserHouseData(props) {
     return position;
   }
 
+  const doSearch = (khuvuc) => {
+    let url =
+      'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase/?khuvuc=' + khuvuc;
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        setHouse(data);
+      });
+  };
+
+  useEffect(() => {
+    console.log('app useeffect!!');
+    // console.log('products', products);
+    let url_khuvuc =
+      'https://62be5bb10bc9b1256155b7bd.mockapi.io/Khuvuc';
+
+    fetch(url_khuvuc)
+      .then((response) => response.json())
+      .then((data) => {
+        setDistrict(data);
+      });
+  }, []);
+
+  var khuvuc_jsx = [];
+
+  if (district != null) {
+    khuvuc_jsx = (
+      (khuvuc_jsx = district.map((item) => (
+        <li>
+          <button className="dropdown-item" value={item.tenkhuvuc} onClick={(e) => doSearch(e.target.value)}>
+            {item.tenkhuvuc}
+          </button>
+        </li>
+      )))
+    );
+  }
+
 
   return (
     <>
@@ -133,7 +175,25 @@ function UserHouseData(props) {
             </button>
           </li>
         </ul>
+
+
+        <button
+          className="btn btn-outline-primary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          data-bs-auto-close="true"
+          aria-expanded="false"
+        >
+          Sort Price
+        </button>
+
+        <ul className="dropdown-menu" aria-labelledby="defaultDropdown">
+            {khuvuc_jsx}
+        </ul>
+
       </div>
+
+
       <br /><br /><br />
       {house_list}
     </>
@@ -154,7 +214,7 @@ const mapStateToProps = (state) => {
 //   };
 // } */
 // export default connect(mapStateToProps,  {
-//   AddCart, 
+//   AddCart,
 //   DeleteCart })(UserHouseData);
 function mapDispatchToProps(dispatch) {
   return {
