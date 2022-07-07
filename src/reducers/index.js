@@ -77,6 +77,8 @@ function todoProduct(state = initProduct, action) {
         ...state,
       };
     case DELETE_CART:
+      console.log("Delete cart");
+      console.log(action.payload);
       let quantity_ = state.Carts[action.payload].quantity;
       return {
         ...state,

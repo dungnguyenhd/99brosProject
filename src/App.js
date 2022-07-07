@@ -12,6 +12,7 @@ import Collection from './pages/Collection';
 import Tintuc from './pages/Tintuc';
 import Favorite from './pages/Favorite';
 import Viewnews from './pages/Viewnews';
+import SearchResult from './pages/SearchResult';
 
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="viewnews/:id/" element={<Viewnews />} />
           <Route path="edit/:id" element={<Edit />} />
           <Route path="*" element={<NoPage />} />
+          <Route path="search/:string" element={<SearchResult />} />
         </Route>
       </Routes>
     </BrowserRouter>

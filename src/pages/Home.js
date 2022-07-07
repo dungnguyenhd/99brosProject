@@ -31,9 +31,9 @@ const Home = () => {
   useEffect(() => {
     let url = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase';
     let urlHome = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase';
-    if (stringSearch.length > 0) {
-      urlHome += '?search=' + stringSearch;
-    }
+    // if (stringSearch.length > 0) {
+    //   urlHome += '?search=' + stringSearch;
+    // }
 
     fetch(urlHome)
       .then((response) => response.json())
@@ -138,18 +138,20 @@ const Home = () => {
                   size="100"
                   placeholder="Tìm kiếm"
                   id='inputSearch'
+                  onChange={function () {
+                    var text = inputSearch.value;
+                    setStringSearch(text);
+                  }}
                 />
                 <div className="input-group-btn">
-                  <button
-                    type="button"
-                    className="btn btn-danger"
-                    onClick={function () {
-                      var text = inputSearch.value;
-                      setStringSearch(text);
-                    }}
-                  >
-                    <i class="fas fa-search"></i>
-                  </button>
+                  <Link to={'/search/' + stringSearch}>
+                    <button
+                      type="button"
+                      className="btn btn-danger"
+                    >
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </form>

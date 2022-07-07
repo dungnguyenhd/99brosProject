@@ -19651,3 +19651,11 @@ body{
   background-color: rgba(236, 236, 236, 0.8);
 }
 
+.span-description {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
