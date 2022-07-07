@@ -21,35 +21,10 @@ function todoProduct(state = initProduct, action) {
         ...state,
       };
     case ADD_CART:
-      if (state.numberCart == 0) {
-        let cart = {
-          id: action.payload.id,
-          quantity: 1,
-          tennha: action.payload.tennha,
-          anh: action.payload.anh,
-          mucgia: action.payload.mucgia,
-          mota: action.payload.mota,
-        };
-        state.Carts.push(cart);
-      } else {
-        let check = false;
-        /*
-        state.Carts.map((item, key) => {
-          if (item.id == action.payload.id) {
-            state.Carts[key].quantity++;
-            check = true;
-          }
-        });
-        */
-        for (var i = 0; i < state.Carts.length; i++) {
-          if (state.Carts[i].id == action.payload.id) {
-            state.Carts[i].quantity++;
-            check = true;
-            break;
-          }
-        }
-        if (!check) {
-          let _cart = {
+      case ADD_CART:
+        var addNumberCart = 0;
+        if (state.numberCart == 0) {
+          let cart = {
             id: action.payload.id,
             quantity: 1,
             tennha: action.payload.tennha,
@@ -57,13 +32,33 @@ function todoProduct(state = initProduct, action) {
             mucgia: action.payload.mucgia,
             mota: action.payload.mota,
           };
-          state.Carts.push(_cart);
+          state.Carts.push(cart);
+          addNumberCart = 1;
+        } else {
+          var listId = [];
+          for(var i=0; i<state.Carts.length; i++){
+            listId.push(state.Carts[i].id);
+          }
+
+          if(listId.length>0){
+            if(!listId.includes(action.payload.id)){
+              let _cart = {
+                id: action.payload.id,
+                quantity: 1,
+                tennha: action.payload.tennha,
+                anh: action.payload.anh,
+                mucgia: action.payload.mucgia,
+                mota: action.payload.mota,
+              };
+              state.Carts.push(_cart);
+              addNumberCart = 1;
+            }
+          }
         }
-      }
-      return {
-        ...state,
-        numberCart: state.numberCart + 1,
-      };
+        return {
+          ...state,
+          numberCart: state.numberCart + addNumberCart,
+        };
     case INCREASE_QUANTITY:
       state.numberCart++;
       state.Carts[action.payload].quantity++;
