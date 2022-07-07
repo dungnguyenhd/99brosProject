@@ -19661,6 +19661,11 @@ body{
   color: blue!important;
 }
 
+.blink_me_green {
+  animation: blinker 1s linear infinite;
+  color: green!important;
+}
+
 @keyframes blinker {
   50% {
     opacity: 0.4;
@@ -19671,4 +19676,68 @@ body{
   background-color: rgba(215, 244, 247, 0.75)!important;
   padding: 1rem;
   border-radius: 10px;
+}
+
+.col-xs-0,
+.col-sm-0,
+.col-md-0,
+.col-lg-0 {
+  flex: 0 0 0;
+  max-width: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 100px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.shake-btn:hover{
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) infinite;
+  transform: translate3d(0, 0, 0);
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 1px);
+  }
+  20%, 80% {
+    transform: translate3d(1px, 0, 1px);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-1px, 0, 1px);
+  }
+  40%, 60% {
+    transform: translate3d(1px, 0, 1px);
+  }
 }
