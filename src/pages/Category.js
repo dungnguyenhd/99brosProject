@@ -27,7 +27,7 @@ const Category = () => {
     <div style={{paddingTop: "7rem",}}>
       <div className="App-jumbotron jumbotron text-center ">
         <h1> Khu vực {category}</h1>
-        <p>Product</p>
+        <p>BDS Khu Vực</p>
       </div>
       <div className="container ">
         <div className="row">

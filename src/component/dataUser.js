@@ -69,7 +69,7 @@ function UserHouseData(props) {
 
                 <div class="d-flex align-items-center"><span class="fs-0 fw-medium">Mức Giá: {item.mucgia}</span></div>
 
-                <div class="d-flex align-items-center"><span class="fs-0 fw-medium">Diện tích: {item.dientich}</span>
+                <div class="d-flex align-items-center"><span class="fs-0 fw-medium">Diện tích: {item.dientich}m2</span>
 
                   <span className='tim' style={{ marginLeft: "7.5rem", }}>
                     {/* <button
@@ -153,41 +153,46 @@ function UserHouseData(props) {
   return (
     <>
       <div>
-        <button
-          className="btn btn-outline-primary dropdown-toggle"
+        <span className='h5'>
+          Bộ lọc:
+        </span>
+
+         <button
+          className="btn btn-outline-info dropdown-toggle ms-2"
           type="button"
           data-bs-toggle="dropdown"
           data-bs-auto-close="true"
           aria-expanded="false"
         >
-          Sort Price
+          Theo Giá
         </button>
 
         <ul className="dropdown-menu" aria-labelledby="defaultDropdown">
           <li>
             <button className="dropdown-item" onClick={() => sortPriceUp()}>
-              High to Low
+              Giảm dần
             </button>
           </li>
           <li>
             <button className="dropdown-item" onClick={() => sortPriceDown()}>
-              Low to High
+              Tăng Dần
             </button>
           </li>
         </ul>
 
 
         <button
-          className="btn btn-outline-primary dropdown-toggle"
+          className="btn btn-outline-info dropdown-toggle ms-1"
           type="button"
           data-bs-toggle="dropdown"
           data-bs-auto-close="true"
           aria-expanded="false"
         >
-          Sort Price
+          Theo Quận Hà Nội
         </button>
 
         <ul className="dropdown-menu" aria-labelledby="defaultDropdown">
+            <li className='text-info h5 ms-3'>Hà Nội</li>
             {khuvuc_jsx}
         </ul>
 
