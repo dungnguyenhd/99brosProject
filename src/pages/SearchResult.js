@@ -6,7 +6,6 @@ import '../css/main.css';
 
 function SearchResult(props) {
     const params = useParams();
-    const [phone, setPhone] = useState(null);
     let navigate = useNavigate();
 
     // useEffect(() => {
@@ -15,7 +14,9 @@ function SearchResult(props) {
 
     return (
         <div>
-            <h1>{params.string}</h1>
+            <div class="container" style={{ paddingTop: "7rem", }}>
+                <h1>{params.string}</h1>
+            </div>
         </div>
     );
 }

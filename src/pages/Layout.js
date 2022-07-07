@@ -16,7 +16,10 @@ const Layout = (props) => {
   }, [props.numberCart]);
 
   const clickView = () => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0, behavior:
+        'smooth'
+    });
   }
 
   return (
@@ -27,6 +30,34 @@ const Layout = (props) => {
             <img src="https://i.imgur.com/CkZJbLx.png" height="42" width='68' alt="99Bro" /></Link>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+            {/* div search */}
+            {/* <div className='container mt-5' style={{ marginBottom: "20px" }}>
+              <form className="form-inline">
+                <div className="input-group">
+                  <input
+                    type="text"
+                    className="form-control"
+                    size="100"
+                    placeholder="Tìm kiếm"
+                    id='inputSearch'
+                    // onChange={function () {
+                    //   var text = inputSearch.value;
+                    //   setStringSearch(text);
+                    // }}
+                  />
+                  <div className="input-group-btn">
+                    <Link to={'/search/' + "stringSearch"}>
+                      <button
+                        type="button"
+                        className="btn btn-danger">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </form>
+            </div> */}
+            {/* end of div search */}
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base align-items-lg-center align-items-start">
               <li class="nav-item px-3 px-xl-4"><Link to="/" class="nav-link fw-medium" onClick={clickView}>Trang chủ</Link></li>
               <li class="nav-item px-3 px-xl-4"><Link to="/aboutMe" class="nav-link fw-medium" onClick={clickView}>Giới thiệu</Link></li>
@@ -34,10 +65,10 @@ const Layout = (props) => {
               <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#testimonial">Bộ sưu tập</a></li>
 
               <li class="nav-item px-3 px-xl-4">
-              <Link to="/favorite" class="nav-link fw-medium" onClick={clickView}>
-                <a class="nav-link fw-medium" aria-current="page" href="#!"><i class="fas fa-heart text-end"></i> <span className="text-white rounded-circle" id="lblCartCount">
-                  <span style={{color: 'white'}}>{numberCart}</span>
-                </span></a>
+                <Link to="/favorite" class="nav-link fw-medium" onClick={clickView}>
+                  <a class="nav-link fw-medium" aria-current="page" href="#!"><i class="fas fa-heart text-end"></i> <span className="text-white rounded-circle" id="lblCartCount">
+                    <span style={{ color: 'white' }}>{numberCart}</span>
+                  </span></a>
                 </Link>
               </li>
 

@@ -147,8 +147,7 @@ const Home = () => {
                   <Link to={'/search/' + stringSearch}>
                     <button
                       type="button"
-                      className="btn btn-danger"
-                    >
+                      className="btn btn-danger">
                       <i class="fas fa-search"></i>
                     </button>
                   </Link>
