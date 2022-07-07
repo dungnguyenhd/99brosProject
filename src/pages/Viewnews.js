@@ -39,52 +39,76 @@ const Viewnews = () => {
     <>
       {news != null ? (
         <div className="container" style={{ paddingTop: "7rem", }}>
-            <div className='row'>
-                <h1> {news.tieude} </h1> <br/> <span> {news.day} </span>
+
+          <p><i><span style={{color: 'blue'}}>Trang chủ</span>/<span style={{color: 'blue'}}>Tin tức</span>/ Tin hot trong ngày</i> </p>
+
+            <div className='row mt-5'>
+                <h1> {news.tieude} </h1> <br/> <span> Ngày: {news.day} - 2:09 PM </span>
             </div>
 
             <div className='row mt-5'>
-                <span>
-                    <img src={news.anhchitiet} height='500' width='1200' />
-                </span>
-            </div>
-
-            <div className='row'>
                 <span>
                     {news.mota}
                 </span>
             </div>
 
-            <div className='row'>
+            <div className='row mt-5 mt-5'>
+                <span>
+                    <img src={news.anhchitiet} style={{paddingLeft: '5rem'}}/>
+                </span>
+            </div>
+
+            <div className='row mt-5'>
+                <span>
+                    {news.mota}
+                </span>
+            </div>
+
+            <div className='row mt-5'>
                 <span>
                     {news.chitiet}
                 </span>
             </div>
 
-            <div className='row'>
+            <div className='row mt-5'>
                 <span>
-                    <img src={news.anhchitiet2} height='500' width='1200' />
+                    <img src={news.anhchitiet2} style={{paddingLeft: '5rem'}}/>
                 </span>
             </div>
 
-            <div className='row'>
+            <div className='row mt-5'>
                 <span>
                     {news.chitiet2}
                 </span>
             </div>
+
+            <p className='mt-5'> Chủ đề: <span style={{color: 'blue'}}> {news.tieude} </span> </p>
+
+            <div class="icon-group mb-4 mt-3">
+
+             <span className='pt-2 text-danger'>Chia sẻ: &#160;&#160;</span>
+            <a class="text-decoration-none icon-item shadow-social" id="facebook" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a class="text-decoration-none icon-item shadow-social" id="instagram" href="https://www.instagram.com/" target='_blank'><i class="fab fa-instagram"></i></a>
+            <a class="text-decoration-none icon-item shadow-social" id="twitter" href="https://twitter.com/" target='_sblank'><i class="fab fa-twitter"> </i></a></div>
+
+
         </div>
+
+
       ) : (
         <div className="spinner-border text-primary mt-3 ms-6"> </div>
       )}
       <div className="container">
 
         <div className='mt-7'>
-           <h2 className='pt-5'> Tin liên quan </h2>
+          <h2 className='pt-5'> Tin liên quan </h2>
         </div>
 
-        <div className="row">
+        <div className="row mt-5">
           <NewsData newsdata={newsdata} />
         </div>
+
+
       </div>
     </>
   );

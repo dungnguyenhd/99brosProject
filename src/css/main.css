@@ -207,7 +207,7 @@ a {
 }
 
 a:hover {
-  color: #F1A501;
+  color: #0cd2f5;
   text-decoration: underline;
 }
 
@@ -4702,7 +4702,7 @@ fieldset:disabled .btn {
 }
 
 .nav-link:hover, .nav-link:focus {
-  color: #F1A501;
+  color: #23c9fc;
   text-decoration: none;
 }
 
@@ -4808,7 +4808,7 @@ fieldset:disabled .btn {
   padding-right: 1rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
-  background-color: rgba(199, 194, 194, 0.8);
+  background-color: rgba(199, 194, 194, 0.9);
   z-index: -1;
 }
 

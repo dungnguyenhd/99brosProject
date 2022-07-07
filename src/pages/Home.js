@@ -117,8 +117,8 @@ const Home = () => {
           <div class="row align-items-center">
             <div class="col-md-5 col-lg-6 order-0 order-md-1 text-end"></div>
             <div class="col-md-7 col-lg-6 text-md-start text-center py-4">
-              <h1 class="hero-title">Welcome<br />To 99Bros Website </h1>
-              <p class="mb-4 fw-medium">This website provide infomation about real estate.<br class="d-none d-xl-block" />Or house renting, real estate news<br class="d-none d-xl-block" />Booking room.</p>
+              <h1 class="hero-title">99Bros<br/>of KITS<br/>Vietnam </h1>
+              <p class="mb-4 fw-medium">99Bros Bất động sản.<br class="d-none d-xl-block" />Dịch vụ bất động sản hàng đầu KITS<br class="d-none d-xl-block" />Xem ngay.</p>
               <div class="text-center text-md-start"> <a class="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow" href="#viewnews" role="button">View news</a>
                 <div class="w-100 d-block d-md-none"></div><a href="#start" role="button"><span class="btn btn-success round-btn-lg rounded-circle me-3 danger-btn-shadow">
                   <i class="fas fa-paper-plane"></i>
@@ -151,17 +151,17 @@ const Home = () => {
                 <button class="btn btn-md btn-outline-light">&#160;</button>
                 <button class="btn btn-md btn-outline-light">&#160;</button>
                 <button className="shake-btn btn btn-danger ms-2 rounded-circle" style={{ padding: '.5rem' }}>
-                  <i class="fa fa-phone-alt"></i>
+                <a href="https://chat.zalo.me/" target="_blank" className='text-white'><i class="fa fa-phone-alt"></i></a>
                 </button>
 
                 &#160;
-                <button className="shake-btn btn btn-info ms-2 rounded-circle" style={{ padding: '.5rem' }}>
-                  <i class="fab fa-facebook-f"></i>
+               <button className="shake-btn btn btn-info ms-2 rounded-circle" style={{ padding: '.5rem' }}>
+                   <a href="https://www.facebook.com/" target="_blank" className='text-white'><i class="fab fa-facebook-f"></i></a>
                 </button>
 
                 &#160;
                 <button className="shake-btn btn btn-secondary ms-2 rounded-circle" style={{ padding: '.5rem' }}>
-                  <i class="fab fa-twitter"></i>
+                <a href="https://twitter.com/?lang=en" target="_blank" className='text-white'><i class="fab fa-twitter"></i></a>
                 </button>
               </div>
             </div>
@@ -203,7 +203,7 @@ const Home = () => {
                 <div class="position-absolute z-index--1 end-0 d-none d-lg-block"></div>
                 <div className='containter'>
                   <div class="mb-7 text-center pt-5 mt-5" >
-                    <h5 class="text-secondary">DANH MỤC </h5>
+                    <h5 class="text-secondary"><i class="fas fa-list"></i>&#160; DANH MỤC </h5>
                     <h4 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Bất Động Sản Theo Khu Vực</h4>
                   </div>
                   <div class="row">
@@ -333,7 +333,9 @@ const Home = () => {
           </div>
 
           <div className='col-lg-2 d-none d-lg-block'>
-            <img src='https://i.imgur.com/qm96ni9.gif' />
+            <div style={{ marginTop: '54rem',paddingLeft: '5rem'}}>
+              <img src='https://i.imgur.com/qm96ni9.gif' />
+            </div>
           </div>
 
         </div>
