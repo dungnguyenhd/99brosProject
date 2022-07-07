@@ -24,6 +24,12 @@ function NewsData(props) {
         setPhone(sortData);
     };
 
+    const clickView = () => {
+        window.scrollTo(0, 0);
+      }
+
+
+
     var phone_list = [];
     var count = 0;
     if (phone != null) {
@@ -33,11 +39,11 @@ function NewsData(props) {
                 return (
                     <div class="col-md-4 mb-4">
 
-                        <div class="card overflow-hidden shadow"> <div className='card-border bg-primary'><Link to={'/viewnews/' + item.id}> <img class="card-img-top" src={item.thumnail} height='320' /></Link></div>
+                        <div class="card overflow-hidden shadow"> <div className='card-border bg-primary'><Link to={'/viewnews/' + item.id} onClick={clickView}> <img class="card-img-top" src={item.thumnail} height='320' /></Link></div>
 
                             <div class="card-body py-4 px-3">
 
-                                <div class="d-flex align-items-center"><span class="fs-0"><span class="fs-0 fw-medium" style={{ color: 'black' }}><h3>{item.tieude}</h3></span></span></div>
+                                <div class="d-flex align-items-center"><Link to={'/viewnews/' + item.id} onClick={clickView}><span class="fs-0"><span class="fs-0 fw-medium" style={{ color: 'black' }}><h3>{item.tieude}</h3></span></span></Link></div>
 
                                 <div class="d-flex align-items-center"><span class="fs-0"><span class="fs-0 fw-medium" style={{ color: 'black' }}>{item.mota}</span></span></div>
 

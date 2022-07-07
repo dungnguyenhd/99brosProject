@@ -212,8 +212,8 @@ const Home = () => {
       <div className='container' id='wrapper_xem_nhieu' style={{backgroundColor: 'white', border: '1px solid white', borderRadius: '7px',}}>
 
       <div className="container" style={{paddingTop: "3rem"}}>
-        <div class="mb-7 text-center" id='viewnews'>
-          <h4 class="text-secondary"><i class="fas fa-fire"></i>&#160; XEM NHIỀU </h4>
+        <div class="mb-7 text-center" id='viewtrend'>
+          <h4 class="blink_me text-secondary"><i class="fas fa-fire"></i>&#160; XEM NHIỀU </h4>
           <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">TOP NHÀ PHỔ BIẾN</h3>
         </div>
 

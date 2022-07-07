@@ -19651,3 +19651,23 @@ body{
   background-color: rgba(236, 236, 236, 0.8);
 }
 
+.blink_me {
+  animation: blinker 1s linear infinite;
+  color: red!important;
+}
+
+.blink_me_blue {
+  animation: blinker 1s linear infinite;
+  color: blue!important;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.4;
+  }
+}
+
+#viewtrend{
+  background-color: pink!important;
+  padding: .7rem;
+}
