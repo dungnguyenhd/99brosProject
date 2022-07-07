@@ -76,7 +76,7 @@ function NewsData(props) {
                 count2++;
                 return (
                     <div class="col-md-4 mb-4">
-                        <div class="card overflow-hidden shadow"> <div className='bg-primary'><Link to={'/viewnews/' + item.id} onClick={clickView}> <img class="card-img-top" style={{ border: 'none' }} src={item.thumnail} height='320' /></Link></div>
+                        <div class="card overflow-hidden shadow"> <div className='bg-primary'><Link to={'/viewnews/' + item.id} onClick={clickView}> <img class="card-img-top" style={{ border: 'none' }} src={item.thumnail}/></Link></div>
 
                             <div class="card-body py-4 px-3">
 
