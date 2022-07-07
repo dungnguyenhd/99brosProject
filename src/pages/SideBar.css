@@ -1,0 +1,10 @@
+.sticky{
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 0;
+    left: 100rem;
+  }
+
+.adImage{
+    aspect-ratio: 1;
+}
