@@ -106,7 +106,7 @@ const Home = () => {
 
   return (
     <>
-      {/* <!-- ======= Hero Section ======= --> */}
+      {/* <!-- ======= Hero Section ======= --> */} 
       <section style={{ paddingTop: "7rem", }}>
         <div class="bg-holder" id="start" style={{
           backgroundImage: `url("https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?cs=srgb&dl=pexels-vecislavas-popa-1571459.jpg&fm=jpg")`

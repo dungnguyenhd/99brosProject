@@ -55,6 +55,7 @@ const AddNew = () => {
           setDetail(data);
         });
 
+
   }, []);
 
   const saveData = () => {
@@ -68,6 +69,9 @@ const AddNew = () => {
     }
 
     let url = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase/' + id;
+    
+    let url_detail = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/Detail/' + id;
+
 
     fetch(url, {
       method: method,
@@ -87,8 +91,30 @@ const AddNew = () => {
       .catch((error) => {
         console.error('Error:', error);
       });
+
+      fetch(url_detail, {
+        method: method,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(detail),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // var date = new Date(data.dob);
+          // data.dob = date.getTime();
+          setDetail(data);
+          console.log('Success:', data);
+        
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
   };
 
+  
+
+  
   var str2bool = (value) => {
     if (value && typeof value === 'string') {
       if (value.toLowerCase() === 'true') return true;
@@ -102,8 +128,11 @@ const AddNew = () => {
     const value = target.value;
     const name = target.name;
     let data = { ...phone };
+    let dataDetail = {...detail};
+    dataDetail[name] = value;
     data[name] = value;
     setPhone(data);
+    setDetail(data);
   };
 
  
@@ -289,7 +318,7 @@ const AddNew = () => {
                           <li class="list-group-item d-flex justify-content-between align-items-center">
                               <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/do-xe.svg" alt="Maison Office" width="14" height="25" />  &#160; Bãi xe:</td>
                               <input 
-                             className="h5"
+                             className="number"
                              value={detail.baidoxe}
                              name="type"
                              onChange={(e) => handleChange(e)}>
@@ -299,7 +328,7 @@ const AddNew = () => {
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/do-oto.svg" alt="Maison Office" width="25" height="16" />  &#160; Giá gửi xe oto:</td>
                               <input 
-                             className="h5"
+                             className="number"
                              value={detail.giadooto}
                              name="type"
                              onChange={(e) => handleChange(e)}>
@@ -309,7 +338,7 @@ const AddNew = () => {
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/do-xe.svg" alt="Maison Office" width="14" height="25" />  &#160; Giá gửi xe máy:</td>
                               <input 
-                             className="h5"
+                             className="number"
                              value={detail.giadoxemay}
                              name="type"
                              onChange={(e) => handleChange(e)}>
@@ -320,7 +349,7 @@ const AddNew = () => {
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/gio-lam-viec.svg" alt="Maison Office" width="25" height="25" />  &#160; Giờ làm việc:</td>
                               <input 
-                             className="h5"
+                             className="time"
                              value={detail.giolamviec}
                              name="type"
                              onChange={(e) => handleChange(e)}>
@@ -330,7 +359,7 @@ const AddNew = () => {
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/thang-may.svg" alt="Maison Office" width="26" height="26" />  &#160; Thang máy:</td>
                               <input 
-                             className="h5"
+                             className="number"
                              value={detail.thangmay}
                              name="type"
                              onChange={(e) => handleChange(e)}>
@@ -340,7 +369,7 @@ const AddNew = () => {
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/dien-du-phong.svg" alt="Maison Office" width="16" height="22" />  &#160; Điện dự phòng:</td>
                               <input 
-                             className="h5"
+                             className="number"
                              value={detail.dienduphong}
                              name="type"
                              onChange={(e) => handleChange(e)}>
@@ -350,7 +379,7 @@ const AddNew = () => {
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/phi-dich-vu.svg" alt="Maison Office" width="18" height="25" />  &#160;Phí dịch vụ:</td>
                               <input 
-                             className="h5"
+                             className="number"
                              value={detail.phidichvu}
                              name="type"
                              onChange={(e) => handleChange(e)}>
@@ -371,15 +400,15 @@ const AddNew = () => {
                         <h1 className="mt-4" style={{ paddingBottom: "5rem", paddingtop: "1rem" }}> <b>Mô tả</b> </h1>
                       </div>
                       <div className='container row'>
-                        <div className='col-sm-8 col-8 col-md-8'>
-                          <span style={{ paddingRight: "auto" }}>
+                        <div className='col-sm-8 col-8 col-md-8 form-floating'>
+                          <textarea style={{ paddingRight: "auto", width: "100%" }} placeholder="Nhập nội dung tại đây" >
                           <input 
-                             className="text"
+                             className="text-area"
                              value={phone.mota}
                              name="type"
                              onChange={(e) => handleChange(e)}>
                              </input>
-                          </span>
+                          </textarea>
                         </div>
 
                         <div className="col-md-4 col-sm-4 col-4" style={{ marginRight: "auto", paddingBottom: "auto", left: "auto" }}>
@@ -392,69 +421,85 @@ const AddNew = () => {
                   {/* ------------------------------------------------------------------------------------------------------------ */}
                   <div className='container-fluid'>
                     <div className="row ms-5 pt-5 me-5">
-                      <h1 className="mt-4"><b> Tiện ích</b></h1>
+                      <h1 className="mt-4"><b> Lợi ích</b></h1>
 
                       <div className="col-md-4 col-sm-4  ps-5 col-4 text-justify" style={{ paddingTop: "2rem", }}>
                         <img
-                          src={phone.anh}
-                          width="100%"
-                          class="rounded adImage" />
+                          src="https://printgo.vn/uploads/media/763962/dinh-dang-file-thiet-ke-png-1024x1012_1566374045.jpg" width="100%" class="rounded adImage"
+                        />
                         <br />
                         <span class="blockquote">
                           <b> Thông tin thêm</b>
                           <br />
-                          {detail.thongtinthem}
+                          <textarea style={{ paddingRight: "auto", width: "100%" }} placeholder="Nhập nội dung tại đây" >
+                          <input 
+                             className="text-area"
+                             value={phone.thongtinthem}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
+                          </textarea>
                         </span>
                       </div>
                       <div className="col-md-4 col-sm-4 col-4  ps-5 text-justify" style={{ paddingTop: "2rem", }}>
                         <img
-                          src={detail.anh7}
-                          width="100%"
-                          class="rounded adImage" />
+                          src="https://printgo.vn/uploads/media/763962/dinh-dang-file-thiet-ke-png-1024x1012_1566374045.jpg" width="100%" class="rounded adImage" />
                         <br />
                         <span class="blockquote">
                           <b> Vị trí phong thủy</b>
                           <br />
-                          {detail.vitriphongthuy}
+                         <textarea style={{ paddingRight: "auto", width: "100%" }} placeholder="Nhập nội dung tại đây" >
+                          <input 
+                             className="text-area"
+                             value={phone.vitriphongthuy}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
+                          </textarea>
                         </span>
                       </div>
                       <div className="col-md-4 col-sm-4 col-4  ps-5 text-justify" style={{ paddingTop: "2rem", }}>
                         <img
-                          src={detail.anh8}
-                          width="100%"
-                          class="rounded adImage" />
+                          src="https://printgo.vn/uploads/media/763962/dinh-dang-file-thiet-ke-png-1024x1012_1566374045.jpg" width="100%" class="rounded adImage" />
                         <br />
                         <span class="blockquote" >
                           <b> Quy mô tòa nhà</b>
                           <br />
-                          {detail.quymo}
+                          <textarea style={{ paddingRight: "auto", width: "100%" }} placeholder="Nhập nội dung tại đây" >
+                          <input 
+                             className="text-area"
+                             value={phone.quymo}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
+                          </textarea>
                         </span>
                       </div>
                     </div>
                   </div>
 
 
-                  <div className='sticky col-md-4 col-md-6 mt-5 '>
-
-                    <img src='https://thumbs.gfycat.com/TatteredAgonizingHuman-size_restricted.gif' width='250px'></img>
-
-                  </div>
-
-
+                  
 <div className=''>
                     
 <div class="building-ttnb" >
 
 <span class="ttnb-overlay"></span>
-
-<div class="ttnb-description">
-
-<p>Thông tin chi tiết và chính xác giúp bạn nhanh chóng tìm được lựa chọn văn phòng phù hợp.</p>
-</div>
-{/* <img src='https://www.thanhphocaphe.com/data/upload/image/banner/hanh-trinh-lap-chi_5b695446e2c9f.png'  /> */}
-<div class="ttnb-contact">Liên hệ <a href="tel:0389546759" data-wpel-link="internal">038.954.6759</a> để nhận báo giá.
-
-</div>                                        
+<button
+                  className="btn bg-primary text-light"
+                  onClick={saveData}
+                >
+                  Save
+                </button>
+                &#160;&#160;
+                <Link to="/">
+                <button
+                  className="btn bg-secondary text-light"
+                  onClick={() => navigate('/', { replace: true })}
+                >
+                  Cancle
+                </button> 
+                </Link>                               
 </div>
 
                   </div>
@@ -468,10 +513,22 @@ const AddNew = () => {
 
               </div>
 
-              <div className='hidden-sm col-md-1 col-lg-2 d-none d-lg-block ' style={{ marginTop: '7rem', paddingLeft: '0' }}>
-                <img src='http://taxiadvertisingvn.com/wp-content/uploads/2021/07/roadshowqc.gif' width='200px' height='1000px'></img>
-              </div>
+              <div className='hidden-sm col-md-1 col-lg-2 d-none d-lg-block ' style={{ marginTop: '7rem', padding: '0px' }}>
+              <img src='http://taxiadvertisingvn.com/wp-content/uploads/2021/07/roadshowqc.gif' width='200px' height='1000px'></img>
+                <div className='stickyBuy col-md-4 col-md-6 mt-5 ' >
 
+                  <img  src='https://thumbs.gfycat.com/TatteredAgonizingHuman-size_restricted.gif' width='250px'></img>
+
+                </div>
+                <img src='http://taxiadvertisingvn.com/wp-content/uploads/2021/07/roadshowqc.gif' width='200px' height='1000px'></img>
+
+                <div className='stickyBuy col-md-4 col-md-6 mt-5 ' >
+
+                  <img  src='https://thumbs.gfycat.com/TatteredAgonizingHuman-size_restricted.gif' width='250px'></img>
+
+                </div>
+              </div>
+              
               {/*   <div className='col-lg-1 d-none d-lg-block d-md-block'></div> */}
             </div>
           </div></>
