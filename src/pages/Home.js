@@ -186,7 +186,7 @@ const Home = () => {
                         }}
                       />
                       <div className="input-group-btn">
-                        <Link to={'/search/' + stringSearch}>
+                        <Link to={stringSearch===""?"/":'/search/' + stringSearch}>
                           <button
                             type="button"
                             className="btn btn-danger">
