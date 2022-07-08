@@ -12,6 +12,7 @@ function UserHouseData(props) {
   const [listItem, setListItem] = useState([]);
   const [liked, setLiked] = useState([]);
   const [district, setDistrict] = useState(null);
+  const [districtHCM, setDistrictHCM] = useState(null);
   let navigate = useNavigate();
   // const params = useParams();
   const [currentItems, setCurrentItems] = useState([]);
@@ -71,6 +72,18 @@ function UserHouseData(props) {
     setHouse(sortData);
   };
 
+  const sortAreaDown = () => {
+    const sortData = [...house];
+    sortData.sort((a, b) => a.dientich - b.dientich);
+    setHouse(sortData);
+  };
+
+  const sortAreaUp = () => {
+    const sortData = [...house];
+    sortData.sort((a, b) => b.dientich - a.dientich);
+    setHouse(sortData);
+  };
+
 
   const clickView = () => {
     window.scrollTo(0, 0);
@@ -93,7 +106,7 @@ function UserHouseData(props) {
 
               <div class="card-body py-4 px-3">
 
-                <div class="d-flex align-items-center"><span class="fs-0"><h4 class="fw-medium ten">{item.tennha}</h4><span class="fs-0 fw-medium" style={{ color: 'black' }}>Địa chỉ: {item.diachi}</span></span></div>
+                <div class="d-flex align-items-center"><span class="fs-0"><Link to={'/buy/' + item.id} onClick={clickView}> <h4 class="fw-medium ten">{item.tennha}</h4></Link><span class="fs-0 fw-medium" style={{ color: 'black' }}>Địa chỉ: {item.diachi}</span></span></div>
 
                 <div class="d-flex align-items-center"><span class="fs-0 fw-medium">Mức Giá: {item.mucgia}</span></div>
 
@@ -177,6 +190,46 @@ function UserHouseData(props) {
     );
   }
 
+  // -------------------------------------------------------------------------------------
+
+  const doSearchHCM = (khuvuc) => {
+    let url =
+      'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase/?khuvuc=' + khuvuc;
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        setHouse(data);
+      });
+  };
+
+  useEffect(() => {
+    console.log('app useeffect!!');
+    // console.log('products', products);
+    let url_khuvucHCM =
+      'https://62b52183da3017eabb1530f0.mockapi.io/TPHCM';
+
+    fetch(url_khuvucHCM)
+      .then((response) => response.json())
+      .then((data) => {
+        setDistrictHCM(data);
+      });
+  }, []);
+
+  var khuvucHCM_jsx = [];
+
+  if (districtHCM != null) {
+    khuvucHCM_jsx = (
+      (khuvucHCM_jsx = districtHCM.map((item) => (
+        <li>
+          <button className="dropdown-item" value={item.tenkhuvuc} onClick={(e) => doSearch(e.target.value)}>
+            {item.tenkhuvuc}
+          </button>
+        </li>
+      )))
+    );
+  }
+
 
   return (
     <>
@@ -210,6 +263,30 @@ function UserHouseData(props) {
 
 
         <button
+          className="btn btn-outline-info dropdown-toggle ms-2"
+          type="button"
+          data-bs-toggle="dropdown"
+          data-bs-auto-close="true"
+          aria-expanded="false"
+        >
+          Theo Diện Tích
+        </button>
+
+        <ul className="dropdown-menu" aria-labelledby="defaultDropdown">
+          <li>
+            <button className="dropdown-item" onClick={() => sortAreaUp()}>
+              Giảm dần
+            </button>
+          </li>
+          <li>
+            <button className="dropdown-item" onClick={() => sortAreaDown()}>
+              Tăng Dần
+            </button>
+          </li>
+        </ul>
+
+
+        <button
           className="btn btn-outline-info dropdown-toggle ms-1"
           type="button"
           data-bs-toggle="dropdown"
@@ -224,9 +301,23 @@ function UserHouseData(props) {
             {khuvuc_jsx}
         </ul>
 
+
+        <button
+          className="btn btn-outline-info dropdown-toggle ms-1"
+          type="button"
+          data-bs-toggle="dropdown"
+          data-bs-auto-close="true"
+          aria-expanded="false"
+        >
+          Theo Quận TP HCM
+        </button>
+
+        <ul className="dropdown-menu" aria-labelledby="defaultDropdown">
+            <li className='text-info h5 ms-3'>TP Hồ Chí Minh</li>
+            {khuvucHCM_jsx}
+        </ul>
+
       </div>
-
-
       <br /><br /><br />
       {/* {house_list} */}
       <div className="row card-deck ">{house_list}</div>

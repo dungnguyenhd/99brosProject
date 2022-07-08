@@ -120,9 +120,15 @@ const Home = () => {
               <h1 class="hero-title">99Bros<br />of KITS<br />Vietnam </h1>
               <p class="mb-4 fw-medium">99Bros Bất động sản.<br class="d-none d-xl-block" />Dịch vụ bất động sản hàng đầu KITS<br class="d-none d-xl-block" />Xem ngay.</p>
               <div class="text-center text-md-start"> <a class="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow" href="#viewnews" role="button">Xem tin</a>
-                <div class="w-100 d-block d-md-none"></div><a href="#start" role="button"><span class="btn btn-success round-btn-lg rounded-circle me-3 danger-btn-shadow">
-                  <i class="fas fa-paper-plane"></i>
-                </span></a><span class="fw-medium" style={{ color: 'white' }}>Đăng tin</span>
+                <div class="w-100 d-block d-md-none"></div>
+                <Link to={"/new/"+"new"}  onClick={clickView}>
+                  <a href="#start" role="button">
+                    <span class="btn btn-success round-btn-lg rounded-circle me-3 danger-btn-shadow">
+                 <i class="fas fa-paper-plane">
+                 </i>
+                 </span></a>
+                 <span class="fw-medium" style={{ color: 'white' }}>Đăng tin</span>
+                 </Link>
               </div>
             </div>
           </div>
@@ -139,15 +145,15 @@ const Home = () => {
             <div className='sticky' style={{ marginTop: '40rem' }}>
               <div className='btn-group-vertical wrapper_sidebar bg-muted'>
                 <button type="button" class="btn btn-light btn-md text-info" onClick={clickView} style={{ marginTop: '7rem', fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Up"><i class="fas fa-arrow-up"></i></button>
-                <a href='#wrapper_xem_nhieu'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Popular"><i class="fa fa-balance-scale"></i></button></a>
-                <a href='#wrapper_phanloai'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Office"><i class="fas fa-hotel"></i></button></a>
-                <a href='#wrapper_tintuc'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Hot news"><i class="far fa-newspaper"></i></button></a>
-                <button type="button" class="btn btn-light btn-md text-info" onClick={clickDown} style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Down"><i class="fas fa-arrow-down"></i></button>
+                <a href='#wrapper_xem_nhieu'><button type="button" className="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Popular"><i className="fab fa-hotjar"></i></button></a>
+                <a href='#wrapper_phanloai'><button type="button" className="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Office"><i className="fas fa-hotel"></i></button></a>
+                <a href='#wrapper_tintuc'><button type="button" className="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Hot news"><i className="far fa-newspaper"></i></button></a>
+                <button type="button" class="btn btn-light btn-md text-info" onClick={clickDown} style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Down"><i className="fas fa-arrow-down"></i></button>
               </div>
 
               <div className='btn-group-vertical wrapper_sidebar bg-muted'>
-                <button class="btn btn-md btn-outline-light">&#160;</button>
-                <button class="btn btn-md btn-outline-light">&#160;</button>
+                <button className="btn btn-md btn-outline-light">&#160;</button>
+                <button className="btn btn-md btn-outline-light">&#160;</button>
                 <button className="shake-btn btn btn-danger ms-2 rounded-circle" style={{ padding: '.5rem' }} type="button" data-bs-toggle="tooltip" title="Hotline">
                   <a href="https://chat.zalo.me/" target="_blank" className='text-white'><i class="fa fa-phone-alt"></i></a>
                 </button>
@@ -199,49 +205,49 @@ const Home = () => {
                 </div>
                 {/* end of div search */}
 
-                <div class="position-absolute z-index--1 end-0 d-none d-lg-block"></div>
+                <div className="position-absolute z-index--1 end-0 d-none d-lg-block"></div>
                 <div className='containter'>
-                  <div class="mb-7 text-center pt-5 mt-5" >
-                    <h5 class="text-secondary"><i class="fas fa-list"></i>&#160; DANH MỤC </h5>
-                    <h4 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Bất Động Sản Theo Khu Vực</h4>
+                  <div className="mb-7 text-center pt-5 mt-5" >
+                    <h5 className="text-secondary"><i className="fas fa-list"></i>&#160; DANH MỤC </h5>
+                    <h4 className="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Bất Động Sản Theo Khu Vực</h4>
                   </div>
-                  <div class="row">
-                    <div class="col-lg-3 col-sm-6 mb-6">
+                  <div className="row">
+                    <div className="col-lg-3 col-sm-6 mb-6">
                       <Link to={'category/Hà%20Nội'}>
-                        <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
-                          <div class="card-body p-xxl-5 p-4"> <img src="http://2.bp.blogspot.com/-BhNz0plAze4/VecqxSWuxyI/AAAAAAAADJM/9HROc8vSj4o/s400/vector-logohn-khuevancac.jpg" width="75" alt="Service" />
-                            <h4 class="mb-3">Hà Nội</h4>
-                            <p class="mb-0 fw-medium">Thành phố Hà Nội bao gồm cả ngoại thành và nội thành.</p>
+                        <div className="card service-card shadow-hover rounded-3 text-center align-items-center">
+                          <div className="card-body p-xxl-5 p-4"> <img src="http://2.bp.blogspot.com/-BhNz0plAze4/VecqxSWuxyI/AAAAAAAADJM/9HROc8vSj4o/s400/vector-logohn-khuevancac.jpg" width="75" alt="Service" />
+                            <h4 className="mb-3">Hà Nội</h4>
+                            <p className="mb-0 fw-medium">Thành phố Hà Nội bao gồm cả ngoại thành và nội thành.</p>
                           </div>
                         </div>
                       </Link>
                     </div>
-                    <div class="col-lg-3 col-sm-6 mb-6">
+                    <div className="col-lg-3 col-sm-6 mb-6">
                       <Link to={'category/Hồ%20Chí%20Minh'}>
-                        <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
-                          <div class="card-body p-xxl-5 p-4"> <img src="https://i.imgur.com/TW9KwPd.png" width="75" alt="Service" />
-                            <h4 class="mb-3">Hồ Chí Minh</h4>
-                            <p class="mb-0 fw-medium">Thành phố Hồ Chí Minh và các khu vực lân cận.</p>
+                        <div className="card service-card shadow-hover rounded-3 text-center align-items-center">
+                          <div className="card-body p-xxl-5 p-4"> <img src="https://i.imgur.com/TW9KwPd.png" width="75" alt="Service" />
+                            <h4 className="mb-3">Hồ Chí Minh</h4>
+                            <p className="mb-0 fw-medium">Thành phố Hồ Chí Minh và các khu vực lân cận.</p>
                           </div>
                         </div>
                       </Link>
                     </div>
-                    <div class="col-lg-3 col-sm-6 mb-6">
+                    <div className="col-lg-3 col-sm-6 mb-6">
                       <Link to={'category/Đà%20Nẵng'}>
-                        <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
-                          <div class="card-body p-xxl-5 p-4"> <img src="https://www.sos24h.vn/wwwroot/resources/upload/img/productcategory/8-2020/logo2.png" width="75" alt="Service" />
-                            <h4 class="mb-3">Đà Nẵng</h4>
-                            <p class="mb-0 fw-medium">Khu vực Thành Phố Đà Nẵng. Không bao gồm lân cận</p>
+                        <div className="card service-card shadow-hover rounded-3 text-center align-items-center">
+                          <div className="card-body p-xxl-5 p-4"> <img src="https://www.sos24h.vn/wwwroot/resources/upload/img/productcategory/8-2020/logo2.png" width="75" alt="Service" />
+                            <h4 className="mb-3">Đà Nẵng</h4>
+                            <p className="mb-0 fw-medium">Khu vực Thành Phố Đà Nẵng. Không bao gồm lân cận</p>
                           </div>
                         </div>
                       </Link>
                     </div>
-                    <div class="col-lg-3 col-sm-6 mb-6">
+                    <div className="col-lg-3 col-sm-6 mb-6">
                       <Link to={'category/Khác'}>
-                        <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
-                          <div class="card-body p-xxl-5 p-4"> <img src="https://i.pinimg.com/originals/95/b2/2f/95b22f2e0059265d3d9cdb0cce0a4a27.png" width="115" alt="Service" />
-                            <h4 class="mb-3">Các Khu Vực Khác</h4>
-                            <p class="mb-0 fw-medium">Các tỉnh thành khác trên khu vực Việt Nam</p>
+                        <div className="card service-card shadow-hover rounded-3 text-center align-items-center">
+                          <div className="card-body p-xxl-5 p-4"> <img src="https://i.pinimg.com/originals/95/b2/2f/95b22f2e0059265d3d9cdb0cce0a4a27.png" width="115" alt="Service" />
+                            <h4 className="mb-3">Các Khu Vực Khác</h4>
+                            <p className="mb-0 fw-medium">Các tỉnh thành khác trên khu vực Việt Nam</p>
                           </div>
                         </div>
                       </Link>
@@ -255,13 +261,13 @@ const Home = () => {
             <div className='container' id='wrapper_xem_nhieu' style={{ backgroundColor: 'white', border: '1px solid white', borderRadius: '7px', }}>
 
               <div className="container" style={{ paddingTop: "1rem" }} id='viewnews'>
-                <div class="mb-7 text-center" id='viewtrend'>
-                  <h4 class="blink_me text-secondary"><i class="fas fa-fire"></i>&#160; XEM NHIỀU </h4>
-                  <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">TOP NHÀ PHỔ BIẾN</h3>
+                <div className="mb-7 text-center" id='viewtrend'>
+                  <h4 className="blink_me text-secondary"><i className="fas fa-fire"></i>&#160; XEM NHIỀU </h4>
+                  <h3 className="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">TOP NHÀ PHỔ BIẾN</h3>
                 </div>
 
-                <section class="pt-5" id="destination" style={{ marginLeft: "2.5rem", }}>
-                  <div class="container">
+                <section className="pt-5" id="destination" style={{ marginLeft: "2.5rem", }}>
+                  <div className="container">
                     <div className='row'>
                       <UserHouseData data={data} />
                     </div>
@@ -272,8 +278,8 @@ const Home = () => {
 
             <div className='container' id='wrapper_phanloai' style={{ backgroundColor: 'white', border: '1px solid white', borderRadius: '7px', marginTop: '2.5rem' }}>
 
-              <section class="pt-5" id="destination" style={{ marginLeft: "2.5rem", }}>
-                <div class="container">
+              <section className="pt-5" id="destination" style={{ marginLeft: "2.5rem", }}>
+                <div className="container">
                   <div className='row'>
                     {arrayType}
                   </div>
@@ -283,20 +289,20 @@ const Home = () => {
 
 
             <div className="container" id='wrapper_tintuc' style={{ backgroundColor: 'white', border: '1px solid white', borderRadius: '7px', marginTop: '2.5rem' }}>
-              <div class="mb-7 text-center" id='viewtrend' style={{ marginTop: '1rem' }}>
-                <h4 class="blink_me_green text-secondary"><i class="far fa-newspaper"></i>&#160;TIN TỨC </h4>
-                <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Tin Hot Hôm Nay</h3>
+              <div className="mb-7 text-center" id='viewtrend' style={{ marginTop: '1rem' }}>
+                <h4 className="blink_me_green text-secondary"><i className="far fa-newspaper"></i>&#160;TIN TỨC </h4>
+                <h3 className="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Tin Hot Hôm Nay</h3>
               </div>
 
-              <section class="pt-5" id="destination" style={{ marginLeft: "2.5rem", }}>
-                <div class="container">
+              <section className="pt-5" id="destination" style={{ marginLeft: "2.5rem", }}>
+                <div className="container">
                   <NewsData newsdata={newsdata} />
                 </div>
               </section>
             </div>
 
-            <div class="mb-7 text-center mt-5">
-              <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Các Đối Tác</h3>
+            <div className="mb-7 text-center mt-5">
+              <h3 className="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Các Đối Tác</h3>
             </div>
 
             <div className='container'>
@@ -311,7 +317,7 @@ const Home = () => {
                 }}
                 pagination={{ clickable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
+                // onSlideChange={() => console.log('slide change')}
               >
                 <SwiperSlide><img src='https://www.leaderim.com/wp-content/uploads/2020/02/Partner-logo-2016.png' height={70} /></SwiperSlide>
                 <SwiperSlide><img src='https://www.pngfind.com/pngs/m/683-6836144_cisco-partner-logo-cisco-partner-logo-vector-hd.png' height={70} /></SwiperSlide>
@@ -332,8 +338,13 @@ const Home = () => {
           </div>
 
           <div className='col-lg-2 d-none d-lg-block'>
-            <div style={{ marginTop: '54rem', paddingLeft: '5rem' }}>
-              <img src='https://i.imgur.com/qm96ni9.gif' />
+            <div style={{ marginTop: '59rem', paddingLeft: '5rem' }}>
+
+              <img src='https://marketingbatdongsan.vn/wp-content/uploads/2020/08/Banner-300x600-Mahattan.png' width='130' height='400'></img>
+
+              <img src='https://scontent.fhan3-3.fna.fbcdn.net/v/t39.30808-6/258185782_493988712118760_7871080718877959268_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=0debeb&_nc_ohc=1_aIoClntsUAX-u7MLt&_nc_ht=scontent.fhan3-3.fna&oh=00_AT8pzJqT0zRvgPyjaPxWMIzhfV8mJe30JRsmeDKaQo4zjA&oe=62CD76B0'  className='mt-8' width='130' height='400's/>
+
+
             </div>
           </div>
 

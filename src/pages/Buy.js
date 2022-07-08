@@ -5,8 +5,7 @@ import { useEffect } from 'react';
 import UserPhoneData from '../component/dataUser';
 import { right } from '@popperjs/core';
 import { Link } from 'react-router-dom';
-import '../css/main.css';
-import './/SideBar.css';
+import './SideBar.css';
 
 
 
@@ -16,7 +15,7 @@ const Buy = () => {
   const params = useParams();
   const [phone, setPhone] = useState([]);
   const [data, setData] = useState([]);
-  const [detail, setDetail]= useState([]);
+  const [detail, setDetail] = useState([]);
   useEffect(() => {
     console.log('user use effect!!');
 
@@ -39,21 +38,27 @@ const Buy = () => {
 
       });
 
-      let url_detail = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/Detail/' + params.id;
+    let url_detail = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/Detail/' + params.id;
 
-      console.log(url_detail);
-      fetch(url_detail)
-        .then((response) => response.json())
-        .then((data) => {
-          /*        var date = new Date(data.rd);
-                 data.rd = date.toISOString().slice(0, 10); */
-          setDetail(data);
-        });
+    console.log(url_detail);
+    fetch(url_detail)
+      .then((response) => response.json())
+      .then((data) => {
+        /*        var date = new Date(data.rd);
+               data.rd = date.toISOString().slice(0, 10); */
+        setDetail(data);
+      });
 
   }, []);
 
 
+  const clickView = () => {
+    window.scrollTo(0, 0);
+  }
 
+  const clickDown = () => {
+    window.scrollTo(0, 20000);
+  }
 
 
   const formatDate = (date) => {
@@ -68,6 +73,33 @@ const Buy = () => {
           <div className='container-fluid'>
             <div className='row'>
               <div className='col-sm-1 col-md-1 col-lg-2 d-none d-lg-block ' style={{ marginTop: '7rem' }}>
+              <div className='sticky' style={{ marginTop: '40rem' }}>
+              <div className='btn-group-vertical wrapper_sidebar bg-muted'>
+                <button type="button" class="btn btn-light btn-md text-info" onClick={clickView} style={{ marginTop: '7rem', fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Up"><i class="fas fa-arrow-up"></i></button>
+                <a href='#wrapper_xem_nhieu'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Popular"><i class="fa fa-balance-scale"></i></button></a>
+                <a href='#wrapper_phanloai'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Office"><i class="fas fa-hotel"></i></button></a>
+                <a href='#wrapper_tintuc'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Hot news"><i class="far fa-newspaper"></i></button></a>
+                <button type="button" class="btn btn-light btn-md text-info" onClick={clickDown} style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Down"><i class="fas fa-arrow-down"></i></button>
+              </div>
+
+              <div className='btn-group-vertical wrapper_sidebar bg-muted'>
+                <button class="btn btn-md btn-outline-light">&#160;</button>
+                <button class="btn btn-md btn-outline-light">&#160;</button>
+                <button className="shake-btn btn btn-danger ms-2 rounded-circle" style={{ padding: '.5rem' }} type="button" data-bs-toggle="tooltip" title="Hotline">
+                  <a href="https://chat.zalo.me/" target="_blank" className='text-white'><i class="fa fa-phone-alt"></i></a>
+                </button>
+
+                &#160;
+                <button className="shake-btn btn btn-info ms-2 rounded-circle" style={{ padding: '.5rem' }} type="button" data-bs-toggle="tooltip" title="Facebook">
+                  <a href="https://www.facebook.com/" target="_blank" className='text-white'><i class="fab fa-facebook-f"></i></a>
+                </button>
+
+                &#160;
+                <button className="shake-btn btn btn-secondary ms-2 rounded-circle" style={{ padding: '.5rem' }} type="button" data-bs-toggle="tooltip" title="Twitter">
+                  <a href="https://twitter.com/?lang=en" target="_blank" className='text-white'><i class="fab fa-twitter"></i></a>
+                </button>
+              </div>
+            </div>
                 <img src='https://tpc.googlesyndication.com/simgad/12332553322558091477?sqp=4sqPyQQrQikqJwhfEAEdAAC0QiABKAEwCTgDQPCTCUgAUAFYAWBfcAJ4AcUBLbKdPg&rs=AOga4qk9RWMQiV8oqgqUPJWnpKtz2w4c9w' width='200px' height='950px'></img>
 
                 <img style={{ marginTop: '5rem' }} src='http://taxiadvertisingvn.com/wp-content/uploads/2021/07/roadshowqc.gif' width='200px' height='950px'></img>
@@ -83,24 +115,24 @@ const Buy = () => {
                       <h1 className="mt-4"> <b>Thông tin tòa nhà</b> </h1>
                     </div>
                     <div className='container-fluid row' style={{ marginTop: "auto", width: "100%" }}>
-                      <div className="col-md-4 col-sm-12 col-4" style={{ paddingTop: "4rem",width: "50%" }}>
-                        <img src={phone.anh} style={{width:"95%", height:"95%", paddingTop:"1rem"}} class="rounded adImage" />
+                      <div className="col-md-4 col-sm-12 col-4" style={{ paddingTop: "4rem", width: "50%" }}>
+                        <img src={phone.anh} style={{ width: "95%", height: "95%", paddingTop: "1rem" }} class="rounded adImage" />
                       </div>
-                      <div className="row col-sm-12 col-md-8 col-8" style={{ paddingTop: "4rem",width: "50%" }}>
+                      <div className="row col-sm-12 col-md-8 col-8" style={{ paddingTop: "4rem", width: "50%" }}>
                         <div className='col-6 col-sm-6' style={{ margin: "auto" }}>
-                        <img src={detail.anh1} width="100%" class="rounded adImage"/>
-                        <img src={detail.anh2} width="100%" class="rounded adImage"style={{marginTop: "2rem", padding:'0'}}/>
+                          <img src={detail.anh1} width="100%" class="rounded adImage" />
+                          <img src={detail.anh2} width="100%" class="rounded adImage" style={{ marginTop: "2rem", padding: '0' }} />
                         </div>
                         <div className='col-6 col-sm-6' style={{ margin: "auto" }}>
-                        <img src={detail.anh3} width="100%" class="rounded adImage"/>
-                        <img src={detail.anh4} width="100%" class="rounded adImage" style={{marginTop: "2rem"}}/>
+                          <img src={detail.anh3} width="100%" class="rounded adImage" />
+                          <img src={detail.anh4} width="100%" class="rounded adImage" style={{ marginTop: "2rem" }} />
                         </div>
                       </div>
-                      </div>
-                      <div class=" " style={{paddingTop: "4rem"}}>
-                        <table style={{ margin: "auto", width: "100%" }}>
-                          <ul class="list-group">
-                            {/* <li>
+                    </div>
+                    <div class=" " style={{ paddingTop: "4rem" }}>
+                      <table style={{ margin: "auto", width: "100%" }}>
+                        <ul class="list-group">
+                          {/* <li>
       <td className="h4">Chủ đầu tư: </td>
       <td className="h5"> {phone.name}</td>
     </li>
@@ -110,56 +142,105 @@ const Buy = () => {
       <td className="h5"> ${phone.price}</td>
     </li> */}
 
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <td className="h4" style={{ marginRight: "18rem" }}><i class="fa fa-chart-area"></i>  &#160; Khu vực:</td>
+                            <span class="badge rounded-pill"><td className="h5"> {phone.khuvuc}</td></span>
+                          </li>
+
+                          <li class="list-group-item  d-flex justify-content-between align-items-center">
+                            <td className="h4" style={{ marginRight: "18rem" }}><i class="fa fa-house-user"></i>  &#160; Diện tích:</td>
+                            <span class="badge rounded-pill"><td className="h5"> {phone.dientich}</td></span>
+                          </li>
+
+                          <li class="list-group-item  d-flex justify-content-between align-items-center">
+                            <td className="h4"> <i class="fa fa-map-pin"></i>  &#160;  &#160;  &#160;Vị trí:</td>
+                            <span class="badge rounded-pill"><td className="h5"> {phone.diachi}</td></span>
+                          </li>
+
+                          <li class="list-group-item  d-flex justify-content-between align-items-center">
+                            <td className="h4"><i class="fa fa-signature"></i> &#160;  &#160;Tên nhà:</td>
+                            <span class="badge rounded-pill"> <td className="h5"> {phone.tennha} </td></span>
+                          </li>
+
+                          <li class="list-group-item  d-flex justify-content-between align-items-center">
+                            <td className="h4"><i class="fa fa-list-ol"></i> &#160;  &#160;Loại hình:</td>
+                            <span class="badge rounded-pill"> <td className="h5"> {phone.sophong}</td></span>
+                          </li>
+
+                          <li class="list-group-item  d-flex justify-content-between align-items-center">
+                            <td className="h4"><i class="fa fa-list-ol"></i> &#160;  &#160;Số lượng:</td>
+                            <span class="badge rounded-pill"> <td className="h5"> {phone.phaply}</td></span>
+                          </li>
+
+                          <li class="list-group-item  d-flex justify-content-between align-items-center">
+                            <td className="h4"><i class="fa fa-barcode"></i> &#160;  &#160;Mã dự án:</td>
+                            <span class="badge rounded-pill"><td className="h5"> {phone.maduan}</td></span>
+                          </li>
+
+
+                          <li class="list-group-item  d-flex justify-content-between align-items-center">
+                            <td className="h4"><i class="fa fa-mobile-alt"></i> &#160; &#160;Liên hệ:</td>
+                            <span class="badge rounded-pill"><td className="h5"> {phone.lienhe}</td></span>
+                          </li>
+
+                          <li class="list-group-item  d-flex justify-content-between align-items-center">
+                            <td className="h4"> <i class="fa fa-dollar-sign"></i> &#160; Mức giá:</td>
+                            <span class="badge rounded-pill"><td className="h5"> {phone.mucgia}</td></span>
+                          </li>
+
+
+                        </ul>
+                      </table>
+
+                    </div>
+                    <div className='row' style={{ marginTop: "2rem" }}>
+                      <div className='container row md-12' style={{ margin: "auto" }}>
+                        <h1 className="mt-4"> <b>Chi tiết các dịch vụ</b> </h1>
+                      </div>
+                      <div class=" " style={{ paddingTop: "4rem" }}>
+                        <table style={{ margin: "auto", width: "100%" }}>
+                          <ul class="list-group">
+
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                              <td className="h4" style={{ marginRight: "18rem" }}><i class="fa fa-chart-area"></i>  &#160; Khu vực:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {phone.khuvuc}</td></span>
+                              <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/do-xe.svg" alt="Maison Office" width="14" height="25" />  &#160; Bãi xe:</td>
+                              <span class="badge rounded-pill"><td className="h5"> {detail.baidoxe}</td></span>
                             </li>
 
-                            <li class="list-group-item  d-flex justify-content-between align-items-center">
-                              <td className="h4" style={{ marginRight: "18rem" }}><i class="fa fa-house-user"></i>  &#160; Diện tích:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {phone.dientich}</td></span>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/do-oto.svg" alt="Maison Office" width="25" height="16" />  &#160; Giá gửi xe oto:</td>
+                              <span class="badge rounded-pill"><td className="h5"> {detail.giadooto}</td></span>
                             </li>
 
-                            <li class="list-group-item  d-flex justify-content-between align-items-center">
-                              <td className="h4"> <i class="fa fa-map-pin"></i>  &#160;  &#160;  &#160;Vị trí:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {phone.diachi}</td></span>
-                            </li>
-
-                            <li class="list-group-item  d-flex justify-content-between align-items-center">
-                              <td className="h4"><i class="fa fa-signature"></i> &#160;  &#160;Tên nhà:</td>
-                              <span class="badge rounded-pill"> <td className="h5"> {phone.tennha} </td></span>
-                            </li>
-
-                            <li class="list-group-item  d-flex justify-content-between align-items-center">
-                              <td className="h4"><i class="fa fa-list-ol"></i> &#160;  &#160;Loại hình:</td>
-                              <span class="badge rounded-pill"> <td className="h5"> {phone.sophong}</td></span>
-                            </li>
-
-                            <li class="list-group-item  d-flex justify-content-between align-items-center">
-                              <td className="h4"><i class="fa fa-list-ol"></i> &#160;  &#160;Số lượng:</td>
-                              <span class="badge rounded-pill"> <td className="h5"> {phone.phaply}</td></span>
-                            </li>
-
-                            <li class="list-group-item  d-flex justify-content-between align-items-center">
-                              <td className="h4"><i class="fa fa-barcode"></i> &#160;  &#160;Mã dự án:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {phone.maduan}</td></span>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/do-xe.svg" alt="Maison Office" width="14" height="25" />  &#160; Giá gửi xe máy:</td>
+                              <span class="badge rounded-pill"><td className="h5"> {detail.giadoxemay}</td></span>
                             </li>
 
 
-                            <li class="list-group-item  d-flex justify-content-between align-items-center">
-                              <td className="h4"><i class="fa fa-mobile-alt"></i> &#160; &#160;Liên hệ:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {phone.lienhe}</td></span>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/gio-lam-viec.svg" alt="Maison Office" width="25" height="25" />  &#160; Giờ làm việc:</td>
+                              <span class="badge rounded-pill"><td className="h5"> {detail.giolamviec}</td></span>
                             </li>
 
-                            <li class="list-group-item  d-flex justify-content-between align-items-center">
-                              <td className="h4"> <i class="fa fa-dollar-sign"></i> &#160; Mức giá:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {phone.mucgia}</td></span>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/thang-may.svg" alt="Maison Office" width="26" height="26" />  &#160; Thang máy:</td>
+                              <span class="badge rounded-pill"><td className="h5"> {detail.thangmay}</td></span>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/dien-du-phong.svg" alt="Maison Office" width="16" height="22" />  &#160; Điện dự phòng:</td>
+                              <span class="badge rounded-pill"><td className="h5"> {detail.dienduphong}</td></span>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/phi-dich-vu.svg" alt="Maison Office" width="18" height="25" />  &#160;Phí dịch vụ:</td>
+                              <span class="badge rounded-pill"><td className="h5"> {detail.phidichvu}</td></span>
                             </li>
 
 
                           </ul>
                         </table>
-                      
+                      </div>
                     </div>
                   </div>
 
@@ -167,31 +248,20 @@ const Buy = () => {
                   <div className="container-fluid">
                     <div className="row ms-5 pt-5 me-5" style={{ marginTop: "5rem", }}>
                       <div className='container row md-12' style={{ margin: "auto" }}>
-                        <h1 className="mt-4" style={{ paddingBottom: "5rem", paddingtop: "1rem" }}> <b>VỊ TRÍ CHIẾN LƯỢC</b> </h1>
+                        <h1 className="mt-4" style={{ paddingBottom: "5rem", paddingtop: "1rem" }}> <b>Mô tả</b> </h1>
                       </div>
                       <div className='container row'>
                         <div className='col-sm-8 col-8 col-md-8'>
                           <span style={{ paddingRight: "auto" }}>
-                            <br />
-                            Tọa lạc ngay giao lộ Nguyễn Văn Tỏ – quốc lộ 51, P. Long Bình
-                            Tân, TP. Biên Hòa, Phố thương mại Diamond Center mang đến cơ hội
-                            an cư lạc nghiệp vô cùng thuận tiện cho cư dân bởi hệ thống tiện
-                            ích cao cấp bao quanh. Chỉ trong vài phút, từ Diamond Center có
-                            thể tiếp cận mọi tiện ích từ giáp dục, y tế, thương mại cho đến
-                            vui chơi giải trí, cũng như làm việc hay thực hiện các thủ tục
-                            hành chính. Diamond Center còn được cộng hưởng lợi ích rất lớn
-                            do nằm trong khu vực phát triển đô thị quy hạch hoàn chỉnh, cộng
-                            đồng dân trí cao. Đây cũng là khu vực đang được đầu tư thêm rất
-                            nhiều dự án hạ tầng và tiện ích, mang đến cho các chủ nhân
-                            Diamond Center một tài sản gia tăng giá trị bền vững.
+                            {phone.mota}
                           </span>
                         </div>
 
                         <div className="col-md-4 col-sm-4 col-4" style={{ marginRight: "auto", paddingBottom: "auto", left: "auto" }}>
                           <img
-                            src="https://thegioidatviet.com.vn/wp-content/uploads/2021/11/so-do-vi-tri.jpg"
+                            src={detail.anh5}
                             width='100%'
-                            class="img-thumbnail" />
+                            class="img-thumbnail" ></img>
                         </div>
                       </div>
                     </div>
@@ -214,99 +284,62 @@ const Buy = () => {
 
                       <div className="col-md-4 col-sm-4  ps-5 col-4 text-justify" style={{ paddingTop: "2rem", }}>
                         <img
-                          src="https://thegioidatviet.com.vn/wp-content/uploads/2021/11/so-do-vi-tri.jpg"
+                          src={phone.anh}
                           width="100%"
                           class="rounded adImage" />
                         <br />
                         <span class="blockquote">
-                          <b> VỊ TRÍ KIM CƯƠNG</b>
+                          <b> Thông tin thêm</b>
                           <br />
-                          Tọa lạc ngay giao lộ Nguyễn Văn Tỏ – quốc lộ 51, P. Long Bình
-                          Tân, TP. Biên Hòa, Phố thương mại Diamond Center mang đến cơ
-                          hội an cư lạc nghiệp vô cùng thuận tiện cho cư dân bởi hệ
-                          thống tiện ích cao cấp bao quanh. Chỉ trong vài phút, từ
-                          Diamond Center có thể tiếp cận mọi tiện ích từ giáp dục, y tế,
-                          thương mại cho đến vui chơi giải trí, cũng như làm việc hay
-                          thực hiện các thủ tục hành chính. Diamond Center còn được cộng
-                          hưởng lợi ích rất lớn do nằm trong khu vực phát triển đô thị
-                          quy hạch hoàn chỉnh, cộng đồng dân trí cao. Đây cũng là khu
-                          vực đang được đầu tư thêm rất nhiều dự án hạ tầng và tiện ích,
-                          mang đến cho các chủ nhân Diamond Center một tài sản gia tăng
-                          giá trị bền vững.
+                          {detail.thongtinthem}
                         </span>
                       </div>
                       <div className="col-md-4 col-sm-4 col-4  ps-5 text-justify" style={{ paddingTop: "2rem", }}>
                         <img
-                          src="https://thegioidatviet.com.vn/wp-content/uploads/2021/11/so-do-vi-tri.jpg"
+                          src={detail.anh7}
                           width="100%"
                           class="rounded adImage" />
                         <br />
                         <span class="blockquote">
-                          <b> VỊ TRÍ KIM CƯƠNG</b>
+                          <b> Vị trí toà nhà</b>
                           <br />
-                          Tọa lạc ngay giao lộ Nguyễn Văn Tỏ – quốc lộ 51, P. Long Bình
-                          Tân, TP. Biên Hòa, Phố thương mại Diamond Center mang đến cơ
-                          hội an cư lạc nghiệp vô cùng thuận tiện cho cư dân bởi hệ
-                          thống tiện ích cao cấp bao quanh. Chỉ trong vài phút, từ
-                          Diamond Center có thể tiếp cận mọi tiện ích từ giáp dục, y tế,
-                          thương mại cho đến vui chơi giải trí, cũng như làm việc hay
-                          thực hiện các thủ tục hành chính. Diamond Center còn được cộng
-                          hưởng lợi ích rất lớn do nằm trong khu vực phát triển đô thị
-                          quy hạch hoàn chỉnh, cộng đồng dân trí cao. Đây cũng là khu
-                          vực đang được đầu tư thêm rất nhiều dự án hạ tầng và tiện ích,
-                          mang đến cho các chủ nhân Diamond Center một tài sản gia tăng
-                          giá trị bền vững.
+                          {detail.vitriphongthuy}
                         </span>
                       </div>
                       <div className="col-md-4 col-sm-4 col-4  ps-5 text-justify" style={{ paddingTop: "2rem", }}>
                         <img
-                          src="https://thegioidatviet.com.vn/wp-content/uploads/2021/11/so-do-vi-tri.jpg"
+                          src={detail.anh8}
                           width="100%"
                           class="rounded adImage" />
                         <br />
                         <span class="blockquote" >
-                          <b> VỊ TRÍ KIM CƯƠNG</b>
+                          <b> Quy mô tòa nhà</b>
                           <br />
-                          Tọa lạc ngay giao lộ Nguyễn Văn Tỏ – quốc lộ 51, P. Long Bình
-                          Tân, TP. Biên Hòa, Phố thương mại Diamond Center mang đến cơ
-                          hội an cư lạc nghiệp vô cùng thuận tiện cho cư dân bởi hệ
-                          thống tiện ích cao cấp bao quanh. Chỉ trong vài phút, từ
-                          Diamond Center có thể tiếp cận mọi tiện ích từ giáp dục, y tế,
-                          thương mại cho đến vui chơi giải trí, cũng như làm việc hay
-                          thực hiện các thủ tục hành chính. Diamond Center còn được cộng
-                          hưởng lợi ích rất lớn do nằm trong khu vực phát triển đô thị
-                          quy hạch hoàn chỉnh, cộng đồng dân trí cao. Đây cũng là khu
-                          vực đang được đầu tư thêm rất nhiều dự án hạ tầng và tiện ích,
-                          mang đến cho các chủ nhân Diamond Center một tài sản gia tăng
-                          giá trị bền vững.
+                          {detail.quymo}
                         </span>
                       </div>
                     </div>
                   </div>
 
 
-                  <div className='sticky col-md-4 col-md-6 mt-5'>
-
-                    <img src='https://thumbs.gfycat.com/TatteredAgonizingHuman-size_restricted.gif' width='250px'></img>
-
-                  </div>
 
 
-<div className=''>
-                    
-<div class="building-ttnb" >
 
-<span class="ttnb-overlay"></span>
+                  <div className=''>
 
-<div class="ttnb-description">
+                    <div class="building-ttnb" >
 
-<p>Thông tin chi tiết và chính xác giúp bạn nhanh chóng tìm được lựa chọn văn phòng phù hợp.</p>
-</div>
+                      <span class="ttnb-overlay"></span>
 
-<div class="ttnb-contact">Liên hệ <a href="tel:0389546759" data-wpel-link="internal">038.954.6759</a> để nhận báo giá.
+                      <div class="ttnb-description">
 
-</div>                                        
-</div>
+                        <p>Thông tin chi tiết và chính xác giúp bạn nhanh chóng tìm được lựa chọn văn phòng phù hợp.</p>
+                      </div>
+                      {/* <img src='https://www.thanhphocaphe.com/data/upload/image/banner/hanh-trinh-lap-chi_5b695446e2c9f.png'  /> */}
+                      <div class="ttnb-contact">Liên hệ <a href="tel:0389546759" data-wpel-link="internal">038.954.6759</a> để nhận báo giá.
+
+                      </div>
+                    </div>
 
                   </div>
 
@@ -319,10 +352,20 @@ const Buy = () => {
 
               </div>
 
+              <div className='hidden-sm col-md-1 col-lg-2 d-none d-lg-block ' style={{ marginTop: '7rem', padding: '0px' }}>
+              <img src='http://taxiadvertisingvn.com/wp-content/uploads/2021/07/roadshowqc.gif' width='200px' height='1000px'></img>
+                <div className='stickyBuy col-md-4 col-md-6 mt-5 ' >
 
+                  <img  src='https://thumbs.gfycat.com/TatteredAgonizingHuman-size_restricted.gif' width='250px'></img>
 
-              <div className='hidden-sm col-md-1 col-lg-2 d-none d-lg-block ' style={{ marginTop: '7rem', paddingLeft: '0' }}>
+                </div>
                 <img src='http://taxiadvertisingvn.com/wp-content/uploads/2021/07/roadshowqc.gif' width='200px' height='1000px'></img>
+
+                <div className='stickyBuy col-md-4 col-md-6 mt-5 ' >
+
+                  <img  src='https://thumbs.gfycat.com/TatteredAgonizingHuman-size_restricted.gif' width='250px'></img>
+
+                </div>
               </div>
 
               {/*   <div className='col-lg-1 d-none d-lg-block d-md-block'></div> */}
