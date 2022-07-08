@@ -25,7 +25,7 @@ const Contact = () => {
                     </div>
                     </div>
                     <div class="col-6 md-4">
-                        <img class="rounded float-end" src='https://www.saga.vn/uploads/%E1%BA%A3nh%20b%C3%A0i%20vi%E1%BA%BFt%20790x399/Handshake.jpg' width="558px" height="350px" />
+                        <img class="rounded float-end" src='https://hoasenjobs.com/sharefb?file=/news/2016/12/14/1481679549_bat-tay.jpg' width="558px" height="350px" />
                     </div>
                 </div>
 
