@@ -111,7 +111,7 @@ function NewsData(props) {
                         }}
                         pagination={{ clickable: true }}
                         onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log('slide change')}
+                        // onSlideChange={() => console.log('slide change')}
                       >
                         {news_list}
 

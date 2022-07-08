@@ -7,27 +7,20 @@ import { Outlet, Link } from 'react-router-dom';
 const Collection = () => {
   const [data, setData] = useState([]);
   const [product, setProduct] = useState('');
-  const [categories, setCategories] = useState(null);
+
   useEffect(() => {
-    let url = 'https://62b04a56e460b79df0423a2e.mockapi.io/aa/';
+    let url = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase/';
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setData(data);
       });
 
-    let url_category = 'https://62b04a56e460b79df0423a2e.mockapi.io/name';
-
-    fetch(url_category)
-      .then((response) => response.json())
-      .then((data) => {
-        setCategories(data);
-      });
   }, []);
 
-  const doSearch = () => {
+  const doSearchAdmin = () => {
     let url =
-      'https://62b04a56e460b79df0423a2e.mockapi.io/aa/?search=' + product;
+      'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase/?search=' + product;
 
     fetch(url)
       .then((response) => response.json())
@@ -37,19 +30,15 @@ const Collection = () => {
       });
   };
 
-  var categories_list = [];
-
-  if (categories != null) {
-    categories_list = categories.map((item) => (
-      <li>
-        <Link to={'category/' + item.type_name}>{item.type_name}</Link>
-      </li>
-    ));
-  }
 
   return (
     <>
-      <div className="container">
+      <div className="container" style={{ paddingTop: "7rem", }}>
+
+        <div className="row text-center mt-3">
+          <span className="h1 text-danger mt-2"> QUẢN LÍ BÀI ĐĂNG </span>
+        </div>
+
         <div className="input-group mb-3">
           {/* ------------------------------------Search---------------------------------------- */}
 
@@ -63,7 +52,7 @@ const Collection = () => {
           <button
             className="btn btn-success mt-3"
             type="submit"
-            onClick={() => doSearch()}
+            onClick={() => doSearchAdmin()}
           >
             Search
           </button>
@@ -74,9 +63,6 @@ const Collection = () => {
 
         {/* ____________________________________DATA_________________________________________ */}
         <div className="row mt-4">
-          <div className="row text-center mt-3">
-            <span className="h1 text-danger mt-2"> MANAGE PRODUCT </span>
-          </div>
 
           <div className="btn-group mt-3">
           </div>

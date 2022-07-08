@@ -16,26 +16,26 @@ function PhoneData(props) {
 
   const sortPriceDown = () => {
     const sortData = [...phone];
-    sortData.sort((a, b) => a.price - b.price);
+    sortData.sort((a, b) => a.mucgia - b.mucgia);
     setPhone(sortData);
   };
 
   const sortPriceUp = () => {
     const sortData = [...phone];
-    sortData.sort((a, b) => b.price - a.price);
+    sortData.sort((a, b) => b.mucgia - a.mucgia);
     setPhone(sortData);
   };
 
   const sortAreaDown = () => {
-    const sortData = [...house];
+    const sortData = [...phone];
     sortData.sort((a, b) => a.dientich - b.dientich);
-    setHouse(sortData);
+    setPhone(sortData);
   };
 
   const sortAreaUp = () => {
-    const sortData = [...house];
+    const sortData = [...phone];
     sortData.sort((a, b) => b.dientich - a.dientich);
-    setHouse(sortData);
+    setPhone(sortData);
   };
 
 
@@ -50,7 +50,7 @@ function PhoneData(props) {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        setHouse(data);
+        setPhone(data);
       });
   };
 
@@ -91,7 +91,7 @@ function PhoneData(props) {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        setHouse(data);
+        setPhone(data);
       });
   };
 
@@ -114,7 +114,7 @@ function PhoneData(props) {
     khuvucHCM_jsx = (
       (khuvucHCM_jsx = districtHCM.map((item) => (
         <li>
-          <button className="dropdown-item" value={item.tenkhuvuc} onClick={(e) => doSearch(e.target.value)}>
+          <button className="dropdown-item" value={item.tenkhuvuc} onClick={(e) => doSearchHCM(e.target.value)}>
             {item.tenkhuvuc}
           </button>
         </li>
@@ -132,23 +132,21 @@ function PhoneData(props) {
         count++;
         return (
           <tr key={item.id}>
-            <td>{item.id}</td>
-            <td>
-              <img src={item.picture} width="100" />
+            <td width='40'>{item.id}</td>
+            <td width='300'>
+              <img src={item.anh} width="300" />
             </td>
-            <td>{item.name}</td>
-            <td>${item.price}</td>
-            <td>{phone.status == 'true' ? (
-                      <span className="h6 text-primary">Avaiable</span>
-                    ) : (
-                      <span className="h6 text-danger">Out of Stock</span>
-                    )}
-                    </td>
+            <td width='300'>{item.tennha}</td>
+            <td width='200'>${item.mucgia}</td>
+            <td width='500' className='blockquote p-2 span-description'>
+              {item.mota}
+            </td>
             <td>
               <Link to={'/buy/' + item.id}>
                 <button className="btn btn-primary"> <i class="fas fa-eye"></i> </button>
               </Link>
             </td>
+
             <td>
               <Link to={'/edit/' + item.id}>
                 <button className="btn bg-warning">
@@ -174,7 +172,7 @@ function PhoneData(props) {
 
   const deletePhone = (id) => {
     if (window.confirm('Are you sure?') == true) {
-      fetch('https://62b04a56e460b79df0423a2e.mockapi.io/aa/' + id, {
+      fetch('https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase/' + id, {
         method: 'DELETE',
       }).then(() => {
         let result = [...phone];
@@ -278,7 +276,7 @@ function PhoneData(props) {
 
       <br /><br /><br /><br />
 
-      <table className="table table-bordered text-center mt-4">
+      <table className="table table-secondary table-bordered text-center mt-4">
       {phone_list}
       </table>
     </>
