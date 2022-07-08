@@ -27,7 +27,7 @@ function PhoneData(props) {
   useEffect(() => {
     if (phone != null) {
       // Fetch items from another resources.
-      let itemsPerPage = 3;
+      let itemsPerPage = 10;
       const starOffset = page * itemsPerPage;
       let endOffset = (page + 1) * itemsPerPage;
       if (endOffset > phone.length) {
@@ -157,13 +157,13 @@ function PhoneData(props) {
   var count = 0;
   if (phone != null) {
     phone_list = currentItems.map((item) => {
-      if (count < 12) {
-        count++;
+      // if (count < 12) {
+      //   count++;
         return (
-          <tr key={item.id}>
+          <tbody key={item.id}>
             <td width='40'>{item.id}</td>
             <td width='300'>
-              <img src={item.anh} width="300" />
+            <Link to={'/buy/' + item.id} onClick={clickView}><img src={item.anh} width="300" /></Link>
             </td>
             <td width='300'>{item.tennha}</td>
             <td width='200'>${item.mucgia}</td>
@@ -191,11 +191,11 @@ function PhoneData(props) {
                 <i class="fas fa-trash text-light" />
               </button>
             </td>
-          </tr>
+          </tbody>
         );
-      } else {
-        return;
-      }
+      // } else {
+      //   return;
+      // }
     });
   }
 
@@ -306,9 +306,9 @@ function PhoneData(props) {
       <br /><br /><br /><br />
 
       <table className="table table-secondary table-bordered text-center mt-4">
-      {/* {phone_list} */}
+      {phone_list}
       </table>
-      <div className="row card-deck ">{phone_list}</div>
+      {/* <div className="row card-deck ">{phone_list}</div> */}
       <ReactPaginate
         previousLabel="Previous"
         nextLabel="Next"
