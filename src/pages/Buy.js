@@ -269,7 +269,7 @@ const Buy = () => {
                           class="rounded adImage" />
                         <br />
                         <span class="blockquote">
-                          <b> Vị trí phong thủy</b>
+                          <b> Vị trí toà nhà</b>
                           <br />
                           {detail.vitriphongthuy}
                         </span>
