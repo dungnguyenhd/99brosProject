@@ -29,21 +29,6 @@ function UserHouseData(props) {
   }, [props.data]);
 
   useEffect(() => {
-    if (house != null) {
-      // Fetch items from another resources.
-      let itemsPerPage = 3;
-      const starOffset = page * itemsPerPage;
-      let endOffset = (page + 1) * itemsPerPage;
-      if (endOffset > house.length) {
-        endOffset = house.length;
-      }
-      setCurrentItems(house.slice(starOffset, endOffset));
-      setPageCount(Math.ceil(house.length / itemsPerPage));
-      // window.scrollTo();
-    }
-  }, [page]);
-
-  useEffect(() => {
     console.log('product list useEffect!!');
     setListItem(props.store_state.Carts);
     if (listItem.length > 0) {
@@ -56,9 +41,29 @@ function UserHouseData(props) {
   }, [props.store_state]);
 
 
+  useEffect(() => {
+    if (house != null) {
+      console.log('test' + house.length);
+      // Fetch items from another resources.
+      let itemsPerPage = 3;
+      const starOffset = page * itemsPerPage;
+      let endOffset = (page + 1) * itemsPerPage;
+      if (endOffset > house.length) {
+        endOffset = house.length;
+      }
+      console.log('testhouselength'+ house.length);
+
+      setCurrentItems(house.slice(starOffset, endOffset));
+      setPageCount(Math.ceil(house.length / itemsPerPage));
+      // window.scrollTo();
+    }
+  },);
+
+
   const handlePageClick = (event) => {
     setPage(event.selected);
   };
+
 
   const sortPriceDown = () => {
     const sortData = [...house];
@@ -90,15 +95,10 @@ function UserHouseData(props) {
   }
 
   var house_list = [];
-  var count = 0;
   var MAX_ITEM = 6;
 
   if (house != null) {
-    house_list = currentItems.map((item) => {
-      console.log("update!!!!!!");
-      if (count < 6) {
-        count++;
-        return (
+    house_list = currentItems.map((item) => (
           <div class="col-md-4 mb-4">
 
 
@@ -132,11 +132,7 @@ function UserHouseData(props) {
 
             </div>
           </div>
-        );
-      } else {
-        return;
-      }
-    });
+        ));
   }
 
   function getPosition(id) {
