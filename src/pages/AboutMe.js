@@ -8,7 +8,6 @@ const NoPage = () => {
     <>
       <div style={{ paddingTop: "8rem", }} class="container fluid" >
         <div class="col-6 text-justify row ">
-
           <h1 style={{ lineHeight: "70px" }}>Về 99BROS</h1>
           <p class="blockquote">
             99bros là công ty cung cấp dịch vụ thuê văn phòng chuyên nghiệp tại Hà Nội và TP. Hồ Chí Minh.
@@ -43,7 +42,17 @@ const NoPage = () => {
             </div>
           </div>
         </div>
-
+        <div>
+          <table style={{ backgroundRepeat: "no-repeat", }} class="rounded float-left" max-width="500px" height="300px" background="https://img.freepik.com/premium-photo/view-modern-business-skyscrapers-glass-sky-view-landscape-commercial-building_39665-83.jpg?w=2000" cellpadding="60" cellspacing="0">
+            <tr>
+              <td valign="bottom">
+                <p class="blockquote text-justify" style={{ fontSize: "28px", fontFamily: "Inter, Sans-serif", lineHeight: "44px" }}><b><font color="#ffffff">
+                  Một môi trường và không gian làm việc phù hợp chính là nền tảng cho sự thành công trong kinh doanh
+                </font></b></p>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="mb-7 text-center mt-5" style={{ paddingTop: "2rem", }}>
           <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Các Đối Tác</h3>
         </div>
