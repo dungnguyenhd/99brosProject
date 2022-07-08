@@ -140,7 +140,6 @@ const Home = () => {
 
       <div className='container-fluid'>
         <div className='row'>
-
           <div className='col-lg-2 d-none d-lg-block'>
             <div className='sticky' style={{ marginTop: '40rem' }}>
               <div className='btn-group-vertical wrapper_sidebar bg-muted'>
