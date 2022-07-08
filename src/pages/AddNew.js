@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import UserPhoneData from '../component/dataUser';
 import { right } from '@popperjs/core';
 import { Link } from 'react-router-dom';
-import '../css/main.css';
 import './/SideBar.css';
 
 
@@ -340,12 +339,22 @@ const AddNew = () => {
 
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/dien-du-phong.svg" alt="Maison Office" width="16" height="22" />  &#160; Điện dự phòng:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {detail.dienduphong}</td></span>
+                              <input 
+                             className="h5"
+                             value={detail.dienduphong}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
                             </li>
 
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/phi-dich-vu.svg" alt="Maison Office" width="18" height="25" />  &#160;Phí dịch vụ:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {detail.phidichvu}</td></span>
+                              <input 
+                             className="h5"
+                             value={detail.phidichvu}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
                             </li>
 
 
@@ -364,15 +373,17 @@ const AddNew = () => {
                       <div className='container row'>
                         <div className='col-sm-8 col-8 col-md-8'>
                           <span style={{ paddingRight: "auto" }}>
-                            {phone.mota}
+                          <input 
+                             className="text"
+                             value={phone.mota}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
                           </span>
                         </div>
 
                         <div className="col-md-4 col-sm-4 col-4" style={{ marginRight: "auto", paddingBottom: "auto", left: "auto" }}>
-                          <img
-                          src={detail.anh5}
-                            width='100%'
-                            class="img-thumbnail" ></img>
+                        <img src="https://printgo.vn/uploads/media/763962/dinh-dang-file-thiet-ke-png-1024x1012_1566374045.jpg" width="100%" class="rounded adImage"/>
                         </div>
                       </div>
                     </div>
