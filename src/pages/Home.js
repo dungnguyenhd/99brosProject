@@ -192,7 +192,7 @@ const Home = () => {
                         }}
                       />
                       <div className="input-group-btn">
-                        <Link to={'/search/' + stringSearch}>
+                        <Link to={stringSearch===""?"/":'/search/' + stringSearch}>
                           <button
                             type="button"
                             className="btn btn-danger">
@@ -317,7 +317,7 @@ const Home = () => {
                 }}
                 pagination={{ clickable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
+                // onSlideChange={() => console.log('slide change')}
               >
                 <SwiperSlide><img src='https://www.leaderim.com/wp-content/uploads/2020/02/Partner-logo-2016.png' height={70} /></SwiperSlide>
                 <SwiperSlide><img src='https://www.pngfind.com/pngs/m/683-6836144_cisco-partner-logo-cisco-partner-logo-vector-hd.png' height={70} /></SwiperSlide>

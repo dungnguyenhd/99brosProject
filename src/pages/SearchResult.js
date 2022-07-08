@@ -31,12 +31,11 @@ function SearchResult(props) {
     return (
         <div>
             <div class="container" style={{ paddingTop: "7rem", }}>
-                <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="Hooray!">Hover over me!</button>
                 <div class="mb-7 text-center pt-5 mt-5" >
                     <h4 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive">{setTextTitle()}</h4>
                 </div>
-                <div className='container' style={{textAlign:"center"}}>
-                    <button type="button"><i class="fa fa-solid fa-arrow-left"></i></button>
+                <div className='container' style={{textAlign:"center",display: data.length>0?"none":"block"}}>
+                    <button type="button" class="btnHaveNo" onClick={() => navigate('/', { replace: true })}><i class="fa fa-solid fa-arrow-left iHaveNo" style={{fontSize:"2rem"}}></i></button>
                 </div>
                 <div className='row result-search' style={{visibility: data.length>0?"visible":"hidden"}}>
                     <UserHouseData data={data} />
