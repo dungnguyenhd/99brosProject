@@ -26,13 +26,13 @@ function UserHouseData(props) {
       setPage(0);
       console.log('set item offset');
     }
-    
+
   }, [props.data]);
 
   useEffect(() => {
     if (house != null) {
       // Fetch items from another resources.
-      let itemsPerPage = 3;
+      let itemsPerPage = 6;
       let starOffset = page * itemsPerPage;
       let endOffset = (page + 1) * itemsPerPage;
       if (endOffset > house.length) {
