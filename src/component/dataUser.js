@@ -78,7 +78,7 @@ function UserHouseData(props) {
 
               <div class="card-body py-4 px-3">
 
-                <div class="d-flex align-items-center"><span class="fs-0"><h4 class="fw-medium ten">{item.tennha}</h4><span class="fs-0 fw-medium" style={{ color: 'black' }}>Địa chỉ: {item.diachi}</span></span></div>
+                <div class="d-flex align-items-center"><span class="fs-0"><Link to={'/buy/' + item.id} onClick={clickView}> <h4 class="fw-medium ten">{item.tennha}</h4></Link><span class="fs-0 fw-medium" style={{ color: 'black' }}>Địa chỉ: {item.diachi}</span></span></div>
 
                 <div class="d-flex align-items-center"><span class="fs-0 fw-medium">Mức Giá: {item.mucgia}</span></div>
 
