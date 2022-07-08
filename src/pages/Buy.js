@@ -249,7 +249,7 @@ const Buy = () => {
                   {/* -------------------------------------------------------------------------------------------------------*/}
                   <div className="container-fluid">
                     <div className="row ms-5 pt-5 me-5" style={{ marginTop: "5rem", }}>
-                      <div className='container row md-12' style={{ margin: "auto" }} id="wrapper_mota">
+                      <div className='container row md-12' style={{ margin: "auto" }} id="warrper_mota">
                         <h1 className="mt-4" style={{ paddingBottom: "5rem", paddingtop: "1rem" }}> <b>Mô tả</b> </h1>
                       </div>
                       <div className='container row'>
