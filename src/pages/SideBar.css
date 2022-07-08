@@ -1,8 +1,8 @@
-.sticky{
+.stickyBuy{
     position: sticky;
     position: -webkit-sticky;
     bottom: 0;
-    left: 100rem;
+    margin-right: 10em;
   }
 
 .adImage{
@@ -19698,11 +19698,11 @@
     padding-left: 0;
   }
   
-  div.sticky {
+  div.stickyBuy {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    padding: 100px;
+  
   }
   
   .tooltip {

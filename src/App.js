@@ -13,6 +13,7 @@ import Tintuc from './pages/Tintuc';
 import Favorite from './pages/Favorite';
 import Viewnews from './pages/Viewnews';
 import SearchResult from './pages/SearchResult';
+import AddNew from './pages/AddNew';
 
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="buy/:id/" element={<Buy />} />
           <Route path="aboutme" element={<AboutMe />} />
           <Route path="tintuc" element={<Tintuc />} />
+          <Route path="new/:id" element={<AddNew />} />
           <Route path="collection" element={<Collection />} />
           <Route path="category/:name" element={<Category />} />
           <Route path="favorite" element={<Favorite />} />

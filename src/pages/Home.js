@@ -120,9 +120,15 @@ const Home = () => {
               <h1 class="hero-title">99Bros<br />of KITS<br />Vietnam </h1>
               <p class="mb-4 fw-medium">99Bros Bất động sản.<br class="d-none d-xl-block" />Dịch vụ bất động sản hàng đầu KITS<br class="d-none d-xl-block" />Xem ngay.</p>
               <div class="text-center text-md-start"> <a class="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow" href="#viewnews" role="button">Xem tin</a>
-                <div class="w-100 d-block d-md-none"></div><a href="#start" role="button"><span class="btn btn-success round-btn-lg rounded-circle me-3 danger-btn-shadow">
-                  <i class="fas fa-paper-plane"></i>
-                </span></a><span class="fw-medium" style={{ color: 'white' }}>Đăng tin</span>
+                <div class="w-100 d-block d-md-none"></div>
+                <Link to={"/new/"+"new"}  onClick={clickView}>
+                  <a href="#start" role="button">
+                    <span class="btn btn-success round-btn-lg rounded-circle me-3 danger-btn-shadow">
+                 <i class="fas fa-paper-plane">
+                 </i>
+                 </span></a>
+                 <span class="fw-medium" style={{ color: 'white' }}>Đăng tin</span> 
+                 </Link>
               </div>
             </div>
           </div>

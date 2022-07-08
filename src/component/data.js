@@ -100,7 +100,7 @@ function PhoneData(props) {
           Sort Price
         </button>
 
-        <Link to={'/edit/new'}>
+        <Link to={'/new/new'}>
               <button className="btn bg-success p-1 text-light ms-2">
                 Add &#160;&#160;
                 <i class="fas fa-plus text-light"></i>
