@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import UserPhoneData from './dataUser';
+import UserHouseData from './dataUser';
 import { Outlet, Link } from 'react-router-dom';
 import { useNavigate, useParams } from 'react-router-dom';
 import '../css/main.css';
@@ -27,6 +27,7 @@ function Type(props) {
             .then((data) => {
                 setData(data);
             });
+            console.log('set item offset############################# type'+data.length);
     }, [props.type]);
 
     var listType;
@@ -38,7 +39,7 @@ function Type(props) {
                     <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">{type}</h3>
                 </div>
                 <div className='row'>
-                    <UserPhoneData data={data} />
+                    <UserHouseData data={data} />
                 </div>
             </div>
         );
