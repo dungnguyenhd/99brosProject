@@ -14,6 +14,7 @@ import Favorite from './pages/Favorite';
 import Viewnews from './pages/Viewnews';
 import SearchResult from './pages/SearchResult';
 import AddNew from './pages/AddNew';
+import Contact from './pages/Contact';
 
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="collection" element={<Collection />} />
           <Route path="category/:name" element={<Category />} />
           <Route path="favorite" element={<Favorite />} />
+          <Route path="Contact" element={<Contact />} />
           <Route path="viewnews/:id/" element={<Viewnews />} />
           <Route path="edit/:id" element={<Edit />} />
           <Route path="*" element={<NoPage />} />
