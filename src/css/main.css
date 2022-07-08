@@ -19748,3 +19748,22 @@ div.sticky {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
+.iHaveNo{
+  color: #1da1f2;
+}
+
+.btnHaveNo{
+  border: 2px dashed #1da1f2;
+  width: 86px;
+  height: 70px;
+}
+
+.btnHaveNo:hover{
+  background-color: #1da1f2;
+  border: 2px dashed white;
+}
+
+.btnHaveNo:hover .iHaveNo{
+  color: white;
+}

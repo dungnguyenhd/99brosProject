@@ -27,15 +27,15 @@ function PhoneData(props) {
   };
 
   const sortAreaDown = () => {
-    const sortData = [...house];
+    const sortData = [...phone];
     sortData.sort((a, b) => a.dientich - b.dientich);
-    setHouse(sortData);
+    setPhone(sortData);
   };
 
   const sortAreaUp = () => {
-    const sortData = [...house];
+    const sortData = [...phone];
     sortData.sort((a, b) => b.dientich - a.dientich);
-    setHouse(sortData);
+    setPhone(sortData);
   };
 
 
@@ -50,7 +50,7 @@ function PhoneData(props) {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        setHouse(data);
+        setPhone(data);
       });
   };
 
@@ -91,7 +91,7 @@ function PhoneData(props) {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        setHouse(data);
+        setPhone(data);
       });
   };
 
@@ -114,7 +114,7 @@ function PhoneData(props) {
     khuvucHCM_jsx = (
       (khuvucHCM_jsx = districtHCM.map((item) => (
         <li>
-          <button className="dropdown-item" value={item.tenkhuvuc} onClick={(e) => doSearch(e.target.value)}>
+          <button className="dropdown-item" value={item.tenkhuvuc} onClick={(e) => doSearchHCM(e.target.value)}>
             {item.tenkhuvuc}
           </button>
         </li>
@@ -172,7 +172,7 @@ function PhoneData(props) {
 
   const deletePhone = (id) => {
     if (window.confirm('Are you sure?') == true) {
-      fetch('https://62b04a56e460b79df0423a2e.mockapi.io/aa/' + id, {
+      fetch('https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase/' + id, {
         method: 'DELETE',
       }).then(() => {
         let result = [...phone];
