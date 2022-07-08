@@ -403,7 +403,7 @@ const AddNew = () => {
                                             </div>
                                             <div className='container row'>
                                                 <div className='col-sm-8 col-8 col-md-8 form-floating'>
-                                                    <textarea style={{ paddingRight: "auto", width: "100%" }} placeholder="Nhập nội dung tại đây" >
+                                                    <textarea style={{ paddingRight: "auto", width: "100%" }} rows="10" placeholder="Nhập nội dung tại đây" >
                                                         <input
                                                             className="text-area"
                                                             value={phone.mota}
@@ -433,7 +433,7 @@ const AddNew = () => {
                                                 <span class="blockquote">
                                                     <b> Thông tin thêm</b>
                                                     <br />
-                                                    <textarea style={{ paddingRight: "auto", width: "100%" }} placeholder="Nhập nội dung tại đây" >
+                                                    <textarea style={{ paddingRight: "auto", width: "100%" }} rows="10" placeholder="Nhập nội dung tại đây" >
                                                         <input
                                                             className="text-area"
                                                             value={phone.thongtinthem}
@@ -450,7 +450,7 @@ const AddNew = () => {
                                                 <span class="blockquote">
                                                     <b> Vị trí phong thủy</b>
                                                     <br />
-                                                    <textarea style={{ paddingRight: "auto", width: "100%" }} placeholder="Nhập nội dung tại đây" >
+                                                    <textarea style={{ paddingRight: "auto", width: "100%" }} rows="10" placeholder="Nhập nội dung tại đây" >
                                                         <input
                                                             className="text-area"
                                                             value={phone.vitriphongthuy}
@@ -467,7 +467,7 @@ const AddNew = () => {
                                                 <span class="blockquote" >
                                                     <b> Quy mô tòa nhà</b>
                                                     <br />
-                                                    <textarea style={{ paddingRight: "auto", width: "100%" }} placeholder="Nhập nội dung tại đây" >
+                                                    <textarea style={{ paddingRight: "auto", width: "100%" }} rows="10" placeholder="Nhập nội dung tại đây" >
                                                         <input
                                                             className="text-area"
                                                             value={phone.quymo}
