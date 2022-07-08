@@ -194,7 +194,7 @@ function UserHouseData(props) {
     khuvucHCM_jsx = (
       (khuvucHCM_jsx = districtHCM.map((item) => (
         <li>
-          <button className="dropdown-item" value={item.tenkhuvuc} onClick={(e) => doSearch(e.target.value)}>
+          <button className="dropdown-item" value={item.tenkhuvuc} onClick={(e) => doSearchHCM(e.target.value)}>
             {item.tenkhuvuc}
           </button>
         </li>
