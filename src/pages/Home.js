@@ -127,7 +127,7 @@ const Home = () => {
                  <i class="fas fa-paper-plane">
                  </i>
                  </span></a>
-                 <span class="fw-medium" style={{ color: 'white' }}>Đăng tin</span> 
+                 <span class="fw-medium" style={{ color: 'white' }}>Đăng tin</span>
                  </Link>
               </div>
             </div>
