@@ -60,7 +60,7 @@ const Favorite = (props) => {
               {cartItems.length == 0 ? (
                 <tr>
                   <td colspan="4" class="text-center">
-                    Your Cart is empty
+                    Chưa có sản phẩm yêu thích nào
                   </td>
                 </tr>
               ) : (
