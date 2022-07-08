@@ -73,34 +73,36 @@ const Buy = () => {
           <div className='container-fluid'>
             <div className='row'>
               <div className='col-sm-1 col-md-1 col-lg-2 d-none d-lg-block ' style={{ marginTop: '7rem' }}>
-              <div className='sticky' style={{ marginTop: '40rem' }}>
-              <div className='btn-group-vertical wrapper_sidebar bg-muted'>
-                <button type="button" class="btn btn-light btn-md text-info" onClick={clickView} style={{ marginTop: '7rem', fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Up"><i class="fas fa-arrow-up"></i></button>
-                <a href='#wrapper_xem_nhieu'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Popular"><i class="fa fa-balance-scale"></i></button></a>
-                <a href='#wrapper_phanloai'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Office"><i class="fas fa-hotel"></i></button></a>
-                <a href='#wrapper_tintuc'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Hot news"><i class="far fa-newspaper"></i></button></a>
-                <button type="button" class="btn btn-light btn-md text-info" onClick={clickDown} style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Down"><i class="fas fa-arrow-down"></i></button>
-              </div>
+            
+                <div className='sticky' >
+                  <div className='btn-group-vertical wrapper_sidebar bg-muted'>
+                    <button type="button" class="btn btn-light btn-md text-info" onClick={clickView} style={{ marginTop: '7rem', fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Up"><i class="fas fa-arrow-up"></i></button>
+                    <a href='#warrper_thongtintoanha'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Popular"><i class="fa fa-balance-scale"></i></button></a>
+                    <a href='#wrapper_chitietdichvu'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Office"><i class="fas fa-hotel"></i></button></a>
+                    <a href='#wrapper_mota'><button type="button" class="shake-btn btn btn-light btn-md text-info" style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Hot news"><i class="far fa-newspaper"></i></button></a>
+                    <button type="button" class="btn btn-light btn-md text-info" onClick={clickDown} style={{ fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Down"><i class="fas fa-arrow-down"></i></button>
+                  </div>
 
-              <div className='btn-group-vertical wrapper_sidebar bg-muted'>
-                <button class="btn btn-md btn-outline-light">&#160;</button>
-                <button class="btn btn-md btn-outline-light">&#160;</button>
-                <button className="shake-btn btn btn-danger ms-2 rounded-circle" style={{ padding: '.5rem' }} type="button" data-bs-toggle="tooltip" title="Hotline">
-                  <a href="https://chat.zalo.me/" target="_blank" className='text-white'><i class="fa fa-phone-alt"></i></a>
-                </button>
+                  <div className='btn-group-vertical wrapper_sidebar bg-muted'>
+                    <button class="btn btn-md btn-outline-light">&#160;</button>
+                    <button class="btn btn-md btn-outline-light">&#160;</button>
+                    <button className="shake-btn btn btn-danger ms-2 rounded-circle" style={{ padding: '.5rem' }} type="button" data-bs-toggle="tooltip" title="Hotline">
+                      <a href="https://chat.zalo.me/" target="_blank" className='text-white'><i class="fa fa-phone-alt"></i></a>
+                    </button>
 
-                &#160;
-                <button className="shake-btn btn btn-info ms-2 rounded-circle" style={{ padding: '.5rem' }} type="button" data-bs-toggle="tooltip" title="Facebook">
-                  <a href="https://www.facebook.com/" target="_blank" className='text-white'><i class="fab fa-facebook-f"></i></a>
-                </button>
+                    &#160;
+                    <button className="shake-btn btn btn-info ms-2 rounded-circle" style={{ padding: '.5rem' }} type="button" data-bs-toggle="tooltip" title="Facebook">
+                      <a href="https://www.facebook.com/" target="_blank" className='text-white'><i class="fab fa-facebook-f"></i></a>
+                    </button>
 
-                &#160;
-                <button className="shake-btn btn btn-secondary ms-2 rounded-circle" style={{ padding: '.5rem' }} type="button" data-bs-toggle="tooltip" title="Twitter">
-                  <a href="https://twitter.com/?lang=en" target="_blank" className='text-white'><i class="fab fa-twitter"></i></a>
-                </button>
-              </div>
-            </div>
-                <img src='https://tpc.googlesyndication.com/simgad/12332553322558091477?sqp=4sqPyQQrQikqJwhfEAEdAAC0QiABKAEwCTgDQPCTCUgAUAFYAWBfcAJ4AcUBLbKdPg&rs=AOga4qk9RWMQiV8oqgqUPJWnpKtz2w4c9w' width='200px' height='950px'></img>
+                    &#160;
+                    <button className="shake-btn btn btn-secondary ms-2 rounded-circle" style={{ padding: '.5rem' }} type="button" data-bs-toggle="tooltip" title="Twitter">
+                      <a href="https://twitter.com/?lang=en" target="_blank" className='text-white'><i class="fab fa-twitter"></i></a>
+                    </button>
+                  </div>
+                </div>
+                 <img src='http://taxiadvertisingvn.com/wp-content/uploads/2021/07/roadshowqc.gif' width='200px' height='1000px'></img>
+                <img style={{marginTop: "2rem"}} src='https://tpc.googlesyndication.com/simgad/12332553322558091477?sqp=4sqPyQQrQikqJwhfEAEdAAC0QiABKAEwCTgDQPCTCUgAUAFYAWBfcAJ4AcUBLbKdPg&rs=AOga4qk9RWMQiV8oqgqUPJWnpKtz2w4c9w' width='200px' height='950px'></img>
 
                 <img style={{ marginTop: '5rem' }} src='http://taxiadvertisingvn.com/wp-content/uploads/2021/07/roadshowqc.gif' width='200px' height='950px'></img>
               </div>
@@ -111,7 +113,7 @@ const Buy = () => {
 
                   <div className="row md-12" style={{ paddingTop: "3rem", }}>
                     {/* ----------------------------------------------------------------------------------- */}
-                    <div className='container row md-12' style={{ margin: "auto" }}>
+                    <div className='container row md-12' id='warrper_thongtintoanha' style={{ margin: "auto" }}>
                       <h1 className="mt-4"> <b>Thông tin tòa nhà</b> </h1>
                     </div>
                     <div className='container-fluid row' style={{ marginTop: "auto", width: "100%" }}>
@@ -194,7 +196,7 @@ const Buy = () => {
 
                     </div>
                     <div className='row' style={{ marginTop: "2rem" }}>
-                      <div className='container row md-12' style={{ margin: "auto" }}>
+                      <div className='container row md-12' style={{ margin: "auto" }} id="wrapper_chitietdichvu">
                         <h1 className="mt-4"> <b>Chi tiết các dịch vụ</b> </h1>
                       </div>
                       <div class=" " style={{ paddingTop: "4rem" }}>
@@ -247,7 +249,7 @@ const Buy = () => {
                   {/* -------------------------------------------------------------------------------------------------------*/}
                   <div className="container-fluid">
                     <div className="row ms-5 pt-5 me-5" style={{ marginTop: "5rem", }}>
-                      <div className='container row md-12' style={{ margin: "auto" }}>
+                      <div className='container row md-12' style={{ margin: "auto" }} id="warrper_mota">
                         <h1 className="mt-4" style={{ paddingBottom: "5rem", paddingtop: "1rem" }}> <b>Mô tả</b> </h1>
                       </div>
                       <div className='container row'>
@@ -280,7 +282,7 @@ const Buy = () => {
                   {/* ------------------------------------------------------------------------------------------------------------ */}
                   <div className='container-fluid'>
                     <div className="row ms-5 pt-5 me-5">
-                      <h1 className="mt-4"><b> Tiện ích</b></h1>
+                      <h1 className="mt-4"><b> Lợi ích</b></h1>
 
                       <div className="col-md-4 col-sm-4  ps-5 col-4 text-justify" style={{ paddingTop: "2rem", }}>
                         <img
@@ -353,17 +355,17 @@ const Buy = () => {
               </div>
 
               <div className='hidden-sm col-md-1 col-lg-2 d-none d-lg-block ' style={{ marginTop: '7rem', padding: '0px' }}>
-              <img src='http://taxiadvertisingvn.com/wp-content/uploads/2021/07/roadshowqc.gif' width='200px' height='1000px'></img>
+                <img src='http://taxiadvertisingvn.com/wp-content/uploads/2021/07/roadshowqc.gif' width='200px' height='1000px'></img>
                 <div className='stickyBuy col-md-4 col-md-6 mt-5 ' >
 
-                  <img  src='https://thumbs.gfycat.com/TatteredAgonizingHuman-size_restricted.gif' width='250px'></img>
+                  <img href="https://chat.zalo.me/" target="_blank" src='https://thumbs.gfycat.com/TatteredAgonizingHuman-size_restricted.gif' width='250px'></img>
 
                 </div>
                 <img src='http://taxiadvertisingvn.com/wp-content/uploads/2021/07/roadshowqc.gif' width='200px' height='1000px'></img>
 
                 <div className='stickyBuy col-md-4 col-md-6 mt-5 ' >
 
-                  <img  src='https://thumbs.gfycat.com/TatteredAgonizingHuman-size_restricted.gif' width='250px'></img>
+                  <img src='https://thumbs.gfycat.com/TatteredAgonizingHuman-size_restricted.gif' width='250px'></img>
 
                 </div>
               </div>

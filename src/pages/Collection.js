@@ -18,7 +18,7 @@ const Collection = () => {
 
   }, []);
 
-  const doSearch = () => {
+  const doSearchAdmin = () => {
     let url =
       'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase/?search=' + product;
 
@@ -52,7 +52,7 @@ const Collection = () => {
           <button
             className="btn btn-success mt-3"
             type="submit"
-            onClick={() => doSearch()}
+            onClick={() => doSearchAdmin()}
           >
             Search
           </button>

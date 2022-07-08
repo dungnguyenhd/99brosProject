@@ -57,9 +57,29 @@ function UserHouseData(props) {
   }, [props.store_state]);
 
 
+  useEffect(() => {
+    if (house != null) {
+      console.log('test' + house.length);
+      // Fetch items from another resources.
+      let itemsPerPage = 3;
+      const starOffset = page * itemsPerPage;
+      let endOffset = (page + 1) * itemsPerPage;
+      if (endOffset > house.length) {
+        endOffset = house.length;
+      }
+      console.log('testhouselength'+ house.length);
+
+      setCurrentItems(house.slice(starOffset, endOffset));
+      setPageCount(Math.ceil(house.length / itemsPerPage));
+      // window.scrollTo();
+    }
+  },);
+
+
   const handlePageClick = (event) => {
     setPage(event.selected);
   };
+
 
   const sortPriceDown = () => {
     const sortData = [...house];
@@ -91,14 +111,13 @@ function UserHouseData(props) {
   }
 
   var house_list = [];
-  var count = 0;
   var MAX_ITEM = 6;
+
 
   if (currentItems != null) {
     house_list = currentItems.map((item) => {
       console.log("update!!!!!!");
       // if (count < 6) {
-        count++;
         return (
           <div class="col-md-4 mb-4">
 
@@ -223,7 +242,7 @@ function UserHouseData(props) {
     khuvucHCM_jsx = (
       (khuvucHCM_jsx = districtHCM.map((item) => (
         <li>
-          <button className="dropdown-item" value={item.tenkhuvuc} onClick={(e) => doSearch(e.target.value)}>
+          <button className="dropdown-item" value={item.tenkhuvuc} onClick={(e) => doSearchHCM(e.target.value)}>
             {item.tenkhuvuc}
           </button>
         </li>
