@@ -22,7 +22,6 @@ import autoplay from 'autoplay';
 const Home = () => {
   const [data, setData] = useState([]);
   const [newsdata, setNewsdata] = useState([]);
-  const [product, setProduct] = useState('');
   const [categories, setCategories] = useState(null);
   const [stringSearch, setStringSearch] = useState('');
   const [type, setType] = useState([]);
@@ -30,6 +29,7 @@ const Home = () => {
 
   useEffect(() => {
     let url = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase';
+
     let urlHome = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase';
     // if (stringSearch.length > 0) {
     //   urlHome += '?search=' + stringSearch;
