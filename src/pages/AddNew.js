@@ -12,24 +12,30 @@ import './/SideBar.css';
 
 
 
-const Buy = () => {
+const AddNew = () => {
   const params = useParams();
   const [phone, setPhone] = useState([]);
   const [data, setData] = useState([]);
   const [detail, setDetail]= useState([]);
   useEffect(() => {
-    console.log('user use effect!!');
+    console.log('Add new!!!!!!!!!!!!!!!!!');
 
-    let url = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase/' + params.id;
-
-    console.log(url);
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        /*        var date = new Date(data.rd);
-               data.rd = date.toISOString().slice(0, 10); */
-        setPhone(data);
-      });
+    if (params.id != 'new') {
+        let url = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase/' + params.id;
+  
+        console.log(url);
+        fetch(url)
+          .then((response) => response.json())
+          .then((data) => {
+            var date = new Date(data.rd);
+            data.rd = date.toISOString().slice(0, 10);
+            setPhone(data);
+          });
+      } else {
+        let initData = {};
+        initData.home = {};
+        setPhone(initData);
+      }
 
     let url_relate = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase/';
     fetch(url_relate)
@@ -52,7 +58,78 @@ const Buy = () => {
 
   }, []);
 
+  const saveData = () => {
+    let method;
+    let id = '';
+    if (params.id != 'new') {
+      method = 'PUT';
+      id = params.id;
+    } else {
+      method = 'POST';
+    }
 
+    let url = 'https://62be5bb10bc9b1256155b7bd.mockapi.io/MainDatabase/' + id;
+
+    fetch(url, {
+      method: method,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(phone),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // var date = new Date(data.dob);
+        // data.dob = date.getTime();
+        setPhone(data);
+        console.log('Success:', data);
+      
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
+
+  var str2bool = (value) => {
+    if (value && typeof value === 'string') {
+      if (value.toLowerCase() === 'true') return true;
+      if (value.toLowerCase() === 'false') return false;
+    }
+    return value;
+  };
+
+  const handleChange = (event) => {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+    let data = { ...phone };
+    data[name] = value;
+    setPhone(data);
+  };
+
+ 
+
+ function FileUploadPage(){   
+    const [selectedFile, setSelectedFile] = useState();
+  const [isFilePicked, setIsFilePicked] = useState(false);
+
+   const changeHandler = (event) => {
+    setSelectedFile(event.target.files[0]);
+     setIsSelected(true);
+  };
+
+  const handleSubmission = () => {
+  };
+
+  return(
+    <div>
+      <input type="file" name="file" onChange={changeHandler} />
+      <div>
+        <button onClick={handleSubmission}>Submit</button>
+      </div>
+    </div>
+ )
+}
 
 
 
@@ -84,76 +161,117 @@ const Buy = () => {
                     </div>
                     <div className='container-fluid row' style={{ marginTop: "auto", width: "100%" }}>
                       <div className="col-md-4 col-sm-12 col-4" style={{ paddingTop: "4rem",width: "50%" }}>
-                        <img src={phone.anh} style={{width:"95%", height:"95%", paddingTop:"1rem"}} class="rounded adImage" />
+                        <img src="https://printgo.vn/uploads/media/763962/dinh-dang-file-thiet-ke-png-1024x1012_1566374045.jpg" style={{width:"95%", height:"95%", paddingTop:"1rem"}} class="rounded adImage" />
                       </div>
                       <div className="row col-sm-12 col-md-8 col-8" style={{ paddingTop: "4rem",width: "50%" }}>
                         <div className='col-6 col-sm-6' style={{ margin: "auto" }}>
-                        <img src={detail.anh1} width="100%" class="rounded adImage"/>
-                        <img src={detail.anh2} width="100%" class="rounded adImage"style={{marginTop: "2rem", padding:'0'}}/>
+                        <img src="https://printgo.vn/uploads/media/763962/dinh-dang-file-thiet-ke-png-1024x1012_1566374045.jpg" width="100%" class="rounded adImage"/>
+                        <img src="https://printgo.vn/uploads/media/763962/dinh-dang-file-thiet-ke-png-1024x1012_1566374045.jpg" width="100%" class="rounded adImage"style={{marginTop: "2rem", padding:'0'}}/>
                         </div>
                         <div className='col-6 col-sm-6' style={{ margin: "auto" }}>
-                        <img src={detail.anh3} width="100%" class="rounded adImage"/>
-                        <img src={detail.anh4} width="100%" class="rounded adImage" style={{marginTop: "2rem"}}/>
+                        <img src="https://printgo.vn/uploads/media/763962/dinh-dang-file-thiet-ke-png-1024x1012_1566374045.jpg" width="100%" class="rounded adImage"/>
+                        <img src="https://printgo.vn/uploads/media/763962/dinh-dang-file-thiet-ke-png-1024x1012_1566374045.jpg" width="100%" class="rounded adImage" style={{marginTop: "2rem"}}/>
                         </div>
                       </div>
                       </div>
                       <div class=" " style={{paddingTop: "4rem"}}>
                         <table style={{ margin: "auto", width: "100%" }}>
                           <ul class="list-group">
-                            {/* <li>
-      <td className="h4">Chủ đầu tư: </td>
-      <td className="h5"> {phone.name}</td>
-    </li>
-
-    <li>
-      <td className="h4">Đơn vị phân phối:</td>
-      <td className="h5"> ${phone.price}</td>
-    </li> */}
+     
 
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               <td className="h4" style={{ marginRight: "18rem" }}><i class="fa fa-chart-area"></i>  &#160; Khu vực:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {phone.khuvuc}</td></span>
+                             
+                             
+                             <input 
+                             className="h5"
+                             value={phone.khuvuc}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
+
+
                             </li>
 
                             <li class="list-group-item  d-flex justify-content-between align-items-center">
                               <td className="h4" style={{ marginRight: "18rem" }}><i class="fa fa-house-user"></i>  &#160; Diện tích:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {phone.dientich}</td></span>
+                              <input 
+                             className="h5"
+                             value={phone.dientich}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
                             </li>
 
                             <li class="list-group-item  d-flex justify-content-between align-items-center">
                               <td className="h4"> <i class="fa fa-map-pin"></i>  &#160;  &#160;  &#160;Vị trí:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {phone.diachi}</td></span>
+                              <input 
+                             className="h5"
+                             value={phone.diachi}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
                             </li>
 
                             <li class="list-group-item  d-flex justify-content-between align-items-center">
                               <td className="h4"><i class="fa fa-signature"></i> &#160;  &#160;Tên nhà:</td>
-                              <span class="badge rounded-pill"> <td className="h5"> {phone.tennha} </td></span>
+                              <input 
+                             className="h5"
+                             value={phone.tennha}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
                             </li>
 
                             <li class="list-group-item  d-flex justify-content-between align-items-center">
                               <td className="h4"><i class="fa fa-list-ol"></i> &#160;  &#160;Loại hình:</td>
-                              <span class="badge rounded-pill"> <td className="h5"> {phone.sophong}</td></span>
+                              <input 
+                             className="h5"
+                             value={phone.sophong}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
                             </li>
 
                             <li class="list-group-item  d-flex justify-content-between align-items-center">
                               <td className="h4"><i class="fa fa-list-ol"></i> &#160;  &#160;Số lượng:</td>
-                              <span class="badge rounded-pill"> <td className="h5"> {phone.phaply}</td></span>
+                              <input 
+                             className="h5"
+                             value={phone.phaply}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
                             </li>
 
                             <li class="list-group-item  d-flex justify-content-between align-items-center">
                               <td className="h4"><i class="fa fa-barcode"></i> &#160;  &#160;Mã dự án:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {phone.maduan}</td></span>
+                              <input 
+                             className="h5"
+                             value={phone.maduan}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
                             </li>
 
 
                             <li class="list-group-item  d-flex justify-content-between align-items-center">
                               <td className="h4"><i class="fa fa-mobile-alt"></i> &#160; &#160;Liên hệ:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {phone.lienhe}</td></span>
+                              <input 
+                             className="h5"
+                             value={phone.lienhe}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
                             </li>
 
                             <li class="list-group-item  d-flex justify-content-between align-items-center">
                               <td className="h4"> <i class="fa fa-dollar-sign"></i> &#160; Mức giá:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {phone.mucgia}</td></span>
+                              <input 
+                             className="h5"
+                             value={phone.mucgia}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
                             </li>
 
 
@@ -171,28 +289,53 @@ const Buy = () => {
 
                           <li class="list-group-item d-flex justify-content-between align-items-center">
                               <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/do-xe.svg" alt="Maison Office" width="14" height="25" />  &#160; Bãi xe:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {detail.baidoxe}</td></span>
+                              <input 
+                             className="h5"
+                             value={detail.baidoxe}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
                             </li>
 
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/do-oto.svg" alt="Maison Office" width="25" height="16" />  &#160; Giá gửi xe oto:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {detail.giadooto}</td></span>
+                              <input 
+                             className="h5"
+                             value={detail.giadooto}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
                             </li>
 
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/do-xe.svg" alt="Maison Office" width="14" height="25" />  &#160; Giá gửi xe máy:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {detail.giadoxemay}</td></span>
+                              <input 
+                             className="h5"
+                             value={detail.giadoxemay}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
                             </li>
 
 
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/gio-lam-viec.svg" alt="Maison Office" width="25" height="25" />  &#160; Giờ làm việc:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {detail.giolamviec}</td></span>
+                              <input 
+                             className="h5"
+                             value={detail.giolamviec}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
                             </li>
 
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               <td className="h4" style={{ marginRight: "18rem" }}><img class="img-logo" src="https://maisonoffice.vn/wp-content/themes/maisonreal/assets/images/svg/thang-may.svg" alt="Maison Office" width="26" height="26" />  &#160; Thang máy:</td>
-                              <span class="badge rounded-pill"><td className="h5"> {detail.thangmay}</td></span>
+                              <input 
+                             className="h5"
+                             value={detail.thangmay}
+                             name="type"
+                             onChange={(e) => handleChange(e)}>
+                             </input>
                             </li>
 
                             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -234,17 +377,7 @@ const Buy = () => {
                       </div>
                     </div>
                   </div>
-                  {/* ------------------------------------------------------------------------------------------------------------ */}
-                  {/* <span>Vị trí trên map</span>
-    <div id="dia_diem" class="section-building section-extra section-map">
-      <div class="container"><h3 class="heading">Địa điểm</h3>
-      <div class="map-content">
-        <p>
-          <iframe loading="lazy" style="border: 0;" src="https://www.google.com/maps/place/B%C3%B2+T%C6%A1+Qu%C3%A1n+M%E1%BB%99c+Nguy%C3%AAn+H%E1%BB%93ng/@21.017234,105.8092314,17z/data=!3m1!4b1!4m5!3m4!1s0x3135abd73ed8ab63:0xb6387b62a439553f!8m2!3d21.0172311!4d105.8114162?hl=vi-VN" width="754" height="350" frameborder="0" allowfullscreen="allowfullscreen">
-            <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start">&#65279;</span></iframe></p>
-</div>
-</div>
-</div> */}
+                  
                   {/* ------------------------------------------------------------------------------------------------------------ */}
                   <div className='container-fluid'>
                     <div className="row ms-5 pt-5 me-5">
@@ -341,4 +474,4 @@ const Buy = () => {
   );
 };
 
-export default Buy;
+export default AddNew;
