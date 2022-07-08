@@ -6,7 +6,7 @@ const NoPage = () => {
     <>
       <div style={{ paddingTop: "8rem", }} class="container fluid" >
         <div class="col-6 text-justify row ">
-          
+
           <h1 style={{ lineHeight: "70px" }}>Về 99BROS</h1>
           <p class="blockquote">
             99bros là công ty cung cấp dịch vụ thuê văn phòng chuyên nghiệp tại Hà Nội và TP. Hồ Chí Minh.
@@ -42,7 +42,7 @@ const NoPage = () => {
           </div>
         </div>
 
-        <div class="mb-7 text-center mt-5" style={{paddingTop: "2rem",}}>
+        <div class="mb-7 text-center mt-5" style={{ paddingTop: "2rem", }}>
           <h3 class="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Các Đối Tác</h3>
         </div>
         <div className='container'>
