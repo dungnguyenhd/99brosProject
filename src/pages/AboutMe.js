@@ -1,7 +1,6 @@
 import React from 'react';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import '../css/abouteMe.css';
 const NoPage = () => {
   return (
     <>
