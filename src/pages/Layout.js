@@ -67,7 +67,7 @@ const Layout = (props) => {
               <li class="nav-item px-3 px-xl-4"><Link to="/" class="nav-link fw-medium" onClick={clickView}>Trang chủ</Link></li>
               <li class="nav-item px-3 px-xl-4"><Link to="/aboutMe" class="nav-link fw-medium" onClick={clickView}>Giới thiệu</Link></li>
               <li class="nav-item px-3 px-xl-4"><Link to="/tintuc" class="nav-link fw-medium" onClick={clickView}>Tin tức</Link></li>
-              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#testimonial">Bộ sưu tập</a></li>
+              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#testimonial">Liên hệ</a></li>
 
               <li class="nav-item px-3 px-xl-4">
                 <Link to="/favorite" class="nav-link fw-medium" onClick={clickView}>
