@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import ReactPaginate from 'react-paginate';
 
 function UserHouseData(props) {
-  const [house, setHouse] = useState(null);
+  const [house, setHouse] = useState([]);
   const [listItem, setListItem] = useState([]);
   const [liked, setLiked] = useState([]);
   const [district, setDistrict] = useState(null);
@@ -16,8 +16,8 @@ function UserHouseData(props) {
   let navigate = useNavigate();
   // const params = useParams();
   const [currentItems, setCurrentItems] = useState([]);
-  const [pageCount, setPageCount] = useState(0);
-  const [page, setPage] = useState(-1);
+  const [pageCount, setPageCount] = useState([]);
+  const [page, setPage] = useState(0);
 
   useEffect(() => {
     setHouse(props.data);
@@ -26,7 +26,23 @@ function UserHouseData(props) {
       setPage(0);
       console.log('set item offset');
     }
+    
   }, [props.data]);
+
+  useEffect(() => {
+    if (house != null) {
+      // Fetch items from another resources.
+      let itemsPerPage = 3;
+      let starOffset = page * itemsPerPage;
+      let endOffset = (page + 1) * itemsPerPage;
+      if (endOffset > house.length) {
+        endOffset = house.length;
+      }
+      setCurrentItems(house.slice(starOffset, endOffset));
+      setPageCount(Math.ceil(house.length / itemsPerPage));
+      // window.scrollTo();
+    }
+  },[house.length]);
 
   useEffect(() => {
     console.log('product list useEffect!!');
@@ -41,23 +57,23 @@ function UserHouseData(props) {
   }, [props.store_state]);
 
 
-  useEffect(() => {
-    if (house != null) {
-      console.log('test' + house.length);
-      // Fetch items from another resources.
-      let itemsPerPage = 3;
-      const starOffset = page * itemsPerPage;
-      let endOffset = (page + 1) * itemsPerPage;
-      if (endOffset > house.length) {
-        endOffset = house.length;
-      }
-      console.log('testhouselength'+ house.length);
+  // useEffect(() => {
+  //   if (house != null) {
+  //     console.log('test' + house.length);
+  //     // Fetch items from another resources.
+  //     let itemsPerPage = 3;
+  //     const starOffset = page * itemsPerPage;
+  //     let endOffset = (page + 1) * itemsPerPage;
+  //     if (endOffset > house.length) {
+  //       endOffset = house.length;
+  //     }
+  //     console.log('testhouselength'+ house.length);
 
-      setCurrentItems(house.slice(starOffset, endOffset));
-      setPageCount(Math.ceil(house.length / itemsPerPage));
-      // window.scrollTo();
-    }
-  },);
+  //     setCurrentItems(house.slice(starOffset, endOffset));
+  //     setPageCount(Math.ceil(house.length / itemsPerPage));
+  //     // window.scrollTo();
+  //   }
+  // },);
 
 
   const handlePageClick = (event) => {
@@ -97,8 +113,12 @@ function UserHouseData(props) {
   var house_list = [];
   var MAX_ITEM = 6;
 
-  if (house != null) {
-    house_list = currentItems.map((item) => (
+
+  if (currentItems != null) {
+    house_list = currentItems.map((item) => {
+      console.log("update!!!!!!");
+      // if (count < 6) {
+        return (
           <div class="col-md-4 mb-4">
 
 
@@ -132,7 +152,11 @@ function UserHouseData(props) {
 
             </div>
           </div>
-        ));
+        );
+      // } else {
+      //   return;
+      // }
+    });
   }
 
   function getPosition(id) {

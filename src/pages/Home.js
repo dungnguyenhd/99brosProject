@@ -106,7 +106,7 @@ const Home = () => {
 
   return (
     <>
-      {/* <!-- ======= Hero Section ======= --> */} 
+      {/* <!-- ======= Hero Section ======= --> */}
       <section style={{ paddingTop: "7rem", }}>
         <div class="bg-holder" id="start" style={{
           backgroundImage: `url("https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?cs=srgb&dl=pexels-vecislavas-popa-1571459.jpg&fm=jpg")`
@@ -121,14 +121,14 @@ const Home = () => {
               <p class="mb-4 fw-medium">99Bros Bất động sản.<br class="d-none d-xl-block" />Dịch vụ bất động sản hàng đầu KITS<br class="d-none d-xl-block" />Xem ngay.</p>
               <div class="text-center text-md-start"> <a class="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow" href="#viewnews" role="button">Xem tin</a>
                 <div class="w-100 d-block d-md-none"></div>
-                <Link to={"/new/"+"new"}  onClick={clickView}>
+                <Link to={"/new/" + "new"} onClick={clickView}>
                   <a href="#start" role="button">
                     <span class="btn btn-success round-btn-lg rounded-circle me-3 danger-btn-shadow">
-                 <i class="fas fa-paper-plane">
-                 </i>
-                 </span></a>
-                 <span class="fw-medium" style={{ color: 'white' }}>Đăng tin</span>
-                 </Link>
+                      <i class="fas fa-paper-plane">
+                      </i>
+                    </span></a>
+                  <span class="fw-medium" style={{ color: 'white' }}>Đăng tin</span>
+                </Link>
               </div>
             </div>
           </div>
@@ -191,7 +191,7 @@ const Home = () => {
                         }}
                       />
                       <div className="input-group-btn">
-                        <Link to={stringSearch===""?"/":'/search/' + stringSearch}>
+                        <Link to={'/search/' + stringSearch}>
                           <button
                             type="button"
                             className="btn btn-danger">
@@ -316,7 +316,7 @@ const Home = () => {
                 }}
                 pagination={{ clickable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
-                // onSlideChange={() => console.log('slide change')}
+                onSlideChange={() => console.log('slide change')}
               >
                 <SwiperSlide><img src='https://www.leaderim.com/wp-content/uploads/2020/02/Partner-logo-2016.png' height={70} /></SwiperSlide>
                 <SwiperSlide><img src='https://www.pngfind.com/pngs/m/683-6836144_cisco-partner-logo-cisco-partner-logo-vector-hd.png' height={70} /></SwiperSlide>
@@ -341,7 +341,7 @@ const Home = () => {
 
               <img src='https://marketingbatdongsan.vn/wp-content/uploads/2020/08/Banner-300x600-Mahattan.png' width='130' height='400'></img>
 
-              <img src='https://scontent.fhan3-3.fna.fbcdn.net/v/t39.30808-6/258185782_493988712118760_7871080718877959268_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=0debeb&_nc_ohc=1_aIoClntsUAX-u7MLt&_nc_ht=scontent.fhan3-3.fna&oh=00_AT8pzJqT0zRvgPyjaPxWMIzhfV8mJe30JRsmeDKaQo4zjA&oe=62CD76B0'  className='mt-8' width='130' height='400's/>
+              <img src='https://scontent.fhan3-3.fna.fbcdn.net/v/t39.30808-6/258185782_493988712118760_7871080718877959268_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=0debeb&_nc_ohc=1_aIoClntsUAX-u7MLt&_nc_ht=scontent.fhan3-3.fna&oh=00_AT8pzJqT0zRvgPyjaPxWMIzhfV8mJe30JRsmeDKaQo4zjA&oe=62CD76B0' className='mt-8' width='130' height='400' s />
 
 
             </div>

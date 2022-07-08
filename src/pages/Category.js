@@ -2,10 +2,10 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import PhoneDataUser from '../component/dataUser';
+import UserHouseData from '../component/dataUser';
 
 const Category = () => {
-  const [phone, setPhone] = useState(null);
+  const [phone, setPhone] = useState([]);
   const [category, setName] = useState(null);
   const params = useParams();
   useEffect(() => {
@@ -67,7 +67,7 @@ const Category = () => {
             </div>
             <div className="container mt-5">
               <div className="row">
-                <PhoneDataUser data={phone} />
+                <UserHouseData data={phone} />
               </div>
             </div>
       </div>
