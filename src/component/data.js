@@ -3,16 +3,45 @@ import { useEffect } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { useNavigate, useParams } from 'react-router-dom';
 import '../css/main.css';
+import ReactPaginate from 'react-paginate';
 
 function PhoneData(props) {
-  const [phone, setPhone] = useState(null);
+  const [phone, setPhone] = useState([]);
   const [district, setDistrict] = useState(null);
   const [districtHCM, setDistrictHCM] = useState(null);
   let navigate = useNavigate();
+  //Use pagination
+  const [currentItems, setCurrentItems] = useState([]);
+  const [pageCount, setPageCount] = useState(0);
+  const [page, setPage] = useState(-1);
 
   useEffect(() => {
     setPhone(props.data);
+    if (props.data != null) {
+      //setCurrentItems(props.data.slice(0, 6));
+      setPage(0);
+      console.log('set item offset');
+    }
   }, [props.data]);
+
+  useEffect(() => {
+    if (phone != null) {
+      // Fetch items from another resources.
+      let itemsPerPage = 3;
+      const starOffset = page * itemsPerPage;
+      let endOffset = (page + 1) * itemsPerPage;
+      if (endOffset > phone.length) {
+        endOffset = phone.length;
+      }
+      setCurrentItems(phone.slice(starOffset, endOffset));
+      setPageCount(Math.ceil(phone.length / itemsPerPage));
+      // window.scrollTo();
+    }
+  },[phone.length]);
+
+  const handlePageClick = (event) => {
+    setPage(event.selected);
+  };
 
   const sortPriceDown = () => {
     const sortData = [...phone];
@@ -127,7 +156,7 @@ function PhoneData(props) {
   var phone_list = [];
   var count = 0;
   if (phone != null) {
-    phone_list = phone.map((item) => {
+    phone_list = currentItems.map((item) => {
       if (count < 12) {
         count++;
         return (
@@ -277,8 +306,29 @@ function PhoneData(props) {
       <br /><br /><br /><br />
 
       <table className="table table-secondary table-bordered text-center mt-4">
-      {phone_list}
+      {/* {phone_list} */}
       </table>
+      <div className="row card-deck ">{phone_list}</div>
+      <ReactPaginate
+        previousLabel="Previous"
+        nextLabel="Next"
+        pageClassName="page-item"
+        pageLinkClassName="page-link"
+        previousClassName=""
+        previousLinkClassName="page-link"
+        nextClassName=""
+        nextLinkClassName="page-link"
+        breakLabel="..."
+        breakClassName="page-item"
+        breakLinkClassName="page-link"
+        pageCount={pageCount}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={5}
+        onPageChange={handlePageClick}
+        containerClassName="pagination"
+        activeClassName="active"
+        forcePage={page}
+      />
     </>
   );
 }
