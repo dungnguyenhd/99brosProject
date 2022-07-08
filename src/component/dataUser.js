@@ -40,7 +40,7 @@ function UserHouseData(props) {
       }
       setCurrentItems(house.slice(starOffset, endOffset));
       setPageCount(Math.ceil(house.length / itemsPerPage));
-      window.scrollTo();
+      // window.scrollTo();
     }
   },[house.length]);
 
@@ -57,23 +57,23 @@ function UserHouseData(props) {
   }, [props.store_state]);
 
 
-  useEffect(() => {
-    if (house != null) {
-      console.log('test' + house.length);
-      // Fetch items from another resources.
-      let itemsPerPage = 3;
-      const starOffset = page * itemsPerPage;
-      let endOffset = (page + 1) * itemsPerPage;
-      if (endOffset > house.length) {
-        endOffset = house.length;
-      }
-      console.log('testhouselength'+ house.length);
+  // useEffect(() => {
+  //   if (house != null) {
+  //     console.log('test' + house.length);
+  //     // Fetch items from another resources.
+  //     let itemsPerPage = 3;
+  //     const starOffset = page * itemsPerPage;
+  //     let endOffset = (page + 1) * itemsPerPage;
+  //     if (endOffset > house.length) {
+  //       endOffset = house.length;
+  //     }
+  //     console.log('testhouselength'+ house.length);
 
-      setCurrentItems(house.slice(starOffset, endOffset));
-      setPageCount(Math.ceil(house.length / itemsPerPage));
-      // window.scrollTo();
-    }
-  },);
+  //     setCurrentItems(house.slice(starOffset, endOffset));
+  //     setPageCount(Math.ceil(house.length / itemsPerPage));
+  //     // window.scrollTo();
+  //   }
+  // },);
 
 
   const handlePageClick = (event) => {
