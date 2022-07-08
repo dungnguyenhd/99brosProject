@@ -6,6 +6,9 @@ import UserPhoneData from '../component/dataUser';
 import { right } from '@popperjs/core';
 import { Link } from 'react-router-dom';
 import './SideBar.css';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 
 
@@ -73,7 +76,7 @@ const Buy = () => {
           <div className='container-fluid'>
             <div className='row'>
               <div className='col-sm-1 col-md-1 col-lg-2 d-none d-lg-block ' style={{ marginTop: '7rem' }}>
-            
+
                 <div className='sticky' >
                   <div className='btn-group-vertical wrapper_sidebar bg-muted'>
                     <button type="button" class="btn btn-light btn-md text-info" onClick={clickView} style={{ marginTop: '7rem', fontSize: '1.5rem' }} data-bs-toggle="tooltip" title="Up"><i class="fas fa-arrow-up"></i></button>
@@ -101,8 +104,8 @@ const Buy = () => {
                     </button>
                   </div>
                 </div>
-                 <img src='http://taxiadvertisingvn.com/wp-content/uploads/2021/07/roadshowqc.gif' width='200px' height='1000px'></img>
-                <img style={{marginTop: "2rem"}} src='https://tpc.googlesyndication.com/simgad/12332553322558091477?sqp=4sqPyQQrQikqJwhfEAEdAAC0QiABKAEwCTgDQPCTCUgAUAFYAWBfcAJ4AcUBLbKdPg&rs=AOga4qk9RWMQiV8oqgqUPJWnpKtz2w4c9w' width='200px' height='950px'></img>
+                <img src='http://taxiadvertisingvn.com/wp-content/uploads/2021/07/roadshowqc.gif' width='200px' height='1000px'></img>
+                <img style={{ marginTop: "2rem" }} src='https://tpc.googlesyndication.com/simgad/12332553322558091477?sqp=4sqPyQQrQikqJwhfEAEdAAC0QiABKAEwCTgDQPCTCUgAUAFYAWBfcAJ4AcUBLbKdPg&rs=AOga4qk9RWMQiV8oqgqUPJWnpKtz2w4c9w' width='200px' height='950px'></img>
 
                 <img style={{ marginTop: '5rem' }} src='http://taxiadvertisingvn.com/wp-content/uploads/2021/07/roadshowqc.gif' width='200px' height='950px'></img>
               </div>
@@ -329,18 +332,43 @@ const Buy = () => {
 
                   <div className=''>
 
-                    <div class="building-ttnb" >
+                    <div class="building-ttnb" style={{marginTop: '20rem'}}>
 
                       <span class="ttnb-overlay"></span>
 
-                      <div class="ttnb-description">
+                      <div className="mb-7 text-center mt-5">
+                                        <h3 className="fs-xl-7 fs-lg-4 fs-5 fw-bold font-cursive text-capitalize">Các Đối Tác</h3>
+                                    </div>
 
-                        <p>Thông tin chi tiết và chính xác giúp bạn nhanh chóng tìm được lựa chọn văn phòng phù hợp.</p>
-                      </div>
-                      {/* <img src='https://www.thanhphocaphe.com/data/upload/image/banner/hanh-trinh-lap-chi_5b695446e2c9f.png'  /> */}
-                      <div class="ttnb-contact">Liên hệ <a href="tel:0389546759" data-wpel-link="internal">038.954.6759</a> để nhận báo giá.
+                                    <div className='container'>
+                                        <Swiper className='ps-9'
+                                            modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                                            spaceBetween={50}
+                                            slidesPerView={4}
+                                            navigation
+                                            autoplay={{
+                                                delay: 2500,
+                                                disableOnInteraction: false,
+                                            }}
+                                            pagination={{ clickable: true }}
+                                            onSwiper={(swiper) => console.log(swiper)}
+                                            onSlideChange={() => console.log('slide change')}
+                                        >
+                                            <SwiperSlide><img src='https://www.leaderim.com/wp-content/uploads/2020/02/Partner-logo-2016.png' height={70} /></SwiperSlide>
+                                            <SwiperSlide><img src='https://www.pngfind.com/pngs/m/683-6836144_cisco-partner-logo-cisco-partner-logo-vector-hd.png' height={70} /></SwiperSlide>
+                                            <SwiperSlide><img src='https://thumbs.dreamstime.com/b/partner-logo-design-ai-supported-81271814.jpg' height={70} /></SwiperSlide>
+                                            <SwiperSlide><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIXfIvUx5yLhleD_vSTSP6NTY0HoYy1YwHVi6mnCNQ93UdwoKnTbO5EWDJAGyMk_loSIA&usqp=CAU' height={70} /></SwiperSlide>
+                                            <SwiperSlide><img src='https://us.123rf.com/450wm/nakigitsune111/nakigitsune1111806/nakigitsune111180600285/103380642-the-logo-between-the-letter-s-and-letter-o-or-so-with-a-certain-distance-and-connected-by-orange-and.jpg?ver=6' height={70} /></SwiperSlide>
+                                            <SwiperSlide><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-R9fTatXZD2vZGInGIbNCwGeL0KxF-HkkQYaH8_p3yuKbVVg7vw6iavRqRod9lkVf5lg&usqp=CAU' height={70} /></SwiperSlide>
+                                            <SwiperSlide><img src='https://allvectorlogo.com/img/2016/10/sap-partner-logo.png' height={70} /></SwiperSlide>
+                                            <SwiperSlide><img src='https://www.seekpng.com/png/detail/209-2091194_rheem-pro-partner-logo.png' height={70} /></SwiperSlide>
+                                            <SwiperSlide><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjFJ4p95Vx4W9CWNldLVkcLmDwFl15SSGzjg&usqp=CAU' height={70} /></SwiperSlide>
+                                            <SwiperSlide><img src='https://findlogovector.com/wp-content/uploads/2019/10/business-integration-partners-bip-logo-vector.png' height={70} /></SwiperSlide>
+                                            <br />
+                                        </Swiper>
 
-                      </div>
+                                        <br /> <br />
+                                    </div>
                     </div>
 
                   </div>
